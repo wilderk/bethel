@@ -1,0 +1,18 @@
+/**
+ * @file
+ * Styles for IE8
+ */
+/* line 6, ../../../sass/global/browsers/ie8.scss */
+img {
+  width: auto;
+}
+
+/* line 10, ../../../sass/global/browsers/ie8.scss */
+.menu .link-home {
+  width: auto;
+  text-indent: 0;
+}
+/* line 14, ../../../sass/global/browsers/ie8.scss */
+.menu .link-home:after {
+  content: '';
+}

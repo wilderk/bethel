@@ -1,0 +1,10 @@
+<?php
+
+function integral_form_alter(&$form, &$form_state, $form_id) {
+  $form['title']['widget'][0]['value']['#placeholder'] = t('Add a Title...');
+  if(isset($form['#entity_type'])) {
+    $form['#node_type'] = $form_state->getBuildInfo()['callback_object']->getEntity()->getType();
+    $form['#node_type'] = strtolower(str_replace('_', ' ', $form['#node_type']));
+    $form['#node_published'] = $form_state->getBuildInfo()['callback_object']->getEntity()->getFields()['status']->getValue()[0]['value'];
+  }
+}

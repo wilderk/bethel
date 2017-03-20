@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.misc.field_p_misc
+    - field.field.paragraph.misc.field_p_settings
+    - field.field.paragraph.misc.field_p_tag
+    - paragraphs.paragraphs_type.misc
+  module:
+    - field_collection
+id: paragraph.misc.default
+targetEntityType: paragraph
+bundle: misc
+mode: default
+content:
+  field_p_misc:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_p_settings:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_embed
+  field_p_tag:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true

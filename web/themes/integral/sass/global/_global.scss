@@ -1,0 +1,46 @@
+/// Global Site Variables
+
+/// Width
+$site-w: 1024px;
+
+/// Padding
+$site-p: 1.5rem;
+$site-p-xs: $site-p / 4;
+$site-p-s: $site-p / 2;
+$site-p-l: $site-p * 2;
+$site-p-xl: $site-p * 4;
+
+$padding: (
+  xs: $site-p-xs,
+  s: $site-p-s,
+  m: $site-p,
+  l: $site-p-l,
+  xl: $site-p-xl,
+);
+
+$paragraph-p: map-get($padding, m);
+
+$paragraph-padding: (
+  auto: $paragraph-p,
+  none: 0,
+  xs: $paragraph-p / 4,
+  s: $paragraph-p / 2,
+  m: $paragraph-p,
+  l: $paragraph-p * 1.5,
+  xl: $paragraph-p * 2,
+  xxl: $paragraph-p * 3,
+  xxxl: $paragraph-p * 6,
+);
+
+@function padding($size, $set:null) {
+  @if($set == null or $set == 'site') {
+    @return map-get($padding, $size);
+  }
+  @else if($set == 'paragraphs' or $set == 'paragraph') {
+    @return map-get($paragraph-padding, $size);
+  }
+}
+
+/// Constraints
+$constrain-w: $site-w;
+$constrain-p: padding(m);

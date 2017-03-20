@@ -1,0 +1,75 @@
+
+.paragraph.paragraph--type--view {
+  
+  > .p__inner {
+    
+    > .p__content {
+      
+      > .field--name-field-p-view {
+        
+        .view-content {
+          position: relative;
+          display: flex;
+        }
+        
+        .views-row {
+          @include group;
+          width: 100%;
+          margin-bottom: 0;
+        }
+        
+        .feed-icon {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+        }
+        
+        nav.pager {
+          width: 100%;
+          padding-bottom: map-get($paragraph-padding, auto);
+          text-align: center;
+          
+          ul {
+            list-style: none;
+            margin: 0;
+          }
+          
+          li {
+            display: inline-block;
+            
+            a {
+              position: relative;
+              padding: 0 map-get($paragraph-padding, xs);
+            }
+            
+            &.is-active a:after {
+              content: '';
+              position: absolute;
+              left: map-get($paragraph-padding, xs) - .1;
+              right: map-get($paragraph-padding, xs) - .1;
+              bottom: -1px;
+              border-bottom: 2px solid;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  &.layout-slideshow {
+    
+    .view-content {
+      display: flex;
+      flex-flow: row wrap;
+    }
+    
+    .views-row {
+      display: flex;
+      height: auto;
+    }
+    
+    .views-row > * {
+      padding: map-get($paragraph-padding, auto);
+    }
+  }
+}

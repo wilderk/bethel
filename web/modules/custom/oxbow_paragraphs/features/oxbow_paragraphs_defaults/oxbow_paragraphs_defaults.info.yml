@@ -1,0 +1,20 @@
+name: Defaults
+description: 'Basic paragraph types with content and setting fields.'
+type: module
+core: 8.x
+dependencies:
+  - entity_reference_revisions
+  - field
+  - field_collection
+  - file
+  - image
+  - link
+  - node
+  - options
+  - oxbow_paragraphs_staff_board
+  - paragraphs
+  - path
+  - text
+  - user
+version: 8.x-1.01
+package: 'Oxbow Paragraphs'

@@ -1,0 +1,679 @@
+<?php
+
+use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Url;
+use Drupal\field_collection\Entity\FieldCollectionItem;
+use Drupal\image\Entity\ImageStyle;
+
+
+/**
+ * @file
+ * Contains oxbow_paragraphs.module
+ */
+
+ 
+/*
+ * Implements hook_preprocess_page
+ */
+function oxbow_paragraphs_preprocess_page(array &$variables) {
+  
+  /// TRUE if admin route
+  $editing = \Drupal::service('router.admin_context')->isAdminRoute();
+  
+  $module_path = drupal_get_path('module', 'oxbow_paragraphs');
+  $theme_path = drupal_get_path('theme', \Drupal::config('system.theme')->get('default'));
+  
+  /// ADMIN
+  if($editing) {
+    /// add module path
+    $variables['#attached']['drupalSettings']['oxbow_paragraphs']['path_module'] = $module_path;
+    /// add theme path
+    $variables['#attached']['drupalSettings']['oxbow_paragraphs']['path_theme'] = $theme_path;
+    /// add admin library
+    $variables['#attached']['library'][] = 'oxbow_paragraphs/drupal.oxbow_paragraphs.admin';
+  }
+  /// RENDER
+  else {
+    /// add render library
+    $variables['#attached']['library'][] = 'oxbow_paragraphs/drupal.oxbow_paragraphs';
+  }
+}
+
+
+/*
+ * Implements hook_template_preprocess_hook
+ */
+function oxbow_paragraphs_template_preprocess_default_variables_alter(&$vars) {
+
+  $module_path = drupal_get_path('module', 'oxbow_paragraphs');
+  $theme_path = drupal_get_path('theme', \Drupal::config('system.theme')->get('default'));
+
+  $vars['oxbow_paragraphs']['path_module'] = $module_path;
+  $vars['oxbow_paragraphs']['path_theme'] = $theme_path;
+}
+
+
+/*
+ * Implements hook_theme_registry_alter
+ */
+function oxbow_paragraphs_theme_registry_alter(&$theme_registry) {
+  /// change default paragraphs template path to oxbow_paragraphs template folder
+  $theme_registry['paragraph']['path'] = drupal_get_path('module', 'oxbow_paragraphs') . '/templates';
+}
+
+
+/*
+ * Implements hook_preprocess_field
+ * Add layout from parent to fields
+ */
+function oxbow_paragraphs_preprocess_field(&$vars) {
+  /// check if parent has layout field
+  if(isset($vars['element']['#object']->field_p_settings_layout->value)) {
+    /// layout from parent
+    $layout = $vars['element']['#object']->field_p_settings_layout->value;
+
+    /// accordion layout
+    if(strpos($layout, 'accordion') !== false) {
+      /// add layout class to field
+      $vars['attributes']['class'] = ['layout-accordion'];
+      /// add layout class to each item
+      foreach ($vars['items'] as $index => $item) {
+        /// open first accordion item
+        if($index == 0 && $layout == 'accordion-open') {
+          $item['attributes']->addClass('open');
+        }
+        /// add layout class
+        $item['attributes']->addClass('layout-item-accordion');
+        /// mark paragraph for accordion rendering
+        $item['content']['#paragraph']->oxbow_paragraphs['display'] = 'accordion';
+      }
+    }
+
+    /// column layout
+    else {
+      /// add layout class to field
+      $vars['attributes']['class'] = ['layout-columns'];
+      /// layout for each item
+      $layout_items = explode('_', $layout);
+      /// check for equal column layout
+      if (count(array_unique($layout_items)) === 1) array_push($vars['attributes']['class'], 'layout-grid');
+      /// add layout class to each item
+      foreach ($vars['items'] as $index => $item) {
+        /// repeat layout pattern
+        if ($index > count($layout_items) - 1) {
+          $layout_class = 'layout-item_' . $layout_items[($index % count($layout_items))];
+        } else {
+          $layout_class = 'layout-item_' . $layout_items[$index];
+        }
+        /// add layout class
+        $item['attributes']->addClass($layout_class);
+        /// mark paragraph for column rendering
+        $item['content']['#paragraph']->oxbow_paragraphs_display = 'column';
+      }
+    }
+  }
+}
+
+
+/*
+ * Create variables used to render Oxbow Paragraphs
+ */
+function oxbow_paragraphs_preprocess_paragraph(&$vars) {
+  $json_map = _load_json();
+  
+  $settings = [];
+  $json = null;
+  $fc_settings = ($vars['paragraph']->hasField('field_p_settings')) ? FieldCollectionItem::load($vars['paragraph']->get('field_p_settings')->getValue()[0]['value']) : null;
+  
+  if(isset($fc_settings)) {
+    $json = json_decode($fc_settings->get('field_p_setting_json')->getValue()[0]['value'], true);
+  }
+
+  /// change json values to mapped value
+  if($json && $json_map) {
+    /// status
+    $settings['status'] = 'show';
+    if(isset($json['status']['fields'])) {
+      $status = $json['status']['fields'];
+      $status_map = $json_map['status']['fields'];
+
+      $settings['status'] = _get_value($status['status']['value'], $status_map['status'], $json_map);
+    }
+    
+    /// text (with title)
+    if(isset($json['text_with_title']['fields'])) {
+      $text = $json['text_with_title']['fields'];
+      $text_map = $json_map['text_with_title']['fields'];
+
+      $settings['title']['color'] = _get_value($text['title_color']['fields']['color']['value'], $text_map['title_color']['fields']['color'], $json_map);
+      $settings['title']['visible'] = _get_value($text['title_display']['value'], $text_map['title_display'], $json_map);
+      $settings['title']['align'] = _get_value($text['title_align']['value'], $text_map['title_align'], $json_map);
+      
+      $link = $fc_settings->get('field_p_setting_title_link')->getValue();
+      if(isset($link[0]['uri'])) {
+        $settings['title']['link'] =  Url::fromUri($link['uri'])->toString();
+      }
+      
+      $settings['text']['color'] = _get_value($text['text_color']['fields']['color']['value'], $text_map['text_color']['fields']['color'], $json_map);
+      $settings['text']['color_key'] = $text['text_color']['fields']['color']['value'];
+      $settings['text']['size'] = _get_value($text['text_size']['value'], $text_map['text_size'], $json_map);
+    }
+    
+    /// text
+    if(isset($json['text']['fields'])) {
+      $text = $json['text']['fields'];
+      $text_map = $json_map['text']['fields'];
+
+      $settings['text']['color'] = _get_value($text['color']['fields']['color']['value'], $text_map['color']['fields']['color'], $json_map);
+      $settings['text']['color_key'] = $text['color']['fields']['color']['value'];
+      $settings['text']['size'] = _get_value($text['size']['value'], $text_map['size'], $json_map);
+    }
+    
+    /// backgrounds
+    if(isset($json['background']['fields'])) {
+      $bg = $json['background']['fields'];
+      $bg_map = $json_map['background']['fields'];
+
+      $settings['background']['type'] = _get_value($bg['type']['value'], $bg_map['type'], $json_map);
+      
+      /// solid
+      if($settings['background']['type'] == 'solid') {
+        $bg_solid = $bg['solid']['fields'];
+        $bg_solid_map = $bg_map['solid']['fields'];
+        
+        $popup = $bg_solid['color']['fields'];
+        $popup_map = $bg_solid_map['color']['fields'];
+        $settings['background']['color'] = _get_value($popup['color']['value'], $popup_map['color'], $json_map);
+        
+        $opacity = _get_value($bg_solid['opacity']['value'], $bg_solid_map['opacity'], $json_map);
+        
+        if($settings['background']['color'] != 'auto' && $opacity != 1) {
+          $rgb = _hex_to_rgb($settings['background']['color']);
+          $settings['background']['color'] = 'rgba(' . $rgb[0] . ', ' . $rgb[1] . ', ' . $rgb[2] . ', ' . $opacity . ')';
+        }
+      }
+      
+      /// image
+      if($settings['background']['type'] == 'image') {
+        $bg_image = $bg['image']['fields'];
+        $bg_image_map = $bg_map['image']['fields'];
+        
+        $image = $fc_settings->get('field_p_setting_bg_img')->entity;
+        if($image && $image->getFileUri()) {
+          $settings['background']['image']['url'] = ImageStyle::load('paragraphs_background')->buildUrl($image->getFileUri());
+        }
+        
+        $settings['background']['image']['size'] = _get_value($bg_image['size']['value'], $bg_image_map['size'], $json_map);
+        $settings['background']['image']['attach'] = _get_value($bg_image['scroll']['value'], $bg_image_map['scroll'], $json_map);
+        
+        $popup = $bg_image['color']['fields'];
+        $popup_map = $bg_image_map['color']['fields'];
+        $settings['background']['color'] = _get_value($popup['color']['value'], $popup_map['color'], $json_map);
+        
+        $popup = $bg_image['overlay']['fields'];
+        $popup_map = $bg_image_map['overlay']['fields'];
+        $settings['background']['overlay']['color'] = _get_value($popup['color']['value'], $popup_map['color'], $json_map);
+        
+        $opacity = _get_value($bg_image['opacity']['value'], $bg_image_map['opacity'], $json_map);
+        
+        if($settings['background']['overlay']['color'] != 'auto' && $opacity != 1) {
+          $rgb = _hex_to_rgb($settings['background']['overlay']['color']);
+          $settings['background']['overlay']['color'] = 'rgba(' . $rgb[0] . ', ' . $rgb[1] . ', ' . $rgb[2] . ', ' . $opacity . ')';
+        }
+      }
+      
+      /// video
+      if($settings['background']['type'] == 'video') {
+        $bg_video = $bg['video']['fields'];
+        $bg_video_map = $bg_map['video']['fields'];
+        
+        $video = $fc_settings->get('field_p_setting_bg_vid')->entity;
+        if($video && $video->getFileUri()) {
+          $settings['background']['video']['url'] = file_create_url($video->getFileUri());
+        }
+        
+        $settings['background']['video']['size'] = _get_value($bg_video['size']['value'], $bg_video_map['size'], $json_map);
+        $settings['background']['video']['loop'] = _get_value($bg_video['loop']['value'], $bg_video_map['loop'], $json_map);
+
+        $popup = $bg_video['color']['fields'];
+        $popup_map = $bg_video_map['color']['fields'];
+        $settings['background']['color'] = _get_value($popup['color']['value'], $popup_map['color'], $json_map);
+        
+        $popup = $bg_video['overlay']['fields'];
+        $popup_map = $bg_video_map['overlay']['fields'];
+        $settings['background']['overlay']['color'] = _get_value($popup['color']['value'], $popup_map['color'], $json_map);
+        
+        $opacity = _get_value($bg_video['opacity']['value'], $bg_video_map['opacity'], $json_map);
+        
+        if($settings['background']['overlay']['color'] != 'auto' && $opacity != 1) {
+          $rgb = _hex_to_rgb($settings['background']['overlay']['color']);
+          $settings['background']['overlay']['color'] = 'rgba(' . $rgb[0] . ', ' . $rgb[1] . ', ' . $rgb[2] . ', ' . $opacity . ')';
+        }
+      }
+    }
+    
+    /// size
+    if(isset($json['size']['fields'])) {
+      $size = $json['size']['fields'];
+      $size_map = $json_map['size']['fields'];
+
+      $settings['size']['height'] = _get_value($size['height']['value'], $size_map['height'], $json_map);
+      $settings['size']['width'] = _get_value($size['constrain']['value'], $size_map['constrain'], $json_map);
+      $settings['size']['padding']['t'] = _get_value($size['padding_t']['value'], $size_map['padding_t'], $json_map);
+      $settings['size']['padding']['b'] = _get_value($size['padding_b']['value'], $size_map['padding_b'], $json_map);
+      $settings['size']['padding']['l'] = _get_value($size['padding_l']['value'], $size_map['padding_l'], $json_map);
+      $settings['size']['padding']['r'] = _get_value($size['padding_r']['value'], $size_map['padding_r'], $json_map);
+    }
+    if(isset($json['size_with_margin']['fields'])) {
+      $size = $json['size_with_margin']['fields'];
+      $size_map = $json_map['size_with_margin']['fields'];
+
+      $settings['size']['height'] = _get_value($size['height']['value'], $size_map['height'], $json_map);
+      $settings['size']['padding']['t'] = _get_value($size['padding_t']['value'], $size_map['padding_t'], $json_map);
+      $settings['size']['padding']['b'] = _get_value($size['padding_b']['value'], $size_map['padding_b'], $json_map);
+      $settings['size']['padding']['l'] = _get_value($size['padding_l']['value'], $size_map['padding_l'], $json_map);
+      $settings['size']['padding']['r'] = _get_value($size['padding_r']['value'], $size_map['padding_r'], $json_map);
+      $settings['size']['margin']['t'] = _get_value($size['margin_t']['value'], $size_map['margin_t'], $json_map);
+      $settings['size']['margin']['b'] = _get_value($size['margin_b']['value'], $size_map['margin_b'], $json_map);
+      $settings['size']['margin']['l'] = _get_value($size['margin_l']['value'], $size_map['margin_l'], $json_map);
+      $settings['size']['margin']['r'] = _get_value($size['margin_r']['value'], $size_map['margin_r'], $json_map);
+    }
+    
+    /// layout
+    if(isset($vars['paragraph']->field_p_settings_layout)) {
+      $vars['paragraph']->field_p_settings_layout = '';
+      $vars['paragraph']->save();
+    }
+
+    if(isset($json['layout']['fields'])) {
+      $layout = $json['layout']['fields'];
+      $layout_map = $json_map['layout']['fields'];
+
+      $settings['layout']['type'] = _get_value($layout['type']['value'], $layout_map['type'], $json_map);
+      
+      if($settings['layout']['type'] == 'stack') {
+        $layout_stack = $layout['stack']['fields'];
+        $layout_stack_map = $layout_map['stack']['fields'];
+        
+        $settings['layout']['padding'] = _get_value($layout_stack['padding']['value'], $layout_stack_map['padding'], $json_map);
+
+        if(isset($layout_stack['h-align'])) {
+          $settings['layout']['h-align'] = _get_value($layout_stack['h-align']['value'], $layout_stack_map['h-align'], $json_map);
+        }
+      }
+      
+      if($settings['layout']['type'] == 'columns') {
+        $layout_columns = $layout['columns']['fields'];
+        $layout_columns_map = $layout_map['columns']['fields'];
+
+        $popup = $layout_columns['layout']['fields'];
+        $popup_map = $layout_columns_map['layout']['fields'];
+
+        $columns = _get_value($popup['columns']['value'], $popup_map['columns'], $json_map);
+        $settings['layout']['layout'] = _get_value($popup[$columns]['fields']['layout']['value'], $popup_map[$columns]['fields']['layout'], $json_map);
+
+        $settings['layout']['direction'] = _get_value($layout_columns['direction']['value'], $layout_columns_map['direction'], $json_map);
+        $settings['layout']['align'] = _get_value($layout_columns['align']['value'], $layout_columns_map['align'], $json_map);
+        $settings['layout']['padding'] = _get_value($layout_columns['padding']['value'], $layout_columns_map['padding'], $json_map);
+
+        if(isset($layout_columns['h-align'])) {
+          $settings['layout']['h-align'] = _get_value($layout_columns['h-align']['value'], $layout_columns_map['h-align'], $json_map);
+        }
+
+        if(count(array_unique(explode('-', $settings['layout']['layout']))) === 1) {
+          $settings['layout']['grid'] = true;
+        }
+        else {
+          $settings['layout']['grid'] = false;
+        }
+
+        $vars['paragraph']->field_p_settings_layout = $settings['layout']['layout'];
+        $vars['paragraph']->save();
+      }
+      
+      if($settings['layout']['type'] == 'slides') {
+        $layout_slides = $layout['slides']['fields'];
+        $layout_slides_map = $layout_map['slides']['fields'];
+        $settings['layout']['slides']['show'] = _get_value($layout_slides['slides']['value'], $layout_slides_map['slides'], $json_map);
+        $settings['layout']['slides']['speed'] = _get_value($layout_slides['speed']['value'], $layout_slides_map['speed'], $json_map);
+        $settings['layout']['slides']['arrows'] = _get_value($layout_slides['arrows']['value'], $layout_slides_map['arrows'], $json_map);
+        $settings['layout']['slides']['align'] = _get_value($layout_slides['align']['value'], $layout_slides_map['align'], $json_map);
+
+        $vars['paragraph']->field_p_settings_layout = 'slides';
+        $vars['paragraph']->save();
+      }
+      
+      if($settings['layout']['type'] == 'tabs') {
+        $layout_tabs = $layout['tabs']['fields'];
+        $layout_tabs_map = $layout_map['tabs']['fields'];
+
+        $settings['layout']['tabs']['align'] = _get_value($layout_tabs['align']['value'], $layout_tabs_map['align'], $json_map);
+        $settings['layout']['tabs']['color'] = _get_value($layout_tabs['color']['fields']['color']['value'], $layout_tabs_map['color']['fields']['color'], $json_map);
+
+        $vars['paragraph']->field_p_settings_layout = 'tabs';
+        $vars['paragraph']->save();
+      }
+
+      if($settings['layout']['type'] == 'accordion') {
+        $layout_accordion = $layout['accordion']['fields'];
+        $layout_accordion_map = $layout_map['accordion']['fields'];
+
+        $accordion_open = _get_value($layout_accordion['expand_first']['value'], $layout_accordion_map['expand_first'], $json_map);
+        $settings['layout']['accordion']['collapse'] = _get_value($layout_accordion['expand_multiple']['value'], $layout_accordion_map['expand_multiple'], $json_map);
+        $settings['layout']['padding'] = _get_value($layout_accordion['padding']['value'], $layout_accordion_map['padding'], $json_map);
+
+        if($accordion_open == 'on') {
+          $vars['paragraph']->field_p_settings_layout = 'accordion-open';
+        }
+        else {
+          $vars['paragraph']->field_p_settings_layout = 'accordion';
+        }
+        $vars['paragraph']->save();
+      }
+    }
+    
+    /// extras
+    if(isset($json['extras']['fields'])) {
+      $extras = $json['extras']['fields'];
+      $extras_map = $json_map['extras']['fields'];
+
+      if(isset($extras['classes']['value'])) {
+        $settings['classes'] = $extras['classes']['value'];
+      }
+      
+      if(isset($extras['scroll']['value'])) {
+        if(_get_value($extras['scroll']['value'], $extras_map['scroll'], $json_map) == 'on') {
+          $scroll = $extras['scroll_button']['fields'];
+          $scroll_map = $extras_map['scroll_button']['fields'];
+          $settings['scroll']['background'] = _get_value($scroll['background']['fields']['color']['value'], $scroll_map['background']['fields']['color'], $json_map);
+          $settings['scroll']['color'] = _get_value($scroll['color']['fields']['color']['value'], $scroll_map['color']['fields']['color'], $json_map);
+        }
+      }
+    }
+
+    /// images
+    if(isset($json['image']['fields'])) {
+      $image = $json['image']['fields'];
+      $image_map = $json_map['image']['fields'];
+
+      if(isset($image['align']['value'])) {
+        $settings['image']['align'] = _get_value($image['align']['value'], $image_map['align'], $json_map);
+      }
+      if(isset($image['size']['value'])) {
+        $settings['image']['size'] = _get_value($image['size']['value'], $image_map['size'], $json_map);
+      }
+      if(isset($image['modal']['value'])) {
+        $settings['image']['modal'] = _get_value($image['modal']['value'], $image_map['modal'], $json_map);
+      }
+    }
+
+    /// views
+    if(isset($json['view']['fields'])) {
+
+      //$test = \Drupal\views\Views::getView('test');
+      //$test->setDisplay('block_1');
+      //ksm($test->buildRenderable());
+      //$settings['view']['render'] = \Drupal\views\Views::getView('test')->buildRenderable();
+      //ksm(views_get_view_result('test', 'block_1')[0]);
+      //$settings['view']['render'] = views_get_view_result('test', 'block_1')[0];
+
+      $view = $json['view']['fields'];
+      $view_map = $json_map['view']['fields'];
+
+      $settings['view']['background'] = _get_value($view['background']['fields']['color']['value'], $view_map['background']['fields']['color'], $json_map);
+      $settings['view']['accent'] = _get_value($view['accent']['fields']['color']['value'], $view_map['accent']['fields']['color'], $json_map);
+      $settings['view']['color'] = _get_value($view['color']['fields']['color']['value'], $view_map['color']['fields']['color'], $json_map);
+    }
+
+    /// Forms
+
+
+    if(isset($json['form']['fields'])) {
+
+      $form = $json['form']['fields'];
+      $form_map = $json_map['form']['fields'];
+
+      $settings['form']['display'] = _get_value($form['display']['value'], $form_map['display'], $json_map);
+      $settings['form']['form_id'] = $vars['paragraph']->get('field_p_form')->getValue()[0]["target_id"];
+
+      $formQuery = db_query('SELECT * FROM {yamlform_submission} yamlform_submission WHERE (( (yamlform_submission.yamlform_id IN  (\''. $settings['form']['form_id'] .'\')) ))')->fetchAll();
+
+      $values = array();
+
+      foreach ( $formQuery as $formObj):
+        array_push($values, \Drupal\yamlform\Entity\YamlFormSubmission::load($formObj->sid)->getData());
+      endforeach;
+
+
+      $settings['form']['values'] = $values;
+
+
+      //Handle the results
+      $results = array();
+
+
+
+
+      //Count Results for each field
+      foreach ($values as $value):
+
+        //Skip if it isn't the right class, and we have a class
+        if(!empty($_SESSION['class_id']) && $_SESSION['class_id'] !== 'no-class-id') {
+          if($value['_class_id'] !== $_SESSION['class_id']) {
+            continue;
+          }
+        }
+
+        //Loop through each field
+        foreach ($value as $key => $field):
+
+          //Skip hidden fields
+          if($key[0] == '_') {
+            continue;
+          }
+
+          if(!empty($results[$key])){
+            if(!empty($results[$key][$field])){
+
+
+              //add 1 to the field count
+              $results[$key][$field]++;
+
+            } else {
+              //add the field and set to 1
+              $results[$key][$field] = 1;
+
+            }
+
+          } else {
+            //Add key and set field to 1
+            $results[$key] = array();
+            $results[$key][$field] = 1;
+          }
+        endforeach;
+
+      endforeach;
+
+      foreach($results as $key => $result) {
+        arsort($result);
+        $results[$key] = $result;
+      }
+
+      $settings['form']['results'] = $results;
+      $settings['form']['tests'] = '';
+
+    }
+
+
+    /// board
+    if(isset($json['board']['fields'])) {
+      $board = $json['board']['fields'];
+      $board_map = $json_map['board']['fields'];
+
+      $board_display = _get_value($board['display']['value'], $board_map['display'], $json_map);
+      $board_summary = _get_value($board['summary']['value'], $board_map['summary'], $json_map);
+      $board_link = _get_value($board['link']['value'], $board_map['link'], $json_map);
+
+      if ($vars['paragraph']->hasField('field_p_board')) {
+        foreach ($vars['paragraph']->get('field_p_board')->referencedEntities() as $delta => $item) {
+          $item->paragraph_display = $board_display;
+          $item->paragraph_summary = $board_summary;
+          $item->paragraph_link = $board_link;
+        }
+      }
+    }
+
+    /// staff
+    if(isset($json['staff']['fields'])) {
+      $staff = $json['staff']['fields'];
+      $staff_map = $json_map['staff']['fields'];
+
+      $staff_display = _get_value($staff['display']['value'], $staff_map['display'], $json_map);
+      $staff_summary = _get_value($staff['summary']['value'], $staff_map['summary'], $json_map);
+      $staff_link = _get_value($staff['link']['value'], $staff_map['link'], $json_map);
+
+      if ($vars['paragraph']->hasField('field_p_staff')) {
+        foreach ($vars['paragraph']->get('field_p_staff')->referencedEntities() as $delta => $item) {
+          $item->paragraph_display = $staff_display;
+          $item->paragraph_summary = $staff_summary;
+          $item->paragraph_link = $staff_link;
+        }
+      }
+    }
+
+    $vars['oxbow_paragraphs']['settings'] = $settings;
+
+    //dpm($vars['oxbow_paragraphs']);
+    //dpm($json);
+  }
+}
+
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function oxbow_paragraphs_preprocess_views_view($view) {
+  //ksm($view);
+}
+
+
+/*
+ * Returns mapped JSON value
+ */
+function _get_value($val, $field, $json_map) {
+  if($field['type'] == 'global') {
+    return $json_map['global']['fields'][$field['map']]['values'][$val]['value'];
+  }
+  else {
+    return $field['values'][$val]['value'];
+  }
+}
+
+
+/*
+ * Returns configuration JSON
+ */
+function _load_json() {
+  
+  $module_path = drupal_get_path('module', 'oxbow_paragraphs');
+  $theme_path = drupal_get_path('theme', \Drupal::config('system.theme')->get('default'));
+  
+  $config_json = [];
+  
+  $config_path = $module_path . '/js/config/';
+  $config_custom_file = $theme_path . '/js/oxbow_paragraphs.config.json';
+
+  $config_files = [];
+  array_push($config_files, $config_path . 'oxbow_paragraphs.config.json');
+  array_push($config_files, $config_path . 'oxbow_paragraphs.config.text.json');
+  array_push($config_files, $config_path . 'oxbow_paragraphs.config.background.json');
+  array_push($config_files, $config_path . 'oxbow_paragraphs.config.size.json');
+  array_push($config_files, $config_path . 'oxbow_paragraphs.config.layout.json');
+  array_push($config_files, $config_path . 'oxbow_paragraphs.config.menu.json');
+  array_push($config_files, $config_path . 'oxbow_paragraphs.config.extras.json');
+
+  foreach($config_files as $config_file) {
+    if (file_exists($config_file)) {
+      $config_this = file_get_contents($config_file);
+      $config_this = json_decode($config_this, true)[0];
+      foreach ($config_this as $key => $item) {
+        $config_json[$key] = $item;
+      }
+    }
+  }
+  
+  if($config_json && file_exists($config_custom_file)) {
+    $config_custom_json = file_get_contents($config_custom_file);
+    $config_custom_json = json_decode($config_custom_json, true)[0];
+    
+    $config_json = _add_json($config_json, $config_custom_json);
+  }
+  
+  return $config_json;
+}
+
+
+/*
+ * Add JSON to JSON
+ */
+function _add_json($base, $add) {
+  
+  foreach($add as $group_key => $group_val) {
+    
+    /// New group, add to JSON
+    if(!isset($base[$group_key])) {
+      $base[$group_key] = $group_val;
+      continue;
+    }
+    
+    foreach($add[$group_key] as $prop_key => $prop_val) {
+      
+      if(is_array($prop_val)) {
+        _add_nested_json($base[$group_key][$prop_key], $add[$group_key][$prop_key]);
+      }
+      else {
+        $base[$group_key][$prop_key] = $prop_val;
+      }
+    }
+    
+  }
+  
+  return $base;
+}
+
+
+/*
+ * Recursive loop for adding JSON
+ */
+function _add_nested_json(&$base, $add) {
+
+  foreach($add as $key => $val) {
+    
+    if($key != 'values' && is_array($val)) {
+      _add_nested_json($base[$key], $add[$key]);
+    }
+    else {
+      $base[$key] = $val;
+    }
+  }
+}
+
+
+/*
+ * Convert hex to RGB color
+ */
+function _hex_to_rgb($hex) {
+  $hex = str_replace("#", "", $hex);
+  
+  if(strlen($hex) == 3) {
+    $r = hexdec(substr($hex,0,1).substr($hex,0,1));
+    $g = hexdec(substr($hex,1,1).substr($hex,1,1));
+    $b = hexdec(substr($hex,2,1).substr($hex,2,1));
+  } else {
+    $r = hexdec(substr($hex,0,2));
+    $g = hexdec(substr($hex,2,2));
+    $b = hexdec(substr($hex,4,2));
+  }
+  
+  return array($r, $g, $b); 
+}

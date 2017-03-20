@@ -1,0 +1,115 @@
+
+/// all paragraphs
+.paragraph.layout-type-slides {
+  
+  > .p__inner {
+    
+    > .p__title {
+      padding-bottom: map-get($paragraph-padding, auto);
+    }
+    
+    > .p__content {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0;
+      
+      > .field--name-field-p-paragraphs {
+        
+      }
+    }
+  }
+  
+  &.padding-top-auto > .p__inner { padding-top: 0; }
+  &.padding-bottom-auto > .p__inner { padding-bottom: 0; }
+  &.padding-left-auto > .p__inner { padding-left: 0; }
+  &.padding-right-auto > .p__inner { padding-right: 0; }
+  
+  &.padding-top-auto > .p__inner > .p__title { padding-top: map-get($paragraph-padding, auto); }
+  &.padding-left-auto > .p__inner > .p__title { padding-left: map-get($paragraph-padding, auto); }
+  &.padding-right-auto > .p__inner > .p__title { padding-right: map-get($paragraph-padding, auto); }
+  
+  .slick-slide > .paragraph {
+    &.padding-top-auto  > .p__inner { padding-top: map-get($paragraph-padding, auto); }
+    &.padding-bottom-auto  > .p__inner { padding-bottom: map-get($paragraph-padding, auto); }
+    &.padding-left-auto  > .p__inner { padding-left: map-get($paragraph-padding, auto); }
+    &.padding-right-auto  > .p__inner { padding-right: map-get($paragraph-padding, auto); }
+  }
+
+  .paragraph {
+    opacity: 0;
+    @include transition(opacity, .5s);
+  }
+
+  &.loaded {
+    .paragraph {
+      opacity: 1;
+    }
+  }
+  
+  .slick-slide {
+    @include flex;
+    height: auto;
+    
+    > .paragraph {
+      width: 100%;
+      //align-items: flex-start;
+    }
+  }
+  
+  &.layout-align-center {
+    .slick-slide > .paragraph {
+      align-items: center;
+    }
+  }
+  
+  .slick-track {
+    display: flex;
+    flex-flow: row wrap;
+    //align-items: center;
+  }
+  
+  $arrow-w: 10px;
+  .slick-prev, .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: $arrow-w;
+    height: $arrow-w * 2;
+    overflow: hidden;
+    font-size: 0;
+    outline: none;
+    
+    &:after {
+      content: '';
+      display: inline-block;
+      width: $arrow-w * 2;
+      height: $arrow-w * 2;
+      transform: rotate(-45deg);
+      background: rgba(white, .5);
+      position: relative;
+    }
+  }
+  .slick-prev {
+    left: 5px;
+    &:after {
+      left: 50%;
+    }
+  }
+  .slick-next {
+    right: 5px;
+    &:after {
+      right: 150%;
+    }
+  }
+
+  .slick-slide > .paragraph--type--image {
+    > .p__inner,
+    > .p__inner > .p__content {
+      height: 100%;
+      position: relative;
+    }
+    figure {
+      @include fill;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.board.field_profile_bio
+    - field.field.profile.board.field_profile_position
+    - profile.type.board
+  module:
+    - text
+id: profile.board.default
+targetEntityType: profile
+bundle: board
+mode: default
+content:
+  field_profile_bio:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_profile_position:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden: {  }

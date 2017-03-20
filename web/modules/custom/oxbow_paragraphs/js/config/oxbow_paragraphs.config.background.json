@@ -1,0 +1,215 @@
+[{
+
+  "background": {
+    "weight": 2,
+    "label": "Background",
+    "fields": {
+
+      "type": {
+        "label": "",
+        "type": "pane-menu",
+        "values": {
+          "none": {
+            "label": "None",
+            "value": "none"
+          },
+          "solid": {
+            "label": "Solid",
+            "value": "solid"
+          },
+          "image": {
+            "label": "Image",
+            "value": "image"
+          },
+          "video": {
+            "label": "Video",
+            "value": "video"
+          }
+        },
+        "default": "none"
+      },
+
+      "solid": {
+        "label": "Solid Color",
+        "type": "pane",
+        "fields": {
+          "color": {
+            "label": "Color",
+            "type": "popup",
+            "fields": {
+              "color": {
+                "label": "Color",
+                "type": "global",
+                "map": "color"
+              }
+            }
+          },
+          "opacity": {
+            "label": "Opacity",
+            "type": "global",
+            "map": "opacity"
+          }
+        }
+      },
+
+      "image": {
+        "label": "Background Image",
+        "type": "pane",
+        "fields": {
+          "image": {
+            "label": "Image",
+            "type": "drupal",
+            "values": {
+              "image": {
+                "label": "Image",
+                "value": "image",
+                "map": ".field--name-field-p-settings .field--name-field-p-setting-bg-img"
+              }
+            },
+            "default": "image"
+          },
+          "size": {
+            "label": "Image Size",
+            "type": "buttons",
+            "values": {
+              "cover": {
+                "label": "Fill",
+                "value": "cover"
+              },
+              "contain": {
+                "label": "Fit",
+                "value": "contain"
+              },
+              "repeat": {
+                "label": "Tile",
+                "value": "repeat"
+              }
+            },
+            "default": "cover"
+          },
+          "scroll": {
+            "label": "Image Position",
+            "type": "buttons",
+            "values": {
+              "normal": {
+                "label": "Normal",
+                "value": "inherit"
+              },
+              "fixed": {
+                "label": "Fixed",
+                "value": "fixed"
+              }
+            },
+            "default": "normal"
+          },
+          "color": {
+            "label": "Background Color",
+            "type": "popup",
+            "fields": {
+              "color": {
+                "label": "Color",
+                "type": "global",
+                "map": "color"
+              }
+            }
+          },
+          "overlay": {
+            "label": "Overlay Color",
+            "type": "popup",
+            "fields": {
+              "color": {
+                "label": "Overlay Color",
+                "type": "global",
+                "map": "color"
+              }
+            }
+          },
+          "opacity": {
+            "label": "Overlay Opacity",
+            "type": "global",
+            "map": "opacity",
+            "default": "opacity_6"
+          }
+        }
+      },
+
+      "video": {
+        "label": "Background Video",
+        "type": "pane",
+        "fields": {
+          "video": {
+            "label": "Video",
+            "type": "drupal",
+            "values": {
+              "video": {
+                "label": "Video",
+                "value": "video",
+                "map": ".field--name-field-p-settings .field--name-field-p-setting-bg-vid"
+              }
+            },
+            "default": "video"
+          },
+          "size": {
+            "label": "Video Size",
+            "type": "buttons",
+            "values": {
+              "cover": {
+                "label": "Fill",
+                "value": "cover"
+              },
+              "contain": {
+                "label": "Fit",
+                "value": "contain"
+              }
+            },
+            "default": "cover"
+          },
+          "loop": {
+            "label": "Playback",
+            "type": "buttons",
+            "values": {
+              "loop": {
+                "label": "Loop",
+                "value": "true"
+              },
+              "once": {
+                "label": "Once",
+                "value": "false"
+              }
+            },
+            "default": "loop"
+          },
+          "color": {
+            "label": "Background Color",
+            "type": "popup",
+            "fields": {
+              "color": {
+                "label": "Color",
+                "type": "global",
+                "map": "color"
+              }
+            }
+          },
+          "overlay": {
+            "label": "Overlay Color",
+            "type": "popup",
+            "fields": {
+              "color": {
+                "label": "Overlay Color",
+                "type": "global",
+                "map": "color"
+              }
+            }
+          },
+          "opacity": {
+            "label": "Overlay Opacity",
+            "type": "global",
+            "map": "opacity",
+            "default": "opacity_6"
+          }
+        }
+      }
+    }
+  }
+  
+}]

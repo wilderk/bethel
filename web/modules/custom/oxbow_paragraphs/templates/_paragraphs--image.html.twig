@@ -1,0 +1,20 @@
+<figure
+  {% if settings.image.modal and settings.image.modal == 'on' %}
+    data-open="paragraph-image-{{ paragraph.id.value }}"
+  {% endif %}
+>
+  {{ content.field_p_image }}
+  {% if paragraph.field_p_caption.value %}
+    <figcaption>{{ content.field_p_caption }}</figcaption>
+  {% endif %}
+</figure>
+{% if settings.image.modal and settings.image.modal == 'on' %}
+  <div id="paragraph-image-{{ paragraph.id.value }}" class="reveal-modal paragraph-image" data-reveal>
+    <figure>
+      {{ content.field_p_image }}
+      {% if paragraph.field_p_caption.value %}
+        <figcaption>{{ content.field_p_caption }}</figcaption>
+      {% endif %}
+    </figure>
+  </div>
+{% endif %}

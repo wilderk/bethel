@@ -1,0 +1,251 @@
+$region-drag-shadow: -2px 2px 10px 1px rgba(black, .3);
+$region-add-h: 40px;
+$p-padding: padding(m);
+
+//////////////////////////
+/// Paragraphs Content ///
+//////////////////////////
+
+body.page-node-type-content-page {
+  padding-bottom: 0;
+}
+
+.group__navigable {
+  border-top: 1px solid color(nav);
+  border-bottom: 1px solid color(nav);
+
+  /// Paragraphs Cleanup
+  .field--name-field-p-regions {
+    padding-bottom: $preview-h;
+
+    > div > .form-item {
+      margin: 0;
+    }
+    .p-region {
+      margin-top: 0 !important;
+    }
+    .paragraphs-dropbutton-wrapper {
+      display: none !important;
+    }
+    table[id*='field-p-regions'] {
+      margin: 0;
+
+      tr {
+        padding: $p-padding !important;
+      }
+
+      .p__add {
+        margin-top: $p-padding / 2;
+      }
+    }
+  }
+
+  /// Top Level Regions
+  .p-region {
+    display: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: color(p-alt);
+
+    &:hover, &:focus {
+      background: color(p-alt);
+    }
+
+    &.p-open {
+      display: inline-block !important;
+    }
+
+    > .p-swap {
+      display: none !important;
+    }
+
+    tr {
+      background: color(p);
+      border-radius: 0 !important;
+      border: 1px solid rgba(black, .2) !important;
+      &:hover, &:focus {
+        //border: 1px solid rgba(black, .6) !important;
+        background: color(p);
+      }
+
+      tr {
+        background: color(p-alt); //lighten(color(p-alt), 4%);
+        &:hover, &:focus {
+          //border: 1px solid rgba(black, .2) !important;
+          background: color(p-alt); //lighten(color(p-alt), 4%);
+        }
+      }
+    }
+    
+    .text-format-wrapper .filter-wrapper {
+      display: none;
+    }
+  }
+
+  /// Hide Status Toggle
+  .p-status-toggle {
+    display: none;
+  }
+
+  /// Add to Region
+  .region__add {
+    .add__menu {
+      color: black;
+    }
+  }
+}
+
+
+///////////////////////////
+/// Navigation Previews ///
+///////////////////////////
+
+/// Paragraphs Nav Preview
+.node__nav {
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .nav__paragraphs {
+    position: relative;
+    padding-bottom: $preview-p * 2;
+    margin-bottom: $preview-h;
+  }
+
+  /// Top Level Previews
+  > .nav__paragraphs > .paragraph__region {
+
+    .paragraph__drag {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: padding(m);
+      color: rgba(black, .2);
+      cursor: move;
+
+      &:after {
+        transform: rotate(-90deg);
+        padding-top: 1px;
+        font-size: 20px;
+      }
+    }
+
+    .paragraph__preview {
+
+      .p__bg {
+        @include fill;
+        background-size: cover;
+        background-position: center;
+
+        .p__overlay {
+          @include fill;
+        }
+      }
+
+      .p__inner {
+
+        .p__title {
+          &.no-title,
+          &.hidden-title {
+            opacity: .5;
+            font-style: italic;
+          }
+        }
+
+        .p__layout {
+          font-size: .9em;
+          font-weight: bold;
+          text-transform: capitalize;
+          opacity: .75;
+        }
+      }
+    }
+
+    /// Active
+    &.p-open {
+      > .paragraph__drag {
+        color: rgba(white, .3);
+      }
+      > .paragraph__preview {
+        box-shadow: none;
+        border: none;
+      }
+    }
+
+    /// Deleted
+    &.p-deleted {
+      > .paragraph__preview {
+        .p__bg {
+          background-image: url('../images/deleted.jpg') !important;
+          opacity: .25 !important;
+        }
+        .p__title {
+          opacity: .8;
+        }
+      }
+    }
+    &.p-deleted.p-open {
+      background: color(nav-delete);
+    }
+
+    /// Drag
+    &.ui-sortable-helper {
+      > .paragraph__preview {
+        box-shadow: $region-drag-shadow;
+      }
+
+      &.p-open {
+        box-shadow: $region-drag-shadow;
+        > .paragraph__preview {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  /// Add Region Button
+  .nav__add {
+    position: fixed;
+    bottom: 0;
+    left: $nav-w / 2;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
+}
+
+
+///////////////////////////////
+/// Everywhere in Navigable ///
+///////////////////////////////
+
+.group__navigable {
+  .nav__add {
+    width: $region-add-h;
+    height: $region-add-h;
+    color: color(nav-preview);
+    margin: 0 auto padding(xs);
+    font-size: $region-add-h * (.4);
+    overflow: visible;
+
+    .icon-add {
+      width: $region-add-h;
+      height: $region-add-h;
+    }
+
+    .add__bg {
+      @include fill(- padding(xs));
+      background: rgba(black, .3);
+      border-radius: ($region-add-h * .75) ($region-add-h * .75) 0 0;
+      border: $preview-border;
+      box-shadow: $preview-shadow;
+      margin: 0;
+    }
+
+    &:after {
+      border-radius: 50%;
+      background: color(nav-active);
+    }
+  }
+}

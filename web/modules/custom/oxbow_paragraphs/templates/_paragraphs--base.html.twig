@@ -1,0 +1,21 @@
+{% if settings.status == 'show' or (settings.status == 'draft' and user.hasPermission('administer nodes')) %}
+{% block p_debug %}{% endblock %}
+{% block p_styles %}{% endblock %}
+<div{{ p_id | raw }}{{ attributes.addClass(classes) }}{{ p_data | raw }}>
+    {% if settings.scroll %}<div class="p__scroll"></div>{% endif %}
+    <div class="p__bg">{% block p_bg %}{% endblock %}</div>
+    <div class="p__inner">
+        {% if p_accordion_html %}
+            <div class="p__accordion">{{ p_accordion_html | raw }}</div>
+        {% endif %}
+        {% if p_title_display != 'hide' and p_title_html %}            
+            <div class="p__title">{% block p_title %}{{ p_title_html | raw }}{% endblock %}</div>
+        {% endif %}
+        <div class="p__content">
+            {% block p_content %}{{ content }}{% endblock %}
+        </div>
+    </div>
+</div>
+{% else %}
+  <!-- Hidden Paragraph -->
+{% endif %}

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_misc
+    - paragraphs.paragraphs_type.misc
+  module:
+    - options
+id: paragraph.misc.field_p_misc
+field_name: field_p_misc
+entity_type: paragraph
+bundle: misc
+label: Content
+description: '<a href="https://www.drupal.org/project/twig_tweak">Rendering patterns</a>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

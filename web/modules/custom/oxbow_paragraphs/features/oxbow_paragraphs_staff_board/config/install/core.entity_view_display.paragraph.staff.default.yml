@@ -1,0 +1,47 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.staff.field_p_settings
+    - field.field.paragraph.staff.field_p_staff
+    - field.field.paragraph.staff.field_p_tag
+    - field.field.paragraph.staff.field_p_title
+    - paragraphs.paragraphs_type.staff
+  module:
+    - field_collection
+id: paragraph.staff.default
+targetEntityType: paragraph
+bundle: staff
+mode: default
+content:
+  field_p_settings:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_list
+  field_p_staff:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: staff
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+  field_p_tag:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_p_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  uid: true

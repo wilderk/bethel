@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_video_controls
+    - paragraphs.paragraphs_type.video
+id: paragraph.video.field_p_video_controls
+field_name: field_p_video_controls
+entity_type: paragraph
+bundle: video
+label: 'Show video controls'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Show video player controls'
+  off_label: 'Show video player controls'
+field_type: boolean

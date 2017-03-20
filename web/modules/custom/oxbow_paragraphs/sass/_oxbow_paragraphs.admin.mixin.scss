@@ -1,0 +1,66 @@
+
+/// Clearfix Mixin
+@mixin group {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/// Fill Container Mixin
+@mixin fill($pos: 0) {
+  position: absolute;
+  top: $pos;
+  bottom: $pos;
+  left: $pos;
+  right: $pos;
+}
+
+/// Flex Display Mixin
+@mixin flex($h-align:none, $v-align:none, $dir:none) {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  
+  @if $h-align != none {
+    -webkit-box-pack: $h-align;
+    -webkit-justify-content: $h-align;
+    -ms-flex-pack: $h-align;
+    justify-content: $h-align;
+  }
+  
+  @if $v-align != none {
+    -webkit-box-align: $v-align;
+    -webkit-align-items: $v-align;
+    -ms-flex-align: $v-align;
+    align-items: $v-align;
+  }
+  
+  @if $dir != none {
+    //-webkit-box-orient: $dir;
+    -webkit-box-direction: $dir;
+    -webkit-flex-direction: $dir;
+    -ms-flex-direction: $dir;
+    flex-direction: $dir;
+  }
+}
+
+/// Transform Mixin
+@mixin transform($transform) {
+  -moz-transform: $transform;
+  -o-transform: $transform;
+  -ms-transform: $transform;
+  -webkit-transform: $transform;
+  transform: $transform;
+}
+
+%no-select, .no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_profile_position
+    - profile.type.staff
+id: profile.staff.field_profile_position
+field_name: field_profile_position
+entity_type: profile
+bundle: staff
+label: Position
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

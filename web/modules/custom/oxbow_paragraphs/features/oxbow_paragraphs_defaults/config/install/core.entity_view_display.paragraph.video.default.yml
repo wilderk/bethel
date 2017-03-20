@@ -1,0 +1,65 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.video.field_p_settings
+    - field.field.paragraph.video.field_p_tag
+    - field.field.paragraph.video.field_p_video_controls
+    - field.field.paragraph.video.field_p_video_title
+    - field.field.paragraph.video.field_p_video_url
+    - field.field.paragraph.video.field_p_youtube
+    - paragraphs.paragraphs_type.video
+  module:
+    - field_collection
+    - link
+id: paragraph.video.default
+targetEntityType: paragraph
+bundle: video
+mode: default
+content:
+  field_p_settings:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_list
+  field_p_tag:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_p_video_controls:
+    weight: 2
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_p_video_title:
+    weight: 3
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_p_video_url:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+hidden:
+  created: true
+  field_p_youtube: true
+  uid: true

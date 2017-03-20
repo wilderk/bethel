@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: paragraphs_background
+label: 'Paragraphs -- Background'
+effects:
+  e0612307-b258-43ce-8fdb-a098567621cd:
+    uuid: e0612307-b258-43ce-8fdb-a098567621cd
+    id: image_scale
+    weight: 1
+    data:
+      width: 2000
+      height: null
+      upscale: false

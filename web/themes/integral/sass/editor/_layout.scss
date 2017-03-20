@@ -1,0 +1,59 @@
+body.path-node > .layout-container,
+body.path-node > .layout-container > .page-content {
+  margin: 0;
+}
+body.path-node > .content-header,
+body.path-node > .layout-container > .region-breadcrumb,
+body.path-node > .layout-container > .region-pre-content {
+  display: none;
+}
+
+
+//////////////////////
+/// Node Edit Form ///
+//////////////////////
+
+$nav-w: 250px;
+
+
+.node__edit {
+
+  /// Sticky Header
+  .group__header {
+    @include flex($v-align: center, $h-align: flex-start);
+    justify-content: space-between;
+    width: 100%;
+    background: color(header);
+
+    * {
+      margin: 0;
+    }
+  }
+
+  /// Normal Fields
+  .group__static {
+    margin: -.75em 0;
+    padding: padding(m);
+  }
+
+  /// Paragraphs Field
+  .group__navigable {
+    @include flex;
+    flex-wrap: wrap;
+
+    /// Navigation for Fields
+    .node__nav {
+      flex: 1 1 0;
+      background: color(nav);
+      max-width: $nav-w;
+      width: $nav-w;
+    }
+
+    /// Paragraphs Field
+    > .node__fields,
+    > .node__paragraphs {
+      flex: 1 1 0;
+      background: color(p);
+    }
+  }
+}

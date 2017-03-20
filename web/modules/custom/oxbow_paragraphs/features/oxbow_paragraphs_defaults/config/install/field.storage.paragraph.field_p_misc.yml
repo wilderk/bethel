@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_p_misc
+field_name: field_p_misc
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: block-starter_main_menu
+      label: 'Block -- Main Menu'
+    -
+      value: entity-node-7
+      label: 'Entity -- Test Article'
+    -
+      value: config-system.site-name
+      label: 'Config -- Site Name'
+    -
+      value: view-frontpage-page_1
+      label: 'View -- Promoted to Front Page'
+    -
+      value: 'token-site:name'
+      label: 'Token -- Site Name'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

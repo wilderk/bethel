@@ -1,0 +1,41 @@
+
+$alert-color: #f04124;
+$success-color: #43AC6A;
+$warning-color: #f08a24;
+$info-color: #5BB1D3;
+
+$alert-padding-top: $site-p;
+$alert-padding-default-float: $alert-padding-top;
+$alert-padding-opposite-direction: $alert-padding-top + rem-calc(10);
+$alert-padding-bottom: $alert-padding-top;
+
+// We use these to control text style.
+// $alert-font-weight: $font-weight-normal;
+// $alert-font-size: rem-calc(13);
+// $alert-font-color: $white;
+// $alert-font-color-alt: scale-color($secondary-color, $lightness: -66%);
+
+// We use this for close hover effect.
+// $alert-function-factor: -14%;
+
+// We use these to control border styles.
+// $alert-border-style: solid;
+// $alert-border-width: 1px;
+// $alert-border-color: scale-color($primary-color, $lightness: $alert-function-factor);
+// $alert-bottom-margin: rem-calc(20);
+
+// We use these to style the close buttons
+// $alert-close-color: $oil;
+// $alert-close-top: 50%;
+// $alert-close-position: rem-calc(4);
+// $alert-close-font-size: rem-calc(22);
+// $alert-close-opacity: .3;
+// $alert-close-opacity-hover: .5;
+// $alert-close-padding: 9px 6px 4px;
+// $alert-close-background: inherit;
+
+// We use this to control border radius
+// $alert-radius: $global-radius;
+
+// $alert-transition-speed: 300ms;
+// $alert-transition-ease: ease-out;

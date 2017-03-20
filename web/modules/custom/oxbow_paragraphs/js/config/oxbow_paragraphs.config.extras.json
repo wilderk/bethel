@@ -1,0 +1,81 @@
+[{
+
+  "extras": {
+    "weight": 6,
+    "label": "Extras",
+    "fields": {
+
+      "classes": {
+        "label": "Classes",
+        "type": "text",
+        "values": {
+          "val_1": {
+            "label": "Text",
+            "value": "",
+            "placeholder": "Add space separated classes..."
+          }
+        },
+        "default": ""
+      },
+
+      "css": {
+        "label": "CSS",
+        "type": "text",
+        "values": {
+          "val_1": {
+            "label": "Text",
+            "value": "",
+            "placeholder": "Add CSS to paragraph..."
+          }
+        },
+        "default": ""
+      },
+
+      "scroll": {
+        "label": "Scroll Button",
+        "type": "pane-menu",
+        "values": {
+          "off": {
+            "label": "Off",
+            "value": "off"
+          },
+          "scroll_button": {
+            "label": "On",
+            "value": "on"
+          }
+        },
+        "default": "off"
+      },
+
+      "scroll_button": {
+        "label": "",
+        "type": "pane",
+        "fields": {
+          "background": {
+            "label": "Button Color",
+            "type": "popup",
+            "fields": {
+              "color": {
+                "label": "Color",
+                "type": "global",
+                "map": "color"
+              }
+            }
+          },
+          "color": {
+            "label": "Arrow Color",
+            "type": "popup",
+            "fields": {
+              "color": {
+                "label": "Color",
+                "type": "global",
+                "map": "color"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+}]

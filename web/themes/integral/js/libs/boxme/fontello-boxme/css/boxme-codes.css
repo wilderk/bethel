@@ -1,0 +1,14 @@
+
+.icon-spin2:before { content: '\31'; } /* '1' */
+.icon-spin3:before { content: '\32'; } /* '2' */
+.icon-spin6:before { content: '\33'; } /* '3' */
+.icon-left-open-big:before { content: '\3c'; } /* '&lt;' */
+.icon-right-open-big:before { content: '\3e'; } /* '&gt;' */
+.icon-cancel:before { content: '\58'; } /* 'X' */
+.icon-left:before { content: '\6c'; } /* 'l' */
+.icon-right:before { content: '\72'; } /* 'r' */
+.icon-cancel-circle:before { content: '\78'; } /* 'x' */
+.icon-left-open:before { content: '\e807'; } /* '' */
+.icon-right-open:before { content: '\e808'; } /* '' */
+.icon-left-circle:before { content: '\e809'; } /* '' */
+.icon-right-circle:before { content: '\e80a'; } /* '' */

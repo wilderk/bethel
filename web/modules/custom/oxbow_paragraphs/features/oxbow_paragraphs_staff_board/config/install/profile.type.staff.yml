@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+id: staff
+label: Staff
+registration: false
+multiple: false
+roles:
+  staff: staff
+  authenticated: '0'
+  administrator: '0'
+  boad: '0'
+weight: 0

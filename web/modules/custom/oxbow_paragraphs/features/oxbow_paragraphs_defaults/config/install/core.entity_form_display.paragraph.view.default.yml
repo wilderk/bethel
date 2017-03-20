@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.view.field_p_settings
+    - field.field.paragraph.view.field_p_settings_layout
+    - field.field.paragraph.view.field_p_tag
+    - field.field.paragraph.view.field_p_view
+    - paragraphs.paragraphs_type.view
+  module:
+    - field_collection
+id: paragraph.view.default
+targetEntityType: paragraph
+bundle: view
+mode: default
+content:
+  field_p_settings:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_embed
+  field_p_tag:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_p_view:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+hidden:
+  created: true
+  field_p_settings_layout: true
+  status: true
+  uid: true

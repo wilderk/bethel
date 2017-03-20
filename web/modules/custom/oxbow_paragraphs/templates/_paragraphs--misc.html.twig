@@ -1,0 +1,20 @@
+<div class="field field--name-field-p-misc">
+  {% set misc_key = content.field_p_misc['#items'].value %}
+  
+  {% if misc_key %}
+    {% set misc_type = misc_key | split('-') | first %}
+    {% set misc_name = (misc_key | split('-'))[1] %}
+    
+    {% if misc_type == 'block' %}
+      {{ drupal_block(misc_name) }}
+    {% elseif misc_type == 'view' %}
+      {{ drupal_view(misc_name, (misc_key | split('-'))[2]) }}
+    {% elseif misc_type == 'entity' %}
+      {{ drupal_entity(misc_name, (misc_key | split('-'))[2]) }}
+    {% elseif misc_type == 'token' %}
+      {{ drupal_token(misc_name) }}
+    {% elseif misc_type == 'config' %}
+      {{ drupal_config(misc_name, (misc_key | split('-'))[2]) }}
+    {% endif %}
+  {% endif %}
+</div>

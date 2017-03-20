@@ -1,0 +1,17 @@
+
+.paragraph.paragraph--type--iframe {
+  
+  > .p__inner {
+    
+    > .p__content {
+      
+      > .field--name-field-p-iframe {
+        width: 100%;
+        
+        iframe {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

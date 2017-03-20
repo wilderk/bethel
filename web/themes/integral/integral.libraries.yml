@@ -1,0 +1,25 @@
+global-css:
+  css:
+    theme:
+      css/screen.css: {}
+
+global-js:
+  js:
+    js/libs/jquery.sticky-kit.min.js: {}
+    js/integral.theme.js: {}
+    js/integral.paragraphs.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.ui.sortable
+    
+bigtext:
+  js:
+    js/libs/jquery.bigtext.js: {}
+  dependencies:
+    - core/jquery
+
+masonry:
+  js:
+    js/libs/jquery.masonry.min.js: {}
+  dependencies:
+    - core/jquery

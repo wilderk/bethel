@@ -1,0 +1,159 @@
+[{
+
+  "text_with_title": {
+    "weight": 1,
+    "label": "Text",
+    "restrict": ["region", "view", "board", "staff"],
+    "fields": {
+
+      "title_color": {
+        "label": "Title Color",
+        "type": "popup",
+        "fields": {
+          "color": {
+            "label": "Title Color",
+            "type": "global",
+            "map": "color"
+          }
+        }
+      },
+
+      "title_display": {
+        "label": "Title Display",
+        "type": "buttons",
+        "values": {
+          "show": {
+            "label": "Show",
+            "value": "true"
+          },
+          "hide": {
+            "label": "Hide",
+            "value": "false"
+          }
+        },
+        "default": "show"
+      },
+
+      "title_align": {
+        "label": "Title Alignment",
+        "type": "buttons",
+        "values": {
+          "left": {
+            "label": "Left",
+            "value": "left"
+          },
+          "center": {
+            "label": "Center",
+            "value": "center"
+          },
+          "right": {
+            "label": "Right",
+            "value": "right"
+          }
+        },
+        "default": "left"
+      },
+
+      "title_link": {
+        "label": "Title Link",
+        "type": "drupal",
+        "values": {
+          "add": {
+            "label": "Link",
+            "value": "link",
+            "map": ".field--name-field-p-settings .field--name-field-p-setting-title-link"
+          }
+        },
+        "default": "link"
+      },
+
+      "text_color": {
+        "label": "Text Color",
+        "type": "popup",
+        "fields": {
+          "color": {
+            "label": "Title Color",
+            "type": "global",
+            "map": "color"
+          }
+        }
+      },
+
+      "text_size": {
+        "label": "Text Size",
+        "type": "select",
+        "values": {
+          "auto": {
+            "label": "Auto",
+            "value": "auto"
+          },
+          "size_1": {
+            "label": "S",
+            "value": "s"
+          },
+          "size_2": {
+            "label": "M",
+            "value": "m"
+          },
+          "size_3": {
+            "label": "L",
+            "value": "l"
+          },
+          "size_4": {
+            "label": "XL",
+            "value": "xl"
+          }
+        },
+        "default": "auto"
+      }
+    }
+  },
+
+  "text": {
+    "weight": 1,
+    "label": "Text",
+    "restrict": ["!region", "!view", "!board", "!staff"],
+    "fields": {
+
+      "color": {
+        "label": "Text Color",
+        "type": "popup",
+        "fields": {
+          "color": {
+            "label": "Title Color",
+            "type": "global",
+            "map": "color"
+          }
+        }
+      },
+      "size": {
+        "label": "Text Size",
+        "type": "select",
+        "values": {
+          "auto": {
+            "label": "Auto",
+            "value": "auto"
+          },
+          "size_1": {
+            "label": "S",
+            "value": "s"
+          },
+          "size_2": {
+            "label": "M",
+            "value": "m"
+          },
+          "size_3": {
+            "label": "L",
+            "value": "l"
+          },
+          "size_4": {
+            "label": "XL",
+            "value": "xl"
+          }
+        },
+        "default": "auto"
+      }
+    }
+  }
+  
+}]

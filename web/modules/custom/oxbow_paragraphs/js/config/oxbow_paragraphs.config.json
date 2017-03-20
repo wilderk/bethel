@@ -1,0 +1,420 @@
+[{
+
+  "global": {
+    "weight": 0,
+    "label": "Gobal",
+    "fields": {
+      
+      "color": {
+        "label": "Color",
+        "type": "colors",
+        "values": {
+          "auto": {
+            "label": "Auto",
+            "value": "auto"
+          },
+          "color_1": {
+            "label": "Black",
+            "value": "#000000"
+          },
+          "color_2": {
+            "label": "Gray 1",
+            "value": "#404040"
+          },
+          "color_3": {
+            "label": "Gray 2",
+            "value": "#BCBCBC"
+          },
+          "color_4": {
+            "label": "Gray 3",
+            "value": "#E9E9E9"
+          },
+          "color_5": {
+            "label": "White",
+            "value": "#FFFFFF"
+          },
+          "color_6": {
+            "label": "Blue 1",
+            "value": "#00A0B0"
+          },
+          "color_7": {
+            "label": "Blue 2",
+            "value": "#5DDEEA"
+          },
+          "color_8": {
+            "label": "Brown",
+            "value": "#6A4A3C"
+          },
+          "color_9": {
+            "label": "Burnt Orange",
+            "value": "#DD601C"
+          },
+          "color_10": {
+            "label": "Yellow 1",
+            "value": "#EDC951"
+          },
+          "color_11": {
+            "label": "Yellow 2",
+            "value": "#FFECAF"
+          }
+        },
+        "default": "auto"
+      },
+      
+      "opacity": {
+        "label": "Opacity",
+        "type": "select",
+        "values": {
+          "opacity_1": {
+            "label": "0%",
+            "value": "0"
+          },
+          "opacity_2": {
+            "label": "10%",
+            "value": ".1"
+          },
+          "opacity_3": {
+            "label": "20%",
+            "value": ".2"
+          },
+          "opacity_4": {
+            "label": "30%",
+            "value": ".3"
+          },
+          "opacity_5": {
+            "label": "40%",
+            "value": ".4"
+          },
+          "opacity_6": {
+            "label": "50%",
+            "value": ".5"
+          },
+          "opacity_7": {
+            "label": "60%",
+            "value": ".6"
+          },
+          "opacity_8": {
+            "label": "70%",
+            "value": ".7"
+          },
+          "opacity_9": {
+            "label": "80%",
+            "value": ".8"
+          },
+          "opacity_10": {
+            "label": "90%",
+            "value": ".9"
+          },
+          "opacity_11": {
+            "label": "100%",
+            "value": "1"
+          }
+        },
+        "default": "opacity_11"
+      },
+      
+      "padding": {
+        "label": "Padding",
+        "type": "select",
+        "values": {
+          "auto": {
+            "label": "Auto",
+            "value": "auto"
+          },
+          "none": {
+            "label": "0",
+            "value": "none"
+          },
+          "padding_1": {
+            "label": "6",
+            "value": "xs"
+          },
+          "padding_2": {
+            "label": "12",
+            "value": "s"
+          },
+          "padding_3": {
+            "label": "24",
+            "value": "m"
+          },
+          "padding_4": {
+            "label": "36",
+            "value": "l"
+          },
+          "padding_5": {
+            "label": "48",
+            "value": "xl"
+          },
+          "padding_6": {
+            "label": "72",
+            "value": "xxl"
+          },
+          "padding_7": {
+            "label": "144",
+            "value": "xxxl"
+          }
+        },
+        "default": "auto"
+      },
+
+      "h-align": {
+        "label": "Horizontal Alignment",
+        "type": "buttons",
+        "values": {
+          "auto": {
+            "label": "Auto",
+            "value": "auto"
+          },
+          "left": {
+            "label": "Left",
+            "value": "left"
+          },
+          "center": {
+            "label": "Center",
+            "value": "center"
+          },
+          "right": {
+            "label": "Right",
+            "value": "right"
+          }
+        },
+        "default": "auto"
+      }
+    }
+  },
+
+  "status": {
+    "weight": 0,
+    "label": "Status",
+    "restrict": ["region"],
+    "fields": {
+
+      "status": {
+        "label": "Status",
+        "type": "buttons",
+        "values": {
+          "show": {
+            "label": "Show",
+            "value": "show"
+          },
+          "hide": {
+            "label": "Hide",
+            "value": "hide"
+          },
+          "draft": {
+            "label": "Draft",
+            "value": "draft"
+          }
+        },
+        "default": "show"
+      }
+    }
+  },
+
+
+  "board": {
+    "weight": 0,
+    "label": "Board",
+    "restrict": ["board"],
+    "fields": {
+      "display": {
+        "label": "Display",
+        "type": "select",
+        "values": {
+          "full": {
+            "label": "Full",
+            "value": "full"
+          },
+          "teaser": {
+            "label": "Teaser",
+            "value": "teaser"
+          }
+        },
+        "default": "full"
+      },
+      "summary": {
+        "label": "Use bio summary",
+        "type": "buttons",
+        "values": {
+          "on": {
+            "label": "On",
+            "value": "on"
+          },
+          "off": {
+            "label": "Off",
+            "value": "off"
+          }
+        },
+        "default": "off"
+      },
+      "link": {
+        "label": "Read more link",
+        "type": "buttons",
+        "values": {
+          "on": {
+            "label": "On",
+            "value": "on"
+          },
+          "off": {
+            "label": "Off",
+            "value": "off"
+          }
+        },
+        "default": "off"
+      }
+    }
+  },
+
+
+  "staff": {
+    "weight": 0,
+    "label": "Staff",
+    "restrict": ["staff"],
+    "fields": {
+      "display": {
+        "label": "Display",
+        "type": "select",
+        "values": {
+          "full": {
+            "label": "Full",
+            "value": "full"
+          },
+          "teaser": {
+            "label": "Teaser",
+            "value": "teaser"
+          }
+        },
+        "default": "full"
+      },
+      "summary": {
+        "label": "Use bio summary",
+        "type": "buttons",
+        "values": {
+          "on": {
+            "label": "On",
+            "value": "on"
+          },
+          "off": {
+            "label": "Off",
+            "value": "off"
+          }
+        },
+        "default": "off"
+      },
+      "link": {
+        "label": "Read more link",
+        "type": "buttons",
+        "values": {
+          "on": {
+            "label": "On",
+            "value": "on"
+          },
+          "off": {
+            "label": "Off",
+            "value": "off"
+          }
+        },
+        "default": "off"
+      }
+    }
+  },
+  
+  
+  "view": {
+    "weight": 0,
+    "label": "View",
+    "restrict": ["view"],
+    "fields": {
+      
+      "background": {
+        "label": "Item Background",
+        "type": "popup",
+        "fields": {
+          "color": {
+            "label": "Item Background",
+            "type": "global",
+            "map": "color"
+          }
+        }
+      },
+      
+      "accent": {
+        "label": "Item Accent Color",
+        "type": "popup",
+        "fields": {
+          "color": {
+            "label": "Item Accent Color",
+            "type": "global",
+            "map": "color"
+          }
+        }
+      },
+      
+      "color": {
+        "label": "Item Text Color",
+        "type": "popup",
+        "fields": {
+          "color": {
+            "label": "Item Text Color",
+            "type": "global",
+            "map": "color"
+          }
+        }
+      }
+    }
+  },
+
+  "image": {
+    "weight": 0,
+    "label": "Image",
+    "restrict": ["image"],
+    "fields": {
+
+      "align": {
+        "label": "Horizontal Alignment",
+        "type": "global",
+        "map": "h-align"
+      },
+
+      "size": {
+        "label": "Image Size",
+        "type": "select",
+        "values": {
+          "size_1": {
+            "label": "Small",
+            "value": "small"
+          },
+          "size_2": {
+            "label": "Medium",
+            "value": "medium"
+          },
+          "size_3": {
+            "label": "Large",
+            "value": "large"
+          },
+          "size_4": {
+            "label": "Full Width",
+            "value": "full"
+          }
+        },
+        "default": "size_4"
+      },
+      "modal": {
+        "label": "Open in Modal",
+        "type": "buttons",
+        "values": {
+          "on": {
+            "label": "On",
+            "value": "on"
+          },
+          "off": {
+            "label": "Off",
+            "value": "off"
+          }
+        },
+        "default": "off"
+      }
+    }
+  }
+  
+}]

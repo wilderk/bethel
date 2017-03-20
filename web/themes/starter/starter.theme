@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter.
+ * Add templates for user display modes.
+ */
+function starter_theme_suggestions_user_alter(&$suggestions, $variables) {
+  $suggestions[] =  'user__' . $variables['elements']['#view_mode'];
+  return $suggestions;
+}
+
+/**
+ * Implements template_preprocess_hook.
+ * Add profiles to user render array.
+ */
+function starter_preprocess_user(&$vars) {
+  $vars['display_id'] = $vars['elements']['#view_mode'];
+  $uid = $vars['user']->uid->value;
+  $profiles =  \Drupal::entityTypeManager()->getStorage('profile');
+  if($profiles) {
+    $profiles = $profiles->loadByProperties([
+      'uid' => $uid,
+    ]);
+    foreach ($profiles as $profile) {
+      $type = $profile->type->getValue()[0]['target_id'];
+      $profile->profile_type = $type;
+    }
+    $vars['profiles'] = $profiles;
+  }
+}

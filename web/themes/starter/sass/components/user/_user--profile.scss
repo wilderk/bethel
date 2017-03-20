@@ -1,0 +1,13 @@
+
+.profile {
+
+}
+
+.profile__board,
+.profile__staff {
+  &.display-id-teaser {
+    .profile__image {
+      padding-bottom: padding(s);
+    }
+  }
+}

@@ -1,0 +1,9 @@
+services:
+  color_convert_extension:
+    class: Drupal\oxbow_paragraphs\TwigExtension\ColorConvertExtension
+    tags:
+      - { name: twig.extension }
+  color_map_extension:
+    class: Drupal\oxbow_paragraphs\TwigExtension\ColorMapExtension
+    tags:
+      - { name: twig.extension }

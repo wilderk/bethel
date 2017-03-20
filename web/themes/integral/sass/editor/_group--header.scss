@@ -1,0 +1,198 @@
+$header-h: 3rem;
+$dropdown-p: padding(xs);
+
+.node__edit .group__header {
+  position: relative;
+  height: $header-h;
+  z-index: 100;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+
+  /// Title
+  .node__title {
+    position: relative;
+    padding: padding(xs) padding(m);
+    max-width: 50%;
+    width: auto;
+
+    label {
+      display: none;
+    }
+
+    input {
+      font-size: 20px;
+      color: white;
+      background: transparent;
+      padding: 3px 0 0;
+      box-shadow: none;
+      border: none;
+      border-bottom: 2px dashed rgba(white, .3);
+
+      &:placeholder-shown {
+        font-style: italic;
+        border-bottom: 2px dashed rgba(white, .5);
+      }
+
+      &:hover {
+        border-bottom: 2px dashed rgba(white, .5);
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+        border-bottom: 2px dashed rgba(white, .5);
+      }
+    }
+  }
+
+  /// Actions
+  .node__actions {
+    @include flex($v-align: center, $h-align: flex-end);
+
+    .btn {
+      @include flex(center, center);
+      color: white;
+      cursor: pointer;
+
+      &:after {
+        padding: padding(xs) padding(s);
+        font-size: 16px;
+        box-sizing: border-box;
+        //border: 1px solid rgba(white, .3);
+      }
+    }
+
+    .btn.toggle + * {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      z-index: 101;
+
+      padding: padding(xs);
+      border: none;
+      box-shadow: none;
+    }
+
+    .btn.toggle.open + * {
+      display: block;
+    }
+
+    > div > .btn {
+      height: $header-h;
+    }
+
+    /// Node Save
+    .node__save {
+      flex: 1;
+      position: relative;
+      //padding: padding(xs);
+
+      .btn {
+        &:after {
+          content: 'Save';
+          @include flex(center, center);
+          height: $header-h;
+          background: color(nav-save);
+          font-weight: bold;
+        }
+      }
+      
+      .btn + * {
+        display: none;
+      }
+    }
+
+    /// Node Advanced
+    .node__advanced {
+      position: relative;
+      width: $header-h;
+
+      .btn.open {
+        z-index: 102;
+      }
+
+      .btn__dropdown {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        padding-bottom: $header-h;
+        background: color(dropdown);
+        box-shadow: 0 2px 10px 1px rgba(black, .5);
+      }
+      
+      .btn.open {
+        background: color(dropdown);
+        color: color(header);
+      }
+
+      /// Meta Data
+      .entity-meta {
+        min-width: 300px;
+      }
+
+      /// Unpublish and Delete Buttons
+      .node__unpublish,
+      .node__publish,
+      .node__delete {
+        position: absolute;
+        bottom: $dropdown-p;
+
+        .btn::after {
+          @include flex(center, center);
+          width: 100%;
+          height: $header-h - ($dropdown-p * 2);
+        }
+      }
+      .node__unpublish,
+      .node__publish {
+        left: $dropdown-p;
+        right: 50%;
+        padding-right: $dropdown-p / 2;
+      }
+      .node__delete {
+        left: 50%;
+        right: $dropdown-p;
+        padding-left: $dropdown-p / 2;
+      }
+    }
+
+    /// Node Unpublish
+    .node__unpublish {
+      .btn {
+        &:after {
+          content: 'Unpublish';
+          background: color(nav-advanced);
+        }
+      }
+      .btn + * {
+        display: none;
+      }
+    }
+
+    /// Node Publish
+    .node__publish {
+      .btn {
+        &:after {
+          content: 'Publish';
+          background: color(nav-advanced);
+        }
+      }
+      .btn + * {
+        display: none;
+      }
+    }
+
+    /// Node Delete
+    .node__delete {
+      .btn {
+        &:after {
+          content: 'Delete';
+          background: color(nav-delete);
+        }
+      }
+      .btn + * {
+        display: none;
+      }
+    }
+  }
+}

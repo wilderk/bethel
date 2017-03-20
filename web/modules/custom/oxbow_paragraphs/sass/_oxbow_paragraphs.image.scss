@@ -1,0 +1,117 @@
+
+/// all paragraphs
+.paragraph.paragraph--type--image {
+  height: auto;
+  
+  > .p__inner {
+    
+    > .p__content {
+      
+    }
+  }
+  
+  .field--name-field-p-image {
+    text-align: center;
+  }
+
+  figure {
+    display: inline-block;
+    margin: 0 auto;
+  }
+  
+  figcaption {
+    margin: 0 auto;
+    padding-top: map-get($paragraph-padding, auto);
+  }
+  
+  .reveal-modal {
+    display: none;
+  }
+
+  &.content-size-large figure {
+    max-width: 800px;
+  }
+  &.content-size-medium figure {
+    max-width: 550px;
+  }
+  &.content-size-small figure {
+    max-width: 300px;
+  }
+
+  &.content-align-left {
+    > .p__inner > .p__content {
+      @include flex($h-align: flex-start);
+      figure {
+        text-align: left;
+      }
+    }
+  }
+  &.content-align-center {
+    > .p__inner > .p__content {
+      @include flex($h-align: center);
+      figure {
+        text-align: center;
+      }
+    }
+  }
+  &.content-align-right {
+    > .p__inner > .p__content {
+      @include flex($h-align: flex-end);
+      figure {
+        text-align: right;
+      }
+    }
+  }
+  
+  /// caption padding
+  &:not(.background-type-none) {
+    
+    &.padding-bottom-none figcaption {
+      padding-bottom: map-get($paragraph-padding, auto);
+    }
+    &.padding-left-none figcaption {
+      padding-left: map-get($paragraph-padding, auto);
+    }
+    &.padding-right-none figcaption {
+      padding-right: map-get($paragraph-padding, auto);
+    }
+  }
+    
+  &.background-type-none {
+    &.padding-bottom-auto figcaption {
+      padding-bottom: 0;
+    }
+    &.padding-left-auto figcaption {
+      padding-left: 0;
+    }
+    &.padding-right-auto figcaption {
+      padding-right: 0;
+    }
+  }
+}
+
+.reveal-overlay {
+  padding: $paragraph-p * 2;
+  text-align: center;
+}
+.reveal-modal.paragraph-image {
+  outline: none;
+  z-index: 10001;
+  display: inline-block;
+
+  background: white;
+  padding: $paragraph-p;
+
+  figure {
+    margin: 0;
+    
+    figcaption {
+      padding-top: $paragraph-p;
+      color: #1f1f1f;
+
+      p:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

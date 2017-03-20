@@ -1,0 +1,58 @@
+$btn-shadow: 0px 0px 5px 0 rgba(0,0,0,0.25);
+
+@mixin btn($type:primary, $padding:padding(s), $btn-bg:color(button), $btn-color:color(button-text)) {
+
+  @if $padding < padding(s) {
+    font-size: .8em;
+  }
+  
+  @if $btn-bg != color(button) {
+    @include button($background:$btn-bg, $background-hover:auto, $color:$btn-color, $style:solid);
+    color: $btn-color !important;
+    padding: $padding;
+  }
+  @else if $type == primary {
+    @include button($background:color(button), $background-hover:auto, $color:color(button-text), $style:solid);
+    box-shadow: $btn-shadow;
+    color: color(button-text) !important;
+    padding: $padding;
+  }
+  @else if $type == secondary {
+    @include button($background:color(button-secondary), $background-hover:auto, $color:color(button-secondary-text), $style:solid);
+    box-shadow: $btn-shadow;
+    color: color(button-secondary-text) !important;
+    padding: $padding;
+  }
+  @else if $type == tertiary {
+    @include button($background:color(button-tertiary), $background-hover:auto, $color:color(button-tertiary-text), $style:solid);
+    box-shadow: $btn-shadow;
+    color: color(button-tertiary-text) !important;
+    padding: $padding;
+  }
+  @else if $type == outline {
+    @include button($background:$btn-bg, $background-hover:auto, $color:$btn-bg, $style:hollow);
+    padding: $padding;
+  }
+  
+  margin-bottom: 0;
+}
+
+.button-default, 
+.button-primary {
+  @include btn;
+  border-bottom: none !important;
+}
+
+.button-secondary {
+  @include btn(secondary);
+  border-bottom: none !important;
+}
+
+.button-tertiary {
+  @include btn(tertiary);
+  border-bottom: none !important;
+}
+
+.button-outline {
+  @include btn(outline);
+}

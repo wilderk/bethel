@@ -1,0 +1,135 @@
+$preview-h: 100px;
+$preview-p: padding(s);
+$preview-border: 1px solid darken(color(nav), 20%);
+$preview-shadow: -1px 1px 10px 0 rgba(black, 0.2);
+
+
+body.path-node {
+  .messages {
+    margin: 0;
+  }
+  .region-highlighted {
+    position: relative;
+    z-index: 2;
+  }
+  .region-content {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.node__edit .group__navigable {
+  max-height: 100vh;
+  border: none;
+
+  
+  ///////////////
+  /// Content ///
+  ///////////////
+
+  /// Node Fields
+  > .node__fields {
+    display: none;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: $preview-p;
+
+    &.nav-open {
+      display: block;
+    }
+
+    > .form__title {
+      margin-bottom: padding(m);
+    }
+  }
+
+  /// Node Paragraphs
+  > .node__paragraphs {
+    display: none;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    padding: padding(m);
+    background: color(node-p);
+
+    &.nav-open {
+      display: block;
+    }
+
+    > * {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+  }
+
+
+  //////////////////
+  /// Navigation ///
+  //////////////////
+
+  .node__nav {
+    overflow: auto;
+
+    /// Top Level Previews
+    > * > .node__fields,
+    > * > .paragraph__region {
+      @extend %no-select;
+      position: relative;
+      height: $preview-h;
+      margin: $preview-p $preview-p 0 0;
+
+      > [class*='preview'] {
+        @include fill;
+        left: padding(m);
+        background: color(nav-preview);
+        cursor: pointer;
+        box-shadow: $preview-shadow;
+        border: $preview-border;
+
+        .p__inner {
+          @include fill;
+          @include flex(center, center);
+          flex-direction: column;
+
+          .p__title {
+            font-weight: bold;
+          }
+        }
+      }
+
+      /// Active
+      &.p-open {
+        background: color(nav-active);
+        margin-left: 0;
+        box-shadow: $preview-shadow;
+        border: $preview-border;
+        border-left: none;
+
+        > * {
+          box-shadow: none;
+          border: none;
+        }
+      }
+    }
+
+    /// Fields Preview
+    > .nav__fields {
+      //background: darken(color(nav), 15%);
+      padding: $preview-p $preview-p $preview-p 0;
+      //border-bottom: 2px solid darken(color(nav), 25%);
+
+      > .node__fields {
+        margin: 0;
+        text-transform: capitalize;
+        height: $preview-h * .5;
+      }
+    }
+
+    /// Navigation Labels
+    .nav__label {
+      margin-top: $preview-p;
+      text-align: center;
+      font-weight: bold;
+      color: rgba(black, .4);
+    }
+  }
+}

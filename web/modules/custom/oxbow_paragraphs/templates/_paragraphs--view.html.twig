@@ -1,0 +1,22 @@
+{% set p_view = null %}
+{% set p_view_items = null %}
+{% set p_view_view = null %}
+{% set p_view_pane = null %}
+
+{% set p_view = paragraph.field_p_view.value %}
+
+{% if p_view %}
+  {% set p_view_items = p_view | split('-') %}
+{% endif %}
+
+{% if p_view_items %}
+  {% set p_view_view = p_view_items | first %}
+
+  {% if p_view_items | length > 1 %}
+    {% set p_view_pane = p_view_items | last %}
+  {% endif %}
+{% endif %}
+{{ settings.view.render }}
+<div class="field field--name-field-p-view field__items">
+  {{ drupal_view(p_view_view, p_view_pane) }}
+</div>

@@ -1,0 +1,22 @@
+{# Form results #}
+{% set settings = oxbow_paragraphs.settings %}
+
+
+{% for key, result in settings.form.results %}
+  <table>
+    <thead>
+    <tr>
+      <th>{{ key }}</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for key, field in result %}
+      <tr>
+        <td>{{  key }}</td>
+        <td>{{ field }}</td>
+      </tr>
+    {%  endfor %}
+    </tbody>
+  </table>
+{% endfor %}

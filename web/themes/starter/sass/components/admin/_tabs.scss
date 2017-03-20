@@ -1,0 +1,58 @@
+
+//////////////////////////////////
+/// Admin Tabs -- View, Edit, etc.
+
+$tab-bg: $base;
+$tab-active-bg: $body-background;
+
+#admin {
+ 
+  #block-starter-local-tasks {
+    position: fixed;
+    //left: 0;
+    right: 0;
+    bottom: -1px;
+    z-index: 1000;
+    
+    @include constrain;
+    
+    ul {
+      @extend %group;
+      margin: 0;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,.5);
+      border-radius: 3px;
+      overflow: hidden;
+      
+      li {
+        list-style: none;
+        float: left;
+        padding: 0;
+        margin: 0;
+        
+        a {
+          @include btn($btn-bg: mediumseagreen, $btn-color: white);
+          font-weight: bold;
+          border-radius: 0 !important;
+          
+          border-left: 1px solid rgba(black,.2);
+          border-right: 1px solid rgba(black,.2);
+          
+          &.is-active {
+            display: none;
+          }
+          
+          &[href$='delete'] {
+            @include btn($btn-bg: crimson, $btn-color: white);
+            font-weight: bold;
+          }
+          
+          &[href*='devel'] {
+            @include btn($btn-bg: gold, $btn-color: white);
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

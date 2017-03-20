@@ -1,0 +1,133 @@
+$paragraph-items: ' > .p__inner > .p__content > .field--name-field-p-paragraphs';
+$paragraph-item: ' > .p__inner > .p__content > .field--name-field-p-paragraphs > .field__item';
+
+$view-items: ' > .p__inner > .p__content > .field--name-field-p-view .view-content';
+$view-item: ' > .p__inner > .p__content > .field--name-field-p-view .view-content > .views-row';
+
+$board-items: ' > .p__inner > .p__content > .field--name-field-p-board';
+$board-item: ' > .p__inner > .p__content > .field--name-field-p-board > .field__item';
+
+$staff-items: ' > .p__inner > .p__content > .field--name-field-p-staff';
+$staff-item: ' > .p__inner > .p__content > .field--name-field-p-staff > .field__item';
+
+$global-font-size: 100%;
+
+
+
+/// Group Clearfix Mixin
+@mixin group() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin fill($px:0) {
+  position: absolute;
+  top: $px;
+  bottom: $px;
+  left: $px;
+  right: $px;
+}
+
+/// Foundation function
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+/// Foundation function
+@function rem-calc($values, $base: null) {
+  $rem-values: ();
+  $count: length($values);
+
+  // If no base is defined, defer to the global font size
+  @if $base == null {
+    $base: $global-font-size;
+  }
+
+  // If the base font size is a %, then multiply it by 16px
+  // This is because 100% font size = 16px in most all browsers
+  @if unit($base) == '%' {
+    $base: ($base / 100%) * 16px;
+  }
+
+  @if $count == 1 {
+    @return -zf-to-rem($values, $base);
+  }
+
+  @for $i from 1 through $count {
+    $rem-values: append($rem-values, -zf-to-rem(nth($values, $i), $base));
+  }
+
+  @return $rem-values;
+}
+
+/// Foundation function
+/// @returns {Number} A number in rems, calculated based on the given value and the base pixel value. rem values are passed through as is.
+@function -zf-to-rem($value, $base: null) {
+  // Check if the value is a number
+  @if type-of($value) != 'number' {
+    @warn inspect($value) + ' was passed to rem-calc(), which is not a number.';
+    @return $value;
+  }
+
+  // Calculate rem if units for $value is not rem
+  @if unit($value) != 'rem' {
+    $value: strip-unit($value) / strip-unit($base) * 1rem;
+  }
+
+  // Turn 0rem into 0
+  @if $value == 0rem {
+    $value: 0;
+  }
+
+  @return $value;
+}
+
+/// Flex Display Mixin
+@mixin flex($h-align:none, $v-align:none, $dir:none) {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  
+  @if $h-align != none {
+    -webkit-box-pack: $h-align;
+    -webkit-justify-content: $h-align;
+    -ms-flex-pack: $h-align;
+    justify-content: $h-align;
+  }
+  
+  @if $v-align != none {
+    -webkit-box-align: $v-align;
+    -webkit-align-items: $v-align;
+    -ms-flex-align: $v-align;
+    align-items: $v-align;
+  }
+  
+  @if $dir != none {
+    //-webkit-box-orient: $dir;
+    -webkit-box-direction: $dir;
+    -webkit-flex-direction: $dir;
+    -ms-flex-direction: $dir;
+    flex-direction: $dir;
+  }
+}
+
+/// Transform Mixin
+@mixin transform($transform) {
+  -moz-transform: $transform;
+  -o-transform: $transform;
+  -ms-transform: $transform;
+  -webkit-transform: $transform;
+  transform: $transform;
+}
+
+@mixin transition($prop, $time) {
+  -webkit-transition: $prop $time;
+  -moz-transition: $prop $time;
+  -ms-transition: $prop $time;
+  -o-transition: $prop $time;
+  transition: $prop $time;
+}

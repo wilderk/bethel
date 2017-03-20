@@ -1,0 +1,795 @@
+/*
+ * Oxbow Paragraphs Menus
+ *  - Theming for menus, and their contents
+ *  - Portable partial file, local variables only
+ */
+
+
+
+.p-hide {
+  display: none !important;
+}
+
+
+/// Hide Drupal data fields
+.field--name-field-p-settings {
+  display: none !important;
+  
+  &.p-show {
+    display: block !important;
+  }
+}
+
+
+
+$menu-w: 500px; //40vw;
+$menu-z: 300;
+$menu-p:  16px; //1.3vw;
+$menu-s: 12px; //1.2vw;
+$menu-color: white;
+$menu-bg: #41576D;
+$menu-bg-2: darken($menu-bg, 10%);
+$menu-bg-3: darken($menu-bg-2, 10%);
+
+$menu-link-s: 12px; //1vw;
+$menu-link-color: rgba(black, .6);
+
+$menu-label-w: $menu-w / 3;
+$menu-label-s: 14px; //1.2vw;
+
+$field-p: 10px; //1vw;
+$field-border: 1px solid rgba($menu-color, .2);
+
+$input-border: 1px solid rgba($menu-color, .5);
+
+$color-w: 50px; //5vw;
+
+$popup-bg: #6A8593; //$menu-bg;
+$popup-bg-2: darken($popup-bg, 10%);
+$popup-bg-3: darken($popup-bg-2, 10%); 
+
+$arrow-w: 30px; //3vw;
+$arrow-bg: $popup-bg; //$menu-bg-3;
+
+$popup-border-w: 0; //$field-p;
+$popup-border: $popup-border-w solid $arrow-bg;
+
+
+
+/// Menu Theming!
+.p-menu {
+  position: relative;
+  z-index: 1;
+  //padding-top: $menu-p;
+  padding-bottom: $menu-p;
+  @extend %no-select !optional;
+
+  &.open {
+    z-index: 2;
+  }
+  
+  ul {
+    margin: 0;
+    text-align: right;
+  }
+  
+  /// Menu Groups
+  > ul > li {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    position: relative;
+    
+    /// Menu Link
+    > .p-menu-item {
+      position: relative;
+      z-index: $menu-z !important;
+      padding: $field-p;
+      cursor: pointer;
+      color: $menu-link-color;
+      text-decoration: none !important;
+      font-size: $menu-link-s;
+      letter-spacing: $menu-link-s * .1;
+      text-transform: uppercase;
+    }
+    
+    /// Group Dropdown
+    > .p-settings {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      z-index: $menu-z + 1;
+      max-width: $menu-w;
+      background: $menu-bg;
+      text-align: left;
+      margin-top: $field-p / 2;
+      margin-bottom: $menu-p * 5;
+      box-shadow: 0 5px 12px -3px rgba(0, 0, 0, 0.7);
+    }
+    
+    /// Open Menu State
+    &.active {
+      z-index: 903;
+      
+      /// Menu Link
+      > .p-menu-item {
+        background: $menu-bg;
+        color: $menu-color;
+      }
+      
+      /// Group Dropdown
+      > .p-settings {
+        display: block;
+      }
+    }
+  }
+
+  li[data-setting='delete'] {
+    padding-left: $menu-p / 2;
+    .p-delete {
+      font-family: oxbow-paragraphs;
+      font-size: 19px;
+      color: $menu-link-color;
+      cursor: pointer;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}
+
+
+/// Setting Groups!
+.p-settings {
+  
+  /// General Fields
+  * {
+    box-sizing: border-box;
+    color: $menu-color;
+    font-size: $menu-s;
+    font-weight: normal !important;
+    line-height: 1 !important;
+  }
+  
+  label {
+    font-size: $menu-label-s;
+    letter-spacing: $menu-label-s * .01;
+    margin: 0;
+  }
+  
+  input[type='text'], textarea {
+    width: 100%;
+    background: $menu-bg-2;
+    border-radius: 0;
+    border: $input-border;
+    padding: $field-p;
+  }
+  
+  select {
+    width: 100%;
+    background-image: none !important;
+    background: $menu-bg-2;
+    color: $menu-color !important;
+    border-radius: 0;
+    border: $input-border;
+    padding: $field-p;
+    text-shadow: none;
+    text-align: center;
+  }
+  
+  > .p-setting:last-of-type {
+    border-bottom: none;
+  }
+}
+
+
+/// Fields
+.p-setting {
+  position: relative;
+  min-width: $menu-w - ($field-p * 2);
+  padding-bottom: $field-p;
+  padding: $field-p;
+  padding-left: $menu-label-w;
+  border-bottom: $field-border;
+  white-space: nowrap;
+  text-align: right;
+  font-size: 0;
+  
+  /// Field Labels
+  > .p-label {
+    @include flex(center, center);
+    flex-direction: column;
+    position: absolute;
+    left: $field-p;
+    right: auto;
+    top: $field-p;
+    bottom: $field-p;
+    width: $menu-label-w - ($field-p * 2);
+    white-space: normal;
+    text-align: left;
+    
+    label {
+      width: 100%;
+      display: block;
+      //line-height: 1.3 !important;
+      //padding-top: .7vw;
+    }
+  }
+  
+  .buttons, .pane-menu, .actions {
+    margin: -$field-p / 2;
+  }
+
+  .button {
+    background-image: none !important;
+    background: $menu-bg-2;
+    text-shadow: none;
+    border-radius: 0;
+    border: none !important;
+    
+    padding: 0 !important;
+    margin: $field-p / 2 !important;
+    
+    outline: none !important;
+    box-shadow: none !important;
+    
+    &:hover {
+      background: darken($menu-bg-2, 5%);
+    }
+    
+    &:focus {
+    }
+    
+    a {
+      display: inline-block;
+      padding: $field-p;
+      background: transparent;
+      text-decoration: none;
+      
+      &.active {
+        background: $menu-color;
+        color: $menu-bg-2;
+      }
+    }
+  }
+}
+
+/// Pane Menus
+.p-pane-menu {
+  min-width: 0;
+  padding-left: $field-p;
+  text-align: right;
+  border-bottom: none;
+  
+  .button {
+    background: transparent;
+    
+    &:hover {
+      background: darken($menu-bg, 5%);
+    }
+    
+    a.active {
+      background: $menu-bg-2;
+      color: $menu-color;
+    }
+  }
+}
+
+
+/// Panes
+.p-pane {
+  display: none;
+  background: $menu-bg-2;
+  padding: 0 !important;
+  margin: -$field-p 0 0 !important;
+  border-bottom: none;
+  
+  > .p-label {
+    display: none;
+    width: 100%;
+    position: static;
+    padding-bottom: $field-p;
+    padding-bottom: $field-p;
+    margin-bottom: $field-p;
+    border-bottom: $field-border;
+    
+    label {
+      text-transform: uppercase;
+    }
+  }
+  
+  input[type='text'], textarea {
+    background: $menu-bg-3;
+  }
+  
+  .p-select:after {
+    bottom: $field-p + ($menu-s/4);
+  }
+  
+  select {
+    background: $menu-bg-3;
+  }
+  
+  .button {
+    background: $menu-bg-3;
+    
+    &:hover {
+      background: lighten($menu-bg-3, 5%);
+    }
+  }
+  
+  &.active {
+    display: block;
+  }
+  
+  /// Secondary Pane Menus
+  > .p-pane-menu {
+      
+    .button {
+      background: $menu-bg;
+      
+      &:hover {
+        background: darken($menu-bg-2, 5%);
+      }
+      
+      a.active {
+        background: $menu-bg-3;
+      }
+    }
+  }
+  
+  /// Secondary Panes
+  > .p-pane {
+    background: $menu-bg-3;
+    
+    .button {
+      background: $menu-bg-2;
+      
+      a.active {
+        background: white;
+      }
+    }
+  }
+  
+  /// popups
+  > .p-popup {
+    .popup-preview {
+      background: $menu-bg-3;
+    }
+  }
+}
+
+/// Popup Field
+.p-popup {
+  position: relative;
+  
+  .popup-preview {
+    display: inline-block;
+    min-width: $field-p * 3;
+    min-height: $field-p * 3;
+    margin: 0 !important;
+    background: $menu-bg-2;
+    
+    .icon--color {
+      @include fill;
+      width: auto;
+      height: auto;
+      margin: 0;
+      
+      &:before {
+        font-size: $menu-s * .6;
+      }
+      
+      &[data-color='auto'] {
+        background: transparent;
+      }
+    }
+  }
+
+  > .popup {
+    display: none;
+    position: absolute;
+    
+    /// Right
+    left: 100%;    
+    top: 50%;
+    transform: translateY(-50%);    
+    z-index: $menu-z + 10;
+    margin-left: $field-p;
+    
+    background: $popup-bg;
+    box-shadow: 0 0 30px 3px rgba(0,0,0,0.5);
+    
+    border: $popup-border;
+    
+    &:before {
+      content: '';
+      width: $arrow-w;
+      height: $arrow-w;
+      transform: scaleY(.8) rotate(45deg);
+      position: absolute;
+      left: -$arrow-w / 2;
+      top: 50%;
+      margin-top: -$arrow-w / 2;
+      margin-left: max($field-p / 2, -$popup-border-w / 2);
+      background: $arrow-bg;
+    }
+    
+    /// left positioned
+    &.pos-l {
+      left: auto;
+      right: 0 + $field-p * 5;
+      margin-right: $field-p;
+      margin-left: 0;
+      
+      &:before {
+        left: auto;
+        right: -$arrow-w / 2;
+        margin-left: 0;
+        margin-right: max($field-p / 2, -$popup-border-w / 2);
+      }
+    }
+    
+    /// top positioned
+    &.pos-t {
+      top: auto;
+      bottom: 100%;
+      left: 100%;
+      margin: 0;
+      margin-bottom: $field-p;
+      transform: translateX(-50%);
+      margin-left: -$field-p * 3;
+      
+      &:before {
+        top: auto;
+        bottom: -$arrow-w / 2;
+        left: 50%;
+        margin: 0;
+        margin-left: -$arrow-w / 2;
+        margin-bottom: max($field-p / 2, -$popup-border-w / 2);
+        transform: scaleX(.8) rotate(45deg);
+      }
+    }
+    
+    /// bottom positioned
+    &.pos-b {
+      top: 100%;
+      left: 100%;
+      margin: 0;
+      margin-top: $field-p;
+      transform: translateX(-50%);
+      margin-left: -$field-p * 3;
+      
+      &:before {
+        top: -$arrow-w / 2;
+        left: auto;
+        right: 0;
+        margin: 0;
+        margin-top: max($field-p / 2, -$popup-border-w / 2);
+        transform: scaleX(.8) rotate(45deg);
+      }
+    }
+    
+    .p-setting {
+      min-width: $menu-w - $menu-label-w;
+      padding-left: $field-p;
+      
+      > .p-label {
+        display: none;
+      }
+    }
+    
+    > .p-setting {
+      background: $popup-bg;
+      
+      &:last-of-type {
+        border-bottom: none;
+      }
+    }
+    
+    > .p-pane-menu {
+      background: $popup-bg;
+      
+      .button {
+        background: $popup-bg;
+        
+        &:hover {
+          background: darken($popup-bg, 5%);
+        }
+        
+        a.active {
+          background: $popup-bg-2;
+        }
+      }
+    }
+    
+    > .p-pane {
+      background: $popup-bg-2;
+      
+      .button {
+        background: $popup-bg-3;
+      }
+      
+      > .p-setting:last-of-type {
+        border-bottom: none;
+      }
+    }
+  }
+  
+  &.active > .popup {
+    display: block;
+  }
+}
+
+
+/// Drupal Field
+.p-drupal {
+  
+  .description {
+    display: none !important;
+    color: rgba($menu-color, .6) !important;
+  }
+  
+  .field[data-map] {
+    label {
+      display: none;
+    }
+  }
+}
+
+
+/// Select Field
+.p-select {
+  position: relative;
+  
+  &:after {
+    content: '▼';
+    color: $menu-color;
+    position: absolute;
+    top: ($field-p * 2) + ($menu-s / 10);
+    right: $field-p * 2;
+    font-size: $menu-s;
+    pointer-events: none;
+  }
+}
+
+
+/// Color Field
+.p-colors {
+
+  .color-palette {
+    font-size: 0;
+    margin: -$field-p / 2;
+    white-space: normal;
+    
+    .color {
+      display: inline-block;
+    }
+    
+    .icon--color {
+      margin: $field-p / 2;
+      cursor: pointer;
+      outline: 2px solid rgba(white, .6);
+      
+      &.active {
+        border: ($field-p / 2) solid $menu-bg-3; //2px solid black;
+      }
+    }
+  }
+}
+    
+.icon--color {
+  position: relative;
+  width: $color-w - $field-p;
+  height: $color-w - $field-p;
+  
+  &[data-color='auto'] {
+    background: $menu-bg-2;
+    &:before {
+      @include fill;
+      @include flex(center, center);
+      content: 'Auto';
+      font-size: $menu-s * .75;
+      text-transform: uppercase;
+    }
+  }
+}
+
+/// Background Color Fields
+[data-setting='background'] .icon--color[data-color='auto'] {
+  &:before {
+    content: 'None';
+  }
+}
+
+
+
+/// Custom Overrides
+
+.p-popup .popup .p-colors {
+  min-width: $color-w * 5 - ($field-p * 4);
+  max-width: $color-w * 5 - ($field-p * 4);
+}
+
+.p-pane[data-field='columns'] {
+  
+  .p-popup .p-setting {
+    min-width: $color-w * 5 - ($field-p * 4);
+  }
+  
+  > .p-pane-menu {
+    .button a {
+      padding: $field-p ($field-p * 1.5);
+    }
+  }
+}
+
+
+.p-menu .field--name-field-p-setting-title-link {
+  
+  .description {
+    display: none;
+  }
+  
+  input {
+    color: $menu-color;
+    background-position: 100% center;
+    background-repeat: no-repeat;
+  }
+}
+
+.p-menu .field--name-field-p-setting-bg-img {
+
+  img {
+    max-width: 150px;
+    height: auto;
+  }
+  
+  .description,
+  .ajax-new-content {
+    display: none !important;
+  }
+  
+  .image-widget-data {
+    
+    > .file-size {
+      display: none;
+    }
+  }
+  
+  input.button {
+    padding: $field-p !important;
+    margin: $field-p 0 0 $field-p !important;
+    font-size: $menu-s;
+    color: white;
+    text-decoration: none !important;
+  }
+}
+
+.p-menu .field--name-field-p-setting-bg-vid {
+  
+  .description,
+  .ajax-new-content {
+    display: none !important;
+  }
+  
+  input.button {
+    padding: $field-p !important;
+    margin: $field-p 0 0 $field-p !important;
+    font-size: $menu-s;
+    color: white;
+    text-decoration: none !important;
+  }
+}
+
+.p-menu {
+  .file--image,
+  .file--video {
+    display: block;
+    background: transparent;
+    padding: $field-p/2 0;
+  }
+}
+
+
+
+/// Status Toggle
+
+.p-menu li[data-setting='status'] {
+  display: none;
+}
+
+.p-has-status > .paragraph-type-top {
+  display: none;
+}
+
+.field--widget-entity-reference-paragraphs table tbody tr {
+  &.p-status-hide {
+    border-color: crimson !important;
+  }
+  &.p-status-draft {
+    border-color: yellow !important;
+  }
+}
+
+div.p-status-hide {
+  height: 130px;
+  overflow: hidden;
+
+  > .paragraph-type-top,
+  > .paragraphs-subform > *:not(.p-menu) {
+    //-webkit-filter: blur(3px);
+    opacity: .3; //.6;
+    pointer-events: none;
+  }
+  > .paragraphs-subform > .p-menu > ul > li:not([data-setting="delete"]) {
+    //-webkit-filter: blur(3px);
+    opacity: .3; //.6;
+    pointer-events: none;
+  }
+  > .paragraphs-subform > .toggle {
+    //-webkit-filter: none;
+    pointer-events: auto;
+  }
+}
+
+$toggle-w: 45px;
+.paragraphs-subform > .toggle {
+  @extend %no-select !optional;
+  position: absolute;
+  top: 0; //-4px;
+  left: 0;
+  cursor: pointer;
+  //border: 2px solid rgba(black, .5);
+  border-radius: 2px;
+  background: rgba(black, .1);
+  transition: opacity .5s;
+  opacity: .5;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .toggle-state {
+    width: $toggle-w;
+  }
+
+  .toggle-labels {
+    width: 100%;
+  }
+
+  .toggle-label {
+    width: $toggle-w;
+    float: left;
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+    margin: 0;
+    padding: 6px 5px 5px;
+    color: rgba(black, .3);
+    font-size: 10px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    cursor: pointer;
+
+    &.active {
+      color: rgba(black, .8);
+    }
+  }
+
+  .toggle-active {
+    width: $toggle-w;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    background: rgba(black, .2);
+    transition: left .5s;
+  }
+}
+
+
+

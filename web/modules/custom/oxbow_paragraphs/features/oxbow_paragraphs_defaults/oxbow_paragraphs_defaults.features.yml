@@ -1,0 +1,7 @@
+bundle: oxbow_paragraphs
+excluded:
+  - field.field.paragraph.video.field_p_video
+  - field.field.paragraph.video.field_p_youtube
+  - field.storage.paragraph.field_p_video
+  - field.storage.paragraph.field_p_youtube
+required: true

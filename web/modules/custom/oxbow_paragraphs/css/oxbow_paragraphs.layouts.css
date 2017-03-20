@@ -1,0 +1,721 @@
+/* line 20, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-columns {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_1-1 {
+  max-width: 100%;
+  flex: 0 0 100%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_1-2 {
+  max-width: 50%;
+  flex: 0 0 50%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_1-3 {
+  max-width: 33.33333%;
+  flex: 0 0 33.33333%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_1-4 {
+  max-width: 25%;
+  flex: 0 0 25%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_1-5 {
+  max-width: 20%;
+  flex: 0 0 20%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_1-6 {
+  max-width: 16.66667%;
+  flex: 0 0 16.66667%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_1-7 {
+  max-width: 14.28571%;
+  flex: 0 0 14.28571%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_1-8 {
+  max-width: 12.5%;
+  flex: 0 0 12.5%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_1-9 {
+  max-width: 11.11111%;
+  flex: 0 0 11.11111%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_1-10 {
+  max-width: 10%;
+  flex: 0 0 10%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_2-1 {
+  max-width: 200%;
+  flex: 0 0 200%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_2-2 {
+  max-width: 100%;
+  flex: 0 0 100%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_2-3 {
+  max-width: 66.66667%;
+  flex: 0 0 66.66667%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_2-4 {
+  max-width: 50%;
+  flex: 0 0 50%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_2-5 {
+  max-width: 40%;
+  flex: 0 0 40%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_2-6 {
+  max-width: 33.33333%;
+  flex: 0 0 33.33333%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_2-7 {
+  max-width: 28.57143%;
+  flex: 0 0 28.57143%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_2-8 {
+  max-width: 25%;
+  flex: 0 0 25%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_2-9 {
+  max-width: 22.22222%;
+  flex: 0 0 22.22222%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_2-10 {
+  max-width: 20%;
+  flex: 0 0 20%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_3-1 {
+  max-width: 300%;
+  flex: 0 0 300%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_3-2 {
+  max-width: 150%;
+  flex: 0 0 150%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_3-3 {
+  max-width: 100%;
+  flex: 0 0 100%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_3-4 {
+  max-width: 75%;
+  flex: 0 0 75%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_3-5 {
+  max-width: 60%;
+  flex: 0 0 60%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_3-6 {
+  max-width: 50%;
+  flex: 0 0 50%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_3-7 {
+  max-width: 42.85714%;
+  flex: 0 0 42.85714%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_3-8 {
+  max-width: 37.5%;
+  flex: 0 0 37.5%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_3-9 {
+  max-width: 33.33333%;
+  flex: 0 0 33.33333%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_3-10 {
+  max-width: 30%;
+  flex: 0 0 30%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_4-1 {
+  max-width: 400%;
+  flex: 0 0 400%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_4-2 {
+  max-width: 200%;
+  flex: 0 0 200%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_4-3 {
+  max-width: 133.33333%;
+  flex: 0 0 133.33333%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_4-4 {
+  max-width: 100%;
+  flex: 0 0 100%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_4-5 {
+  max-width: 80%;
+  flex: 0 0 80%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_4-6 {
+  max-width: 66.66667%;
+  flex: 0 0 66.66667%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_4-7 {
+  max-width: 57.14286%;
+  flex: 0 0 57.14286%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_4-8 {
+  max-width: 50%;
+  flex: 0 0 50%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_4-9 {
+  max-width: 44.44444%;
+  flex: 0 0 44.44444%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_4-10 {
+  max-width: 40%;
+  flex: 0 0 40%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_5-1 {
+  max-width: 500%;
+  flex: 0 0 500%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_5-2 {
+  max-width: 250%;
+  flex: 0 0 250%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_5-3 {
+  max-width: 166.66667%;
+  flex: 0 0 166.66667%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_5-4 {
+  max-width: 125%;
+  flex: 0 0 125%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_5-5 {
+  max-width: 100%;
+  flex: 0 0 100%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_5-6 {
+  max-width: 83.33333%;
+  flex: 0 0 83.33333%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_5-7 {
+  max-width: 71.42857%;
+  flex: 0 0 71.42857%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_5-8 {
+  max-width: 62.5%;
+  flex: 0 0 62.5%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_5-9 {
+  max-width: 55.55556%;
+  flex: 0 0 55.55556%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_5-10 {
+  max-width: 50%;
+  flex: 0 0 50%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_6-1 {
+  max-width: 600%;
+  flex: 0 0 600%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_6-2 {
+  max-width: 300%;
+  flex: 0 0 300%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_6-3 {
+  max-width: 200%;
+  flex: 0 0 200%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_6-4 {
+  max-width: 150%;
+  flex: 0 0 150%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_6-5 {
+  max-width: 120%;
+  flex: 0 0 120%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_6-6 {
+  max-width: 100%;
+  flex: 0 0 100%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_6-7 {
+  max-width: 85.71429%;
+  flex: 0 0 85.71429%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_6-8 {
+  max-width: 75%;
+  flex: 0 0 75%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_6-9 {
+  max-width: 66.66667%;
+  flex: 0 0 66.66667%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_6-10 {
+  max-width: 60%;
+  flex: 0 0 60%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_7-1 {
+  max-width: 700%;
+  flex: 0 0 700%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_7-2 {
+  max-width: 350%;
+  flex: 0 0 350%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_7-3 {
+  max-width: 233.33333%;
+  flex: 0 0 233.33333%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_7-4 {
+  max-width: 175%;
+  flex: 0 0 175%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_7-5 {
+  max-width: 140%;
+  flex: 0 0 140%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_7-6 {
+  max-width: 116.66667%;
+  flex: 0 0 116.66667%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_7-7 {
+  max-width: 100%;
+  flex: 0 0 100%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_7-8 {
+  max-width: 87.5%;
+  flex: 0 0 87.5%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_7-9 {
+  max-width: 77.77778%;
+  flex: 0 0 77.77778%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_7-10 {
+  max-width: 70%;
+  flex: 0 0 70%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_8-1 {
+  max-width: 800%;
+  flex: 0 0 800%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_8-2 {
+  max-width: 400%;
+  flex: 0 0 400%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_8-3 {
+  max-width: 266.66667%;
+  flex: 0 0 266.66667%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_8-4 {
+  max-width: 200%;
+  flex: 0 0 200%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_8-5 {
+  max-width: 160%;
+  flex: 0 0 160%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_8-6 {
+  max-width: 133.33333%;
+  flex: 0 0 133.33333%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_8-7 {
+  max-width: 114.28571%;
+  flex: 0 0 114.28571%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_8-8 {
+  max-width: 100%;
+  flex: 0 0 100%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_8-9 {
+  max-width: 88.88889%;
+  flex: 0 0 88.88889%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_8-10 {
+  max-width: 80%;
+  flex: 0 0 80%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_9-1 {
+  max-width: 900%;
+  flex: 0 0 900%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_9-2 {
+  max-width: 450%;
+  flex: 0 0 450%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_9-3 {
+  max-width: 300%;
+  flex: 0 0 300%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_9-4 {
+  max-width: 225%;
+  flex: 0 0 225%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_9-5 {
+  max-width: 180%;
+  flex: 0 0 180%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_9-6 {
+  max-width: 150%;
+  flex: 0 0 150%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_9-7 {
+  max-width: 128.57143%;
+  flex: 0 0 128.57143%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_9-8 {
+  max-width: 112.5%;
+  flex: 0 0 112.5%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_9-9 {
+  max-width: 100%;
+  flex: 0 0 100%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_9-10 {
+  max-width: 90%;
+  flex: 0 0 90%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_10-1 {
+  max-width: 1000%;
+  flex: 0 0 1000%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_10-2 {
+  max-width: 500%;
+  flex: 0 0 500%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_10-3 {
+  max-width: 333.33333%;
+  flex: 0 0 333.33333%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_10-4 {
+  max-width: 250%;
+  flex: 0 0 250%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_10-5 {
+  max-width: 200%;
+  flex: 0 0 200%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_10-6 {
+  max-width: 166.66667%;
+  flex: 0 0 166.66667%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_10-7 {
+  max-width: 142.85714%;
+  flex: 0 0 142.85714%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_10-8 {
+  max-width: 125%;
+  flex: 0 0 125%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_10-9 {
+  max-width: 111.11111%;
+  flex: 0 0 111.11111%;
+}
+
+/* line 32, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-item_10-10 {
+  max-width: 100%;
+  flex: 0 0 100%;
+}
+
+@media screen and (max-width: 500px) {
+  /* line 39, ../sass/oxbow_paragraphs.layouts.scss */
+  .layout-grid > .layout-item_1-2 {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  /* line 44, ../sass/oxbow_paragraphs.layouts.scss */
+  .layout-grid > .layout-item_1-3 {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  /* line 49, ../sass/oxbow_paragraphs.layouts.scss */
+  .layout-grid > .layout-item_1-4 {
+    max-width: 50%;
+    flex: 0 0 50%;
+  }
+}
+@media screen and (max-width: 500px) {
+  /* line 49, ../sass/oxbow_paragraphs.layouts.scss */
+  .layout-grid > .layout-item_1-4 {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  /* line 57, ../sass/oxbow_paragraphs.layouts.scss */
+  .layout-grid > .layout-item_1-5 {
+    max-width: 33.33333%;
+    flex: 0 0 33.33333%;
+  }
+}
+@media screen and (max-width: 500px) {
+  /* line 57, ../sass/oxbow_paragraphs.layouts.scss */
+  .layout-grid > .layout-item_1-5 {
+    max-width: 50%;
+    flex: 0 0 50%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  /* line 65, ../sass/oxbow_paragraphs.layouts.scss */
+  .layout-grid > .layout-item_1-6 {
+    max-width: 33.33333%;
+    flex: 0 0 33.33333%;
+  }
+}
+@media screen and (max-width: 500px) {
+  /* line 65, ../sass/oxbow_paragraphs.layouts.scss */
+  .layout-grid > .layout-item_1-6 {
+    max-width: 50%;
+    flex: 0 0 50%;
+  }
+}
+
+/* line 74, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-align-top.layout-columns,
+.layout-align-top .layout-columns {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+/* line 80, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-align-center.layout-columns,
+.layout-align-center .layout-columns {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/* line 86, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-align-bottom.layout-columns,
+.layout-align-bottom .layout-columns {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+/* line 93, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-direction-ltr.layout-columns,
+.layout-direction-ltr .layout-columns {
+  flex-direction: row;
+}
+
+/* line 97, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-direction-rtl.layout-columns,
+.layout-direction-rtl .layout-columns {
+  flex-direction: row-reverse;
+}
+
+/* line 102, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-h-align-left .paragraph {
+  text-align: left;
+}
+
+/* line 105, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-h-align-center .paragraph {
+  text-align: center;
+}
+
+/* line 108, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-h-align-right .paragraph {
+  text-align: right;
+}

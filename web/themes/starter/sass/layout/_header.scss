@@ -1,0 +1,57 @@
+
+$header-top-h: rem-calc(60);
+$header-top-content-h: rem-calc($header-top-h) - ($site-p-s * 2);
+
+
+#header {
+  background: color(header);
+  position: relative;
+  padding-top: $header-top-h;
+  
+  #header-top {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    height: $header-top-h;
+    background: color(header);
+    padding: padding(s) padding(m);
+    //box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
+    
+    > .layout-container {
+      position: relative;
+      padding: 0;
+    }
+    
+    /// logo
+    #block-starter-branding {
+      float: left;
+      height: $header-top-content-h;
+      position: relative;
+      z-index: 2;
+      font-size: 0;
+      
+      img {
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+  
+  #header-main {
+
+  }
+}
+
+/// adjust absolute position to admin menu
+body.toolbar-fixed #header #header-top {
+  top: 39px;
+}
+body.toolbar-fixed.toolbar-horizontal.toolbar-tray-open #header #header-top {
+  top: 79px;
+}
+body.toolbar-fixed.toolbar-vertical.toolbar-tray-open #header #header-top {
+  top: 39px;
+  left: 240px;
+}

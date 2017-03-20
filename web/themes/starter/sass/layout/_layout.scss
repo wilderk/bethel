@@ -1,0 +1,53 @@
+
+$footer-h: 184px;
+
+
+html, body {
+  height: 100%;
+}
+
+#page {
+  min-height: 100%;
+  position: relative;
+  padding-bottom: $footer-h;
+}
+  
+#header {
+  width: 100%;
+  
+  #header-top {
+    > .layout-container {
+      @include constrain;
+    }
+  }
+  
+  #header-main {
+    > .layout-container {
+      @include constrain;
+    }
+  }
+}
+
+#content-top {
+  
+}
+
+#content-main {
+  > .layout-container {
+    @include constrain;
+    overflow: hidden;
+  }
+}
+
+#content-bottom {
+  
+}
+
+#footer {
+  margin-top: -$footer-h;
+  position: relative;
+  
+  > .layout-container {
+    @include constrain;
+  }
+}

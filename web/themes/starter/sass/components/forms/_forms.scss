@@ -1,0 +1,218 @@
+
+$input-font-color: rgba(0,0,0,0.75);
+$input-font-size: rem-calc(14);
+$input-placeholder-font-color: #cccccc;
+$input-bg-color: transparent;
+$input-focus-bg-color: scale-color($white, $lightness: -2%);
+$input-border-color: scale-color($white, $lightness: -20%);
+$input-focus-border-color: scale-color($white, $lightness: -40%);
+$input-border-style: solid;
+$input-border-width: 1px;
+$input-border-radius: $global-radius;
+$input-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+
+
+form {
+  
+  .form-submit {
+    @include btn;
+  }
+  
+  /// top level items
+  > div > .form-item {
+    
+    > label {
+      //font-weight: bold;
+    }
+  }
+  
+  .form-item {
+    margin-bottom: padding(m);
+    
+    /// nested form items
+    .form-item {
+      margin-bottom: padding(s);
+    }
+    
+    input, textarea {
+      margin: 0;
+    }
+    
+    .description {
+      font-size: $form-label-font-size;
+      margin-top: padding(xs);
+    }
+    
+    label {
+      font-size: map-get($headers, h5);
+      margin-bottom: padding(xs);
+    }
+    
+    /// custom radio buttons
+    &.form-type-radio,
+    &.form-type-checkbox {
+      
+      input {
+        display: none;
+      }
+      
+      label {
+        margin-left: 0;
+        
+        &:before {
+          content: '';
+          display: inline-block;
+          width: 1em;
+          height: 1em;
+          position: relative;
+          top: .1em;
+          margin-right: .5em;
+          
+          background: $input-bg-color;
+          border: $input-border-width $input-border-style $input-border-color;
+        }
+      }
+        
+      input:checked + label {
+        &:before {
+          border-width: 5px;
+          border-color: $input-focus-border-color;
+        }
+      }
+    }
+    &.form-type-radio {
+      label {
+        &:before {
+          border-radius: 50%;
+        }
+      }
+    }
+    
+    /// file upload
+    &.webform-component-file {
+      @include clearfix;
+      
+      .form-managed-file {
+        @include clearfix;
+        
+        .form-submit {
+          margin-top: padding(s);
+        }
+      }
+    }
+    
+    /// time with hour and minute
+    &.webform-component-time {
+      @include clearfix;
+      font-size: 0;
+      
+      .webform-container-inline > *{
+        @extend .medium-4;
+        @extend .small-12;
+        float: left;
+        font-size: $font-size;
+        
+        .form-select {
+          margin: 0;
+        }
+      }
+      .form-item-submitted-time-hour {
+        padding-right: padding(m) * (2/3);
+        
+        @media #{$small-only} {
+          padding-right: 0;
+        }
+      }
+      .form-item-submitted-time-minute {
+        padding: 0 padding(m) * (1/3);
+        
+        @media #{$small-only} {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+      .form-radios {
+        padding-left: padding(m) * (2/3);
+        margin-top: rem-calc(40);
+        
+        @media #{$small-only} {
+          padding-left: 0;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+
+/// awesome inputs
+$fancy-input-border: 1px solid color(input-label);
+
+.form-type-textfield,
+.form-type-password,
+.form-type-email,
+.form-type-number {
+  position: relative;
+  padding-top: padding(m);
+  
+  input {
+    
+    background: color(input);
+    border: none;
+    border-bottom: $fancy-input-border;
+    box-shadow: none;
+    height: rem-calc(25);
+    padding: 3px 0;
+    
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      border: none;
+      background: color(input);
+    }
+  }
+  
+  label {
+    position: absolute;
+    top: padding(m);
+    transition: all .3s;
+  }
+  
+  input:focus ~ label, input:valid:not(.is-empty) ~ label     {
+    top: 0;
+    font-size: .6em;
+    color: color(input-active);
+  }
+
+  .form-bar:before,
+  .form-bar:after {
+    content: '';
+    position: absolute;
+    top: rem-calc(24) + padding(m);
+    height: 2px;
+    width: 0;
+    background: color(input-active);
+    transition: all .3s;
+  }
+  .form-bar:before {
+    left: 50%;
+  }
+  .form-bar:after {
+    right: 50%;
+  }
+  
+  input:focus ~ .form-bar:before,
+  input:focus ~ .form-bar:after {
+    width: 50%;
+  }  
+}
+
+
+/// user login form
+#user-login-form {
+  width: 300px;
+  max-width: 100%;
+  margin: padding(m) auto 0;
+}
+
+

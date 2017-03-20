@@ -1,0 +1,24 @@
+
+.paragraph.paragraph--type--video {
+  
+  > .p__inner {
+    
+    > .p__content {
+      
+      > .field--name-field-p-video {
+        
+        video {
+          max-width: 100%;
+          margin: 0px auto;
+          display: block;
+        }
+
+
+        iframe {
+          margin: 0px auto;
+          display: block;
+        }
+      }
+    }
+  }
+}

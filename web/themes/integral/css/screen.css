@@ -1,0 +1,739 @@
+/* line 5, ../sass/global/_helpers.scss */
+.btn {
+  cursor: pointer;
+}
+
+/* line 10, ../sass/global/_helpers.scss */
+.element-invisible {
+  display: none;
+}
+
+/* line 16, ../sass/global/_helpers.scss */
+.group :after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 24, ../sass/global/_helpers.scss */
+.node__edit .group__navigable .node__nav > * > .node__fields,
+.node__edit .group__navigable .node__nav > * > .paragraph__region, .no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@font-face {
+  font-family: 'oxbow';
+  src: url("../fonts/fontello-oxbow/font/oxbow.eot?");
+  src: url("../fonts/fontello-oxbow/font/oxbow.eot?#iefix") format("embedded-opentype"), url("../fonts/fontello-oxbow/font/oxbow.woff") format("woff"), url("../fonts/fontello-oxbow/font/oxbow.ttf") format("truetype"), url("../fonts/fontello-oxbow/font/oxbow.svg#oxbow") format("svg");
+  font-weight: bold;
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 2, ../sass/global/_icons.scss */
+[class*='icon-'] {
+  position: relative;
+}
+/* line 4, ../sass/global/_icons.scss */
+[class*='icon-']:after {
+  font-family: 'oxbow';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* line 12, ../sass/global/_icons.scss */
+.icon-advanced::after {
+  content: '\E801';
+}
+
+/* line 16, ../sass/global/_icons.scss */
+.icon-save::after {
+  content: '\E802';
+}
+
+/* line 20, ../sass/global/_icons.scss */
+.icon-delete::after {
+  content: '\0054';
+}
+
+/* line 24, ../sass/global/_icons.scss */
+.icon-add::after {
+  content: '\E800';
+}
+
+/* line 28, ../sass/global/_icons.scss */
+.icon-drag::after {
+  content: '\E805';
+}
+
+/* line 32, ../sass/global/_icons.scss */
+.icon-loading::after {
+  content: '\0041';
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* line 1, ../sass/editor/_layout.scss */
+body.path-node > .layout-container,
+body.path-node > .layout-container > .page-content {
+  margin: 0;
+}
+
+/* line 5, ../sass/editor/_layout.scss */
+body.path-node > .content-header,
+body.path-node > .layout-container > .region-breadcrumb,
+body.path-node > .layout-container > .region-pre-content {
+  display: none;
+}
+
+/* line 22, ../sass/editor/_layout.scss */
+.node__edit .group__header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: flex-start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: flex-start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: #242424;
+}
+/* line 28, ../sass/editor/_layout.scss */
+.node__edit .group__header * {
+  margin: 0;
+}
+/* line 34, ../sass/editor/_layout.scss */
+.node__edit .group__static {
+  margin: -.75em 0;
+  padding: 1.5rem;
+}
+/* line 40, ../sass/editor/_layout.scss */
+.node__edit .group__navigable {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}
+/* line 45, ../sass/editor/_layout.scss */
+.node__edit .group__navigable .node__nav {
+  flex: 1 1 0;
+  background: lightgray;
+  max-width: 250px;
+  width: 250px;
+}
+/* line 53, ../sass/editor/_layout.scss */
+.node__edit .group__navigable > .node__fields,
+.node__edit .group__navigable > .node__paragraphs {
+  flex: 1 1 0;
+  background: white;
+}
+
+/* line 4, ../sass/editor/_group--header.scss */
+.node__edit .group__header {
+  position: relative;
+  height: 3rem;
+  z-index: 100;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+}
+/* line 11, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__title {
+  position: relative;
+  padding: 0.375rem 1.5rem;
+  max-width: 50%;
+  width: auto;
+}
+/* line 17, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__title label {
+  display: none;
+}
+/* line 21, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__title input {
+  font-size: 20px;
+  color: white;
+  background: transparent;
+  padding: 3px 0 0;
+  box-shadow: none;
+  border: none;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.3);
+}
+/* line 30, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__title input:placeholder-shown {
+  font-style: italic;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.5);
+}
+/* line 35, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__title input:hover {
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.5);
+}
+/* line 39, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__title input:focus {
+  outline: none;
+  box-shadow: none;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.5);
+}
+/* line 48, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: flex-end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: flex-end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+/* line 51, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions .btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+}
+/* line 56, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions .btn:after {
+  padding: 0.375rem 0.75rem;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+/* line 64, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions .btn.toggle + * {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 101;
+  padding: 0.375rem;
+  border: none;
+  box-shadow: none;
+}
+/* line 76, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions .btn.toggle.open + * {
+  display: block;
+}
+/* line 80, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions > div > .btn {
+  height: 3rem;
+}
+/* line 85, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions .node__save {
+  flex: 1;
+  position: relative;
+}
+/* line 91, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions .node__save .btn:after {
+  content: 'Save';
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 3rem;
+  background: #308f5a;
+  font-weight: bold;
+}
+/* line 100, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions .node__save .btn + * {
+  display: none;
+}
+/* line 106, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions .node__advanced {
+  position: relative;
+  width: 3rem;
+}
+/* line 110, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions .node__advanced .btn.open {
+  z-index: 102;
+}
+/* line 114, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions .node__advanced .btn__dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding-bottom: 3rem;
+  background: lightgray;
+  box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.5);
+}
+/* line 123, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions .node__advanced .btn.open {
+  background: lightgray;
+  color: #242424;
+}
+/* line 129, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions .node__advanced .entity-meta {
+  min-width: 300px;
+}
+/* line 134, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions .node__advanced .node__unpublish,
+.node__edit .group__header .node__actions .node__advanced .node__publish,
+.node__edit .group__header .node__actions .node__advanced .node__delete {
+  position: absolute;
+  bottom: 0.375rem;
+}
+/* line 140, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions .node__advanced .node__unpublish .btn::after,
+.node__edit .group__header .node__actions .node__advanced .node__publish .btn::after,
+.node__edit .group__header .node__actions .node__advanced .node__delete .btn::after {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 2.25rem;
+}
+/* line 146, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions .node__advanced .node__unpublish,
+.node__edit .group__header .node__actions .node__advanced .node__publish {
+  left: 0.375rem;
+  right: 50%;
+  padding-right: 0.1875rem;
+}
+/* line 152, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions .node__advanced .node__delete {
+  left: 50%;
+  right: 0.375rem;
+  padding-left: 0.1875rem;
+}
+/* line 162, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions .node__unpublish .btn:after {
+  content: 'Unpublish';
+  background: #0eb1ff;
+}
+/* line 167, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions .node__unpublish .btn + * {
+  display: none;
+}
+/* line 175, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions .node__publish .btn:after {
+  content: 'Publish';
+  background: #0eb1ff;
+}
+/* line 180, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions .node__publish .btn + * {
+  display: none;
+}
+/* line 188, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions .node__delete .btn:after {
+  content: 'Delete';
+  background: #b01030;
+}
+/* line 193, ../sass/editor/_group--header.scss */
+.node__edit .group__header .node__actions .node__delete .btn + * {
+  display: none;
+}
+
+/* line 8, ../sass/editor/_group--navigable.scss */
+body.path-node .messages {
+  margin: 0;
+}
+/* line 11, ../sass/editor/_group--navigable.scss */
+body.path-node .region-highlighted {
+  position: relative;
+  z-index: 2;
+}
+/* line 15, ../sass/editor/_group--navigable.scss */
+body.path-node .region-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* line 21, ../sass/editor/_group--navigable.scss */
+.node__edit .group__navigable {
+  max-height: 100vh;
+  border: none;
+}
+/* line 31, ../sass/editor/_group--navigable.scss */
+.node__edit .group__navigable > .node__fields {
+  display: none;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 0.75rem;
+}
+/* line 37, ../sass/editor/_group--navigable.scss */
+.node__edit .group__navigable > .node__fields.nav-open {
+  display: block;
+}
+/* line 41, ../sass/editor/_group--navigable.scss */
+.node__edit .group__navigable > .node__fields > .form__title {
+  margin-bottom: 1.5rem;
+}
+/* line 47, ../sass/editor/_group--navigable.scss */
+.node__edit .group__navigable > .node__paragraphs {
+  display: none;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  padding: 1.5rem;
+  background: #878787;
+}
+/* line 54, ../sass/editor/_group--navigable.scss */
+.node__edit .group__navigable > .node__paragraphs.nav-open {
+  display: block;
+}
+/* line 58, ../sass/editor/_group--navigable.scss */
+.node__edit .group__navigable > .node__paragraphs > * {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+/* line 69, ../sass/editor/_group--navigable.scss */
+.node__edit .group__navigable .node__nav {
+  overflow: auto;
+}
+/* line 73, ../sass/editor/_group--navigable.scss */
+.node__edit .group__navigable .node__nav > * > .node__fields,
+.node__edit .group__navigable .node__nav > * > .paragraph__region {
+  position: relative;
+  height: 100px;
+  margin: 0.75rem 0.75rem 0 0;
+}
+/* line 80, ../sass/editor/_group--navigable.scss */
+.node__edit .group__navigable .node__nav > * > .node__fields > [class*='preview'],
+.node__edit .group__navigable .node__nav > * > .paragraph__region > [class*='preview'] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  left: 1.5rem;
+  background: white;
+  cursor: pointer;
+  box-shadow: -1px 1px 10px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid #a0a0a0;
+}
+/* line 88, ../sass/editor/_group--navigable.scss */
+.node__edit .group__navigable .node__nav > * > .node__fields > [class*='preview'] .p__inner,
+.node__edit .group__navigable .node__nav > * > .paragraph__region > [class*='preview'] .p__inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+/* line 93, ../sass/editor/_group--navigable.scss */
+.node__edit .group__navigable .node__nav > * > .node__fields > [class*='preview'] .p__inner .p__title,
+.node__edit .group__navigable .node__nav > * > .paragraph__region > [class*='preview'] .p__inner .p__title {
+  font-weight: bold;
+}
+/* line 100, ../sass/editor/_group--navigable.scss */
+.node__edit .group__navigable .node__nav > * > .node__fields.p-open,
+.node__edit .group__navigable .node__nav > * > .paragraph__region.p-open {
+  background: #0eb1ff;
+  margin-left: 0;
+  box-shadow: -1px 1px 10px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid #a0a0a0;
+  border-left: none;
+}
+/* line 107, ../sass/editor/_group--navigable.scss */
+.node__edit .group__navigable .node__nav > * > .node__fields.p-open > *,
+.node__edit .group__navigable .node__nav > * > .paragraph__region.p-open > * {
+  box-shadow: none;
+  border: none;
+}
+/* line 115, ../sass/editor/_group--navigable.scss */
+.node__edit .group__navigable .node__nav > .nav__fields {
+  padding: 0.75rem 0.75rem 0.75rem 0;
+}
+/* line 120, ../sass/editor/_group--navigable.scss */
+.node__edit .group__navigable .node__nav > .nav__fields > .node__fields {
+  margin: 0;
+  text-transform: capitalize;
+  height: 50px;
+}
+/* line 128, ../sass/editor/_group--navigable.scss */
+.node__edit .group__navigable .node__nav .nav__label {
+  margin-top: 0.75rem;
+  text-align: center;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+/* line 9, ../sass/editor/_paragraphs.scss */
+body.page-node-type-content-page {
+  padding-bottom: 0;
+}
+
+/* line 13, ../sass/editor/_paragraphs.scss */
+.group__navigable {
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+/* line 18, ../sass/editor/_paragraphs.scss */
+.group__navigable .field--name-field-p-regions {
+  padding-bottom: 100px;
+}
+/* line 21, ../sass/editor/_paragraphs.scss */
+.group__navigable .field--name-field-p-regions > div > .form-item {
+  margin: 0;
+}
+/* line 24, ../sass/editor/_paragraphs.scss */
+.group__navigable .field--name-field-p-regions .p-region {
+  margin-top: 0 !important;
+}
+/* line 27, ../sass/editor/_paragraphs.scss */
+.group__navigable .field--name-field-p-regions .paragraphs-dropbutton-wrapper {
+  display: none !important;
+}
+/* line 30, ../sass/editor/_paragraphs.scss */
+.group__navigable .field--name-field-p-regions table[id*='field-p-regions'] {
+  margin: 0;
+}
+/* line 33, ../sass/editor/_paragraphs.scss */
+.group__navigable .field--name-field-p-regions table[id*='field-p-regions'] tr {
+  padding: 1.5rem !important;
+}
+/* line 37, ../sass/editor/_paragraphs.scss */
+.group__navigable .field--name-field-p-regions table[id*='field-p-regions'] .p__add {
+  margin-top: 0.75rem;
+}
+/* line 44, ../sass/editor/_paragraphs.scss */
+.group__navigable .p-region {
+  display: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: #f9f9f9;
+}
+/* line 50, ../sass/editor/_paragraphs.scss */
+.group__navigable .p-region:hover, .group__navigable .p-region:focus {
+  background: #f9f9f9;
+}
+/* line 54, ../sass/editor/_paragraphs.scss */
+.group__navigable .p-region.p-open {
+  display: inline-block !important;
+}
+/* line 58, ../sass/editor/_paragraphs.scss */
+.group__navigable .p-region > .p-swap {
+  display: none !important;
+}
+/* line 62, ../sass/editor/_paragraphs.scss */
+.group__navigable .p-region tr {
+  background: white;
+  border-radius: 0 !important;
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+/* line 66, ../sass/editor/_paragraphs.scss */
+.group__navigable .p-region tr:hover, .group__navigable .p-region tr:focus {
+  background: white;
+}
+/* line 71, ../sass/editor/_paragraphs.scss */
+.group__navigable .p-region tr tr {
+  background: #f9f9f9;
+}
+/* line 73, ../sass/editor/_paragraphs.scss */
+.group__navigable .p-region tr tr:hover, .group__navigable .p-region tr tr:focus {
+  background: #f9f9f9;
+}
+/* line 80, ../sass/editor/_paragraphs.scss */
+.group__navigable .p-region .text-format-wrapper .filter-wrapper {
+  display: none;
+}
+/* line 86, ../sass/editor/_paragraphs.scss */
+.group__navigable .p-status-toggle {
+  display: none;
+}
+/* line 92, ../sass/editor/_paragraphs.scss */
+.group__navigable .region__add .add__menu {
+  color: black;
+}
+
+/* line 106, ../sass/editor/_paragraphs.scss */
+.node__nav * {
+  box-sizing: border-box;
+}
+/* line 110, ../sass/editor/_paragraphs.scss */
+.node__nav .nav__paragraphs {
+  position: relative;
+  padding-bottom: 1.5rem;
+  margin-bottom: 100px;
+}
+/* line 119, ../sass/editor/_paragraphs.scss */
+.node__nav > .nav__paragraphs > .paragraph__region .paragraph__drag {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1.5rem;
+  color: rgba(0, 0, 0, 0.2);
+  cursor: move;
+}
+/* line 128, ../sass/editor/_paragraphs.scss */
+.node__nav > .nav__paragraphs > .paragraph__region .paragraph__drag:after {
+  transform: rotate(-90deg);
+  padding-top: 1px;
+  font-size: 20px;
+}
+/* line 137, ../sass/editor/_paragraphs.scss */
+.node__nav > .nav__paragraphs > .paragraph__region .paragraph__preview .p__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+}
+/* line 142, ../sass/editor/_paragraphs.scss */
+.node__nav > .nav__paragraphs > .paragraph__region .paragraph__preview .p__bg .p__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+/* line 150, ../sass/editor/_paragraphs.scss */
+.node__nav > .nav__paragraphs > .paragraph__region .paragraph__preview .p__inner .p__title.no-title, .node__nav > .nav__paragraphs > .paragraph__region .paragraph__preview .p__inner .p__title.hidden-title {
+  opacity: .5;
+  font-style: italic;
+}
+/* line 157, ../sass/editor/_paragraphs.scss */
+.node__nav > .nav__paragraphs > .paragraph__region .paragraph__preview .p__inner .p__layout {
+  font-size: .9em;
+  font-weight: bold;
+  text-transform: capitalize;
+  opacity: .75;
+}
+/* line 168, ../sass/editor/_paragraphs.scss */
+.node__nav > .nav__paragraphs > .paragraph__region.p-open > .paragraph__drag {
+  color: rgba(255, 255, 255, 0.3);
+}
+/* line 171, ../sass/editor/_paragraphs.scss */
+.node__nav > .nav__paragraphs > .paragraph__region.p-open > .paragraph__preview {
+  box-shadow: none;
+  border: none;
+}
+/* line 180, ../sass/editor/_paragraphs.scss */
+.node__nav > .nav__paragraphs > .paragraph__region.p-deleted > .paragraph__preview .p__bg {
+  background-image: url("../images/deleted.jpg") !important;
+  opacity: .25 !important;
+}
+/* line 184, ../sass/editor/_paragraphs.scss */
+.node__nav > .nav__paragraphs > .paragraph__region.p-deleted > .paragraph__preview .p__title {
+  opacity: .8;
+}
+/* line 189, ../sass/editor/_paragraphs.scss */
+.node__nav > .nav__paragraphs > .paragraph__region.p-deleted.p-open {
+  background: #b01030;
+}
+/* line 195, ../sass/editor/_paragraphs.scss */
+.node__nav > .nav__paragraphs > .paragraph__region.ui-sortable-helper > .paragraph__preview {
+  box-shadow: -2px 2px 10px 1px rgba(0, 0, 0, 0.3);
+}
+/* line 199, ../sass/editor/_paragraphs.scss */
+.node__nav > .nav__paragraphs > .paragraph__region.ui-sortable-helper.p-open {
+  box-shadow: -2px 2px 10px 1px rgba(0, 0, 0, 0.3);
+}
+/* line 201, ../sass/editor/_paragraphs.scss */
+.node__nav > .nav__paragraphs > .paragraph__region.ui-sortable-helper.p-open > .paragraph__preview {
+  box-shadow: none;
+}
+/* line 209, ../sass/editor/_paragraphs.scss */
+.node__nav .nav__add {
+  position: fixed;
+  bottom: 0;
+  left: 125px;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+/* line 224, ../sass/editor/_paragraphs.scss */
+.group__navigable .nav__add {
+  width: 40px;
+  height: 40px;
+  color: white;
+  margin: 0 auto 0.375rem;
+  font-size: 16px;
+  overflow: visible;
+}
+/* line 232, ../sass/editor/_paragraphs.scss */
+.group__navigable .nav__add .icon-add {
+  width: 40px;
+  height: 40px;
+}
+/* line 237, ../sass/editor/_paragraphs.scss */
+.group__navigable .nav__add .add__bg {
+  position: absolute;
+  top: -0.375rem;
+  left: -0.375rem;
+  right: -0.375rem;
+  bottom: -0.375rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 30px 30px 0 0;
+  border: 1px solid #a0a0a0;
+  box-shadow: -1px 1px 10px 0 rgba(0, 0, 0, 0.2);
+  margin: 0;
+}
+/* line 246, ../sass/editor/_paragraphs.scss */
+.group__navigable .nav__add:after {
+  border-radius: 50%;
+  background: #0eb1ff;
+}

@@ -1,0 +1,21 @@
+
+#footer {
+  background: color(footer);
+  
+  > .layout-container {
+    padding-top: padding(l);
+    padding-bottom: padding(m);
+  }
+
+  #block-copyrightblock {
+    text-align: center;
+    font-size: .8em;
+
+    * {
+      color: lighten(color(footer), 20%);
+    }
+  }
+  * + #block-copyrightblock {
+    margin-top: padding(m);
+  }
+}

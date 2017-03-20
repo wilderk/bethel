@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: profile
+label: Profile
+effects:
+  3101866f-c2ad-44ee-b8a0-84dda885271c:
+    uuid: 3101866f-c2ad-44ee-b8a0-84dda885271c
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 200
+      upscale: false

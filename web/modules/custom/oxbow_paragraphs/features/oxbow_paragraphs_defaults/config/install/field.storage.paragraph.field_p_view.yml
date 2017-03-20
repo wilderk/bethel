@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_p_view
+field_name: field_p_view
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: frontpage-page_1
+      label: 'Promoted to Front Page'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

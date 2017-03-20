@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_settings
+    - paragraphs.paragraphs_type.image
+  module:
+    - field_collection
+id: paragraph.image.field_p_settings
+field_name: field_p_settings
+entity_type: paragraph
+bundle: image
+label: Settings
+description: ''
+required: false
+translatable: true
+default_value:
+  - {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_collection

@@ -1,0 +1,504 @@
+$ox-orange: #DD6011;
+$ox-gray: #404040;
+
+$white       : #FFFFFF;
+$gainsboro   : #DDDDDD;
+$base        : #AAAAAA;
+$charcoal    : #555555;
+$oil         : #333333;
+$black       : #000000;
+
+$active-blue: #0eb1ff;
+$pane-color: white;
+$pane-alt-color: $oil;
+$pane-bg: #4A6072;
+$pane-p: 12px;
+$paragraph-p: 30px;
+$add-bg: lightgray;
+$add-btn-w: 30px;
+
+
+/////////////
+/// fonts ///
+
+@font-face {
+  font-family: 'oxbow-paragraphs';
+  src: url('../fonts/oxbow_paragraphs/font/oxbow_paragraphs.eot?');
+  src: url('../fonts/oxbow_paragraphs/font/oxbow_paragraphs.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/oxbow_paragraphs/font/oxbow_paragraphs.woff') format('woff'),
+       url('../fonts/oxbow_paragraphs/font/oxbow_paragraphs.ttf') format('truetype'),
+       url('../fonts/oxbow_paragraphs/font/oxbow_paragraphs.svg#oxbow-paragraphs') format('svg');
+  font-weight: normal; 
+  font-style: normal;
+}
+
+
+body.page-node-type-content-page {
+  padding-bottom: 100px;
+  
+  @media screen and (orientation:portrait) {
+    padding-bottom: 30vh;
+  }
+}
+
+table td a.tabledrag-handle {
+  .handle {
+    background-position: 40% 10px !important;
+    height: 28px !important;
+  }
+}
+
+
+
+//////////////////////////
+/// paragraphs theming ///
+
+.field--name-field-p-regions {
+  
+  tr.p-active {
+    z-index: 2;
+  }
+  
+  > * {
+    opacity: 0;
+    transition: opacity .5s;
+  }
+  
+  &:before {
+    content: 'Loading Content';
+    font-size: 14px;
+    opacity: 1;
+    display: block;
+    text-align: center;
+    padding-top: 20px;
+  }
+  
+  &.p-loaded {
+    > * {
+      opacity: 1;
+    }
+    &:before {
+      display: none;
+    }
+  }
+  
+  /// deleted paragraphs
+  .p-deleted {
+    > td {
+      line-height: 1;
+    }
+    > .field-multiple-drag {
+      display: none !important;
+    }
+    .paragraph-type-top {
+      @include flex($v-align: center);
+      flex-direction: row;
+
+      .p-restore {
+        display: block !important;
+        background: $gainsboro;
+        padding: ($paragraph-p / 4) ($paragraph-p / 2);
+        
+        &.icon-loading {
+          color: $gainsboro;
+          &:after {
+            color: $oil;
+          }
+        }
+      }
+
+      .paragraphs-dropbutton-wrapper {
+        display: none !important;
+      }
+    }
+  }
+  
+  /// old add paragraph button
+  .p-add {
+    font-size: 0;
+    > * {
+      display: none !important;
+    }
+    > .p__add {
+      display: block !important;
+    }
+  }
+  /// new add paragraph button
+  .p__add {
+    position: relative;
+    width: 100%;
+    float: left;
+    margin: 0 auto;
+
+    > .btn {
+      position: relative;
+      width: $add-btn-w;
+      height: $add-btn-w;
+      margin: 0 auto;
+      background: $active-blue;
+      color: white;
+      border-radius: 50%;
+      font-size: 13px;
+
+      &:after {
+        font-family: 'oxbow-paragraphs';
+        @include fill;
+        @include flex(center, center);
+        content: '\E800';
+        transition: all .5s;
+      }
+
+      &.open::after {
+        transform: rotate(45deg);
+      }
+
+      &.icon-loading::after {
+        content: '\0041';
+      }
+    }
+
+    .add__menu {
+      display: none;
+      flex-wrap: wrap;
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      z-index: 3;
+      width: 300px;
+      transform: translateX(-50%);
+
+      background: $add-bg;
+      //border: 2px solid darken($add-bg, 15%);
+      box-shadow: 0 0 8px -1px rgba(black, .3);
+
+      margin-top: $pane-p;
+      margin-bottom: $pane-p;
+
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: - $pane-p;
+        left: 50%;
+        z-index: -1;
+        width: $add-btn-w;
+        height: $add-btn-w;
+        transform: rotate(45deg);
+        margin-left: - ($add-btn-w / 2);
+        background: $add-bg;
+      }
+
+      .btn {
+        flex: (100%/3) 1 0;
+        max-width: (100%/3);
+        padding: $pane-p;
+        text-align: center;
+
+        border: 1px solid darken($add-bg, 5%);
+        font-size: 13px;
+
+        &:hover {
+          background: rgba(white, .5);
+        }
+      }
+    }
+
+    &.open-bottom .add__menu {
+      bottom: auto;
+      top: 100%;
+
+      &:before {
+        top: - $pane-p;
+        bottom: auto;
+      }
+    }
+
+    .btn.toggle.open + .add__menu {
+      @include flex;
+    }
+  }
+  
+  /// add region button
+  .paragraphs-dropbutton-wrapper {
+    text-align: center;
+    margin: 40px 0;
+  }
+  
+  table[id*='field-p-regions'] > tbody > tr {
+    border-color: rgba(#4C7196, .5) !important;
+    border-width: 2px !important;
+  }
+}
+
+.field--widget-entity-reference-paragraphs {
+  
+  .tabledrag-toggle-weight-wrapper {
+    display: none;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  /// top level paragraph entity tables
+  table[id*='field-p-regions-values'],
+  table[id*='field-p-paragraphs-values'] {
+    display: inline-block;
+    width: 100%;
+    
+    > thead {
+      display: none;
+    }
+    
+    > tbody {
+      display: inline-block;
+      width: 100%;
+      white-space: normal;
+      
+      > tr {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        padding: $paragraph-p;
+        border: 2px solid rgba(black, .1);
+        margin-top: $paragraph-p * 1.5;
+        border-radius: 3px;
+        //background: #efefef;
+
+        &:first-child {
+          margin-top: $paragraph-p;
+        }
+        
+        > td {
+          display: inline-block;
+          width: 100%;
+          position: relative;
+          padding: 0;
+          
+          .paragraph-type-top {
+            height: 0;
+            margin: 0;
+            padding: 0;
+            
+            > * {
+              display: none;
+            }
+            
+            .paragraph-type-title {
+              display: block;
+              overflow: visible;
+              font-weight: bold;
+            }
+          }
+          
+          .paragraphs-subform > .form-wrapper {
+            margin-top: $pane-p;
+          }
+        }
+        
+        /// swap icons
+        .p-swap {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          text-align: center;
+          margin-top: $paragraph-p / 6;
+           
+          a {
+            display: inline-block;
+            position: relative;
+            top: 6px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            
+            &:after {
+              content: 'S';
+              font-family: oxbow-paragraphs;
+              @include fill(2px);
+              font-size: 18px;
+              color: white;
+              line-height: 1;
+              transition: all .3s;
+              padding: 2px;
+              background: rgba(black, .5);
+              border-radius: 50%;
+              transform: rotate(90deg);
+            }
+            &:hover:after {
+              transform: rotate(270deg); //rotate(180deg);
+            }
+          }
+        }
+        
+        &:last-child {
+          > .p-swap {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  //////////////
+  /// fields ///
+
+  /// adjust image paragraph display
+  .field--name-field-p-image,
+  .field--name-field-p-caption {
+    width: 50%;
+    float: left;
+  }
+  .field--name-field-p-image {
+    padding-right: $paragraph-p;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    input[value='Remove'] {
+      display: block;
+      margin: ($paragraph-p / 2) 0 0 0;
+    }
+  }
+  
+  
+  /////////////
+  /// icons ///
+  
+  $icon-size: 40px;
+  $icon-active-w: 8px;
+  $icon-active-color: transparent; //$active-blue;
+  $icon-active-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
+  $icon-radius: 2px;
+  $icon-inner-size: $icon-size - $icon-active-w*2;
+  $icon-grow-w: 8px;
+  $icon-border-color: rgba(black, .5);
+  $icon-border: 2px solid $icon-border-color;
+  
+  .p-icon {
+    float: left;
+    height: $icon-size;
+    width: $icon-size;
+    font-size: 0;
+    position: relative;
+    
+    input {
+      display: none;
+    }
+    
+    input:checked + label {
+      @include fill($icon-active-w - $icon-grow-w);
+      transition: all .3s ease-out;
+      
+      &:before {
+        border: ($icon-active-w - 1) solid $icon-active-color;
+      }
+    }
+    
+    label {
+      display: inline-block;
+      @include flex(center, center);
+      @include fill($icon-active-w);
+      @extend %no-select;
+      border-radius: $icon-radius;
+      transition: all .3s ease-in;
+      
+      &:before {
+        content: '';
+        @include fill(-$icon-active-w);
+        background: transparent;
+        border: none;
+        border-radius: $icon-radius;
+      }
+      
+      &:hover {
+        transition: all .2s ease-out;
+        @include fill($icon-active-w - $icon-grow-w/3);
+      }
+    }
+  }
+}
+
+.ajax-loading {
+  position: relative;
+  color: rgba(white, 0) !important;
+
+  &:after {
+    content: 'A';
+    font-family: oxbow-paragraphs;
+    @include flex($v-align:center, $h-align:center);
+    @include fill;
+    top: 3px;
+    color: black !important;
+    font-size: 11px;
+
+    animation-name: spin;
+    animation-duration: 1500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      } to {
+          transform: rotate(360deg);
+        }
+    }
+  }
+}
+
+
+
+///////////////
+/// regions ///
+
+.field--name-field-p-regions {
+  table[id*='field-p-regions-values'] {
+    > tbody > tr > td.field-multiple-drag {
+      display: none !important;
+    }
+  }
+}
+
+
+
+//////////////////
+/// paragraphs ///
+
+.field--name-field-p-paragraphs {
+  position: relative;
+  z-index: 1;
+
+  table[id*='field-p-paragraphs-values'] {
+    > tbody > tr > td.field-multiple-drag {
+      display: none !important;
+    }
+  }
+}
+
+.paragraphs-subform {
+  position: relative;
+  z-index: 1;
+  
+  &.active {
+    z-index: 2;
+  }
+}
+
+
+
+///////////////
+/// page layout
+
+form[data-drupal-form-fields*='edit-field-p-regions'] {
+
+  .layout-region-node-main {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+  
+  .layout-region-node-secondary {
+    //display: none;
+  }
+}

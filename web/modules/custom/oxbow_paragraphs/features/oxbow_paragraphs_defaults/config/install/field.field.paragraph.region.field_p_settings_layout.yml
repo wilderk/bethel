@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_settings_layout
+    - paragraphs.paragraphs_type.region
+id: paragraph.region.field_p_settings_layout
+field_name: field_p_settings_layout
+entity_type: paragraph
+bundle: region
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

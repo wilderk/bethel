@@ -1,0 +1,66 @@
+$grid-w: 100%;
+$grid-cols: 12;
+$grid-p: 0; //$site-p;
+$col-w-min: 240px; //rem-calc(210); //$site-w / $grid-cols;
+
+
+/// Percent Based Column Mixin
+@mixin column($width:100%, $columns:null) {
+  @if $columns == null {
+    max-width: $width;
+    flex: 0 0 $width;
+  }
+  else {
+    max-width: (100% / $columns);
+    flex: 0 0 (100% / $columns);
+  }
+}
+
+
+/// Grid Mixin
+@mixin grid($cols:1, $dir:left) {
+  
+  @include grid-column($grid-cols/$cols, $float:$dir, $collapse:false);
+  
+  &:nth-child(#{$cols}n+1) {
+    clear: $dir;
+  }
+}
+
+
+/// Class Based Layout Mixin
+@mixin layout($target, $parent, $dir:left) {
+  
+  #{$parent} {
+    @include flex-grid-row(collapse, $grid-w, $grid-cols, true, 0);
+  }
+  
+  /// loop through all possible items in layout
+  @for $i from 1 through $grid-cols {
+    /// loop through all possible widths for item
+    @for $w from 1 through $grid-cols {
+      /// pattern: layout-item-[item_number]-[item_width] [target]:nth-child([item_number]n)
+      &.layout-item-#{$i}-#{$w} {
+        #{$target}:nth-child(#{$i}n) {
+          @include flex-grid-column($w, $gutter:0);
+        }
+        /// add breakpoints for grid layout
+        &.layout-grid #{$target}:nth-child(#{$i}n) { 
+          /// number of items in row
+          $col_num: $grid-cols / $w;
+          /// screen width at column's minimum size
+          $col_break: $col_num * $col-w-min;
+          /// new colum width
+          $col_w_new: $w * 2;
+          /// if larger than half of the grid, go full width
+          @if $col_w_new > $grid-cols/2 {
+            $col_w_new: $grid-cols;
+          }
+          @media screen and (max-width: $col_break) {
+            @include flex-grid-column($col_w_new, $gutter:0);
+          }
+        }
+      }
+    }
+  }
+}

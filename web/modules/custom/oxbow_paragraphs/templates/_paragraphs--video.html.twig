@@ -1,0 +1,46 @@
+<div class="field field--name-field-p-video">
+  {# uploaded video
+    {% if content.field_p_video[0]['#markup'] | trim is not empty %}
+      <video controls>
+        <source src="{{ content.field_p_video[0]['#markup'] }}" type="video/{{ content.field_p_video[0]['#markup'] | split('.') | last }}">
+      </video>
+    {% endif %}
+  #}
+  {% if content.field_p_youtube['#items'].uri | trim is not empty %}
+    {# YOUTUBE #}
+    {% if 'youtu' in content.field_p_youtube['#items'].uri %}
+      {% set video_id = null %}
+      {% if 'youtube.com/watch?v=' in content.field_p_youtube['#items'].uri %}
+        {% set video_id = content.field_p_youtube['#items'].uri | split('=') | last %}
+      {% elseif 'youtu.be/' in content.field_p_youtube['#items'].uri %}
+        {% set video_id = content.field_p_youtube['#items'].uri | split('/') | last %}
+      {% elseif 'youtube.com/embed' in content.field_p_youtube['#items'].uri %}
+        {% set video_id = content.field_p_youtube['#items'].uri | split('/') | last %}
+      {% endif %}
+      {% if '?' in video_id %}
+        {% set video_id = video_id | split('?') | first %}
+      {% endif %}
+      <iframe src="//www.youtube.com/embed/{{ video_id }}?rel=0&controls={{ content.field_p_video_controls['#items'].value }}&showinfo={{ content.field_p_video_title['#items'].value }}" frameborder="0" allowfullscreen></iframe>
+    {# VIMEO #}
+    {% elseif ('vimeo' in content.field_p_youtube['#items'].uri) or ('.ogg' in content.field_p_youtube['#items'].uri) %}
+      {% set video_id = null %}
+      {% if 'vimeo.com/' in content.field_p_youtube['#items'].uri %}
+        {% set video_id = content.field_p_youtube['#items'].uri | split('/') | last %}
+      {% endif %}
+      {% if '?' in video_id %}
+        {% set video_id = video_id | split('?') | first %}
+      {% endif %}
+      <iframe src="https://player.vimeo.com/video/{{ video_id }}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    {# OTHER #}
+    {% elseif ('.mp4' in content.field_p_youtube['#items'].uri) or ('.ogg' in content.field_p_youtube['#items'].uri) %}
+      <video controls>
+        {% if '.mp4' in content.field_p_youtube['#items'].uri %}
+          <source src="{{ content.field_p_youtube['#items'].uri }}" type="video/mp4">
+        {% elseif '.ogg' in content.field_p_youtube['#items'].uri %}
+          <source src="{{ content.field_p_youtube['#items'].uri }}" type="video/ogg">
+        {% endif %}
+        Your browser does not support the video tag.
+      </video>
+    {% endif %}
+  {% endif %}
+</div>

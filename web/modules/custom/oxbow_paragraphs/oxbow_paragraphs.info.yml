@@ -1,0 +1,12 @@
+name: 'Oxbow Paragraphs'
+type: module
+description: 'Custom paragraphs functionality.'
+core: 8.x
+package: 'Oxbow Paragraphs'
+
+dependencies:
+  - drupal:paragraphs
+  - drupal:field_collection
+  - drupal:entity_reference
+  - drupal:path
+  - drupal:twig_tweak

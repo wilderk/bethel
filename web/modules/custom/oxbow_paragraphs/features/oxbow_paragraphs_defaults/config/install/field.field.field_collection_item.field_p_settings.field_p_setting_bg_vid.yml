@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.field_collection_item.field_p_setting_bg_vid
+    - field_collection.field_collection.field_p_settings
+  module:
+    - file
+id: field_collection_item.field_p_settings.field_p_setting_bg_vid
+field_name: field_p_setting_bg_vid
+entity_type: field_collection_item
+bundle: field_p_settings
+label: 'Background Video'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: paragraphs/videos
+  file_extensions: 'mp4 ogg webm'
+  max_filesize: '10 MB'
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

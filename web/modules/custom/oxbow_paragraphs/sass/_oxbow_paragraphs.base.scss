@@ -1,0 +1,291 @@
+$paragraph-w: rem-calc(1024);
+$paragraph-p: rem-calc(24);
+$paragraph-m: rem-calc(48);
+
+$paragraph-padding: (
+                     auto: $paragraph-p,
+                     none: 0,
+                     xs: rem-calc(6),
+                     s: rem-calc(12),
+                     m: $paragraph-p,
+                     l: rem-calc(36),
+                     xl: rem-calc(48),
+                     xxl: rem-calc(72),
+                     xxxl: rem-calc(144),
+                    );
+  
+$paragraph-margin: (
+                    auto: 0,
+                    none: 0,
+                    xs: rem-calc(12),
+                    s: rem-calc(24),
+                    m: $paragraph-m,
+                    l: rem-calc(96),
+                    xl: rem-calc(192),
+                    xxl: rem-calc(384),
+                   );
+
+$paragraph-spacing: (
+                     auto: $paragraph-p, 
+                     none: 0,
+                     xs: rem-calc(6),
+                     s: rem-calc(12),
+                     m: $paragraph-p,
+                     l: rem-calc(36),
+                     xl: rem-calc(48),
+                     xxl: rem-calc(72),
+                     xxxl: rem-calc(144),
+                    );
+
+$paragraph-font-size: (
+                     s: 3vw,
+                     m: 5vw,
+                     l: 6vw,
+                     xl: 8vw,
+                    );
+
+$paragraph-font-size-static: (
+                     s: 30px,
+                     m: 50px,
+                     l: 60px,
+                     xl: 80px,
+                    );
+
+$scroll-w: $paragraph-p * 1.5;
+
+
+
+
+/// all paragraphs
+.paragraph {
+  position: relative;
+  //overflow: hidden;
+  box-sizing: border-box;
+  
+  @include flex($h-align:center, $v-align:center);
+  //align-items: flex-start;
+  //height: 100%;
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  /// paragraph backgrounds
+  > .p__bg {
+    @include fill;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /// overlay
+    &::before {
+      @include fill;
+      z-index: 1;
+    }
+  }
+  
+  > .p__inner {
+    max-width: $paragraph-w;
+    margin: 0 auto;
+    padding-left: $paragraph-p;
+    padding-right: $paragraph-p;
+    
+    width: 100%;
+    padding-top: $paragraph-p;
+    padding-bottom: $paragraph-p;
+    position: relative;
+    z-index: 2;
+    
+    > .p__title {      
+      h2 {
+        margin: 0;
+        line-height: 1;
+      }
+    }
+  }
+  
+  .field--name-field-p-paragraphs {
+    @include group;
+    
+    > .field__item {
+      width: 100%;
+    }
+  }
+  
+  .field--type-text-long {
+    p:first-child {
+      margin-top: 0;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  figure {
+    margin: 0;
+    
+    figcaption {
+      margin-top: map-get($paragraph-padding, s);
+    }
+  }
+  
+  
+  /// constraints
+  &.constrain-none {
+    > .p__inner {
+      max-width: none;
+    }
+  }
+  
+  /// title
+  &.title-false {
+    > .p__inner > .p__title {
+      display: none;
+    }
+  }
+  &.title-align-left {
+    > .p__inner > .p__title {
+      text-align: left;
+    }
+  }
+  &.title-align-center {
+    > .p__inner > .p__title {
+      text-align: center;
+    }
+  }
+  &.title-align-right {
+    > .p__inner > .p__title {
+      text-align: right;
+    }
+  }
+  
+  /// scroll button
+  .p__scroll {
+    @include flex($h-align:center, $v-align:center);
+    position: absolute;
+    top: (-$scroll-w) / 2;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    margin: 0 auto;
+    width: $scroll-w;
+    height: $scroll-w;
+    border-radius: 50%;
+    cursor: pointer;
+    
+    &:after {
+      content: '▼';
+      font-size: $scroll-w * .5;
+    }
+  }
+  
+  /// column layouts  
+  &.layout-equalize.layout-columns #{$paragraph-item} > .paragraph {
+    height: 100%;
+    align-items: flex-start;
+  }
+  
+  /// padding
+  @each $name, $size in $paragraph-padding {
+    &.padding-top-#{$name} > .p__inner { padding-top: $size; }
+    &.padding-bottom-#{$name} > .p__inner  { padding-bottom: $size; }
+    &.padding-left-#{$name}  > .p__inner { padding-left: $size; }
+    &.padding-right-#{$name}  > .p__inner { padding-right: $size; }
+  }
+  &:not(.paragraph--type--region).background-type-none {
+    &.padding-top-auto > .p__inner { padding-top: 0; }
+    &.padding-bottom-auto > .p__inner  { padding-bottom: 0; }
+    &.padding-left-auto  > .p__inner { padding-left: 0; }
+    &.padding-right-auto  > .p__inner { padding-right: 0; }
+  }
+  
+  /// margin
+  @each $name, $size in $paragraph-margin {
+    &.margin-top-#{$name} { margin-top: $size; }
+    &.margin-bottom-#{$name} { margin-bottom: $size; }
+    &.margin-left-#{$name} { margin-left: $size; }
+    &.margin-right-#{$name} { margin-right: $size; }
+  }
+  
+  /// spacing
+  @each $name, $size in $paragraph-spacing {
+    &.layout-padding-#{$name} {
+      > .p__inner > .p__title {
+        padding-bottom: $size;
+      }
+      > .p__inner > .p__content {
+        margin-bottom: -$size;
+        margin-left: -$size/2;
+        margin-right: -$size/2;
+      }
+      #{$paragraph-item},
+      #{$view-item},
+      #{$board-item},
+      #{$staff-item} {
+        padding-left: $size/2;
+        padding-right: $size/2;
+        padding-bottom: $size;
+      }
+    }
+  }
+  
+  /// font size
+  @each $name, $size in $paragraph-font-size {
+    &.text-size-#{$name} {
+      
+      h2, a[class*='buttton'] {
+        font-size: $size;
+      }
+      h3 {
+        font-size: $size * (2/3);
+      }
+      h4 {
+        font-size: $size * .5;
+      }
+      h5 {
+        font-size: $size * .4;
+      }
+      p, a {
+        font-size: $size * .5;
+      }
+      
+      @media screen and (min-width: $paragraph-w) {
+        
+        h2, a[class*='buttton'] {
+          font-size: map-get($paragraph-font-size-static, $name);
+        }
+        h3 {
+          font-size: map-get($paragraph-font-size-static, $name) * (2/3);
+        }
+        h4 {
+          font-size:  map-get($paragraph-font-size-static, $name) * .5;
+        }
+        h5 {
+          font-size:  map-get($paragraph-font-size-static, $name) * .4;
+        }
+        p, a {
+          font-size:  map-get($paragraph-font-size-static, $name) * .5;
+        }
+      }
+      
+      @media screen and (max-width: $paragraph-w/2) {
+        
+        h2, a[class*='buttton'] {
+          font-size: $size * 1.5;
+        }
+        h3 {
+          font-size: $size;
+        }
+        h4 {
+          font-size: $size * .75;
+        }
+        h5 {
+          font-size: $size * .6;
+        }
+        p, a {
+          font-size: $size * .75;
+        }
+      }
+    }
+  }
+}

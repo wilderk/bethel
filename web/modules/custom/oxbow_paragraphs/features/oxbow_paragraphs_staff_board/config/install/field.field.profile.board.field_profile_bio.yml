@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_profile_bio
+    - profile.type.board
+  module:
+    - text
+id: profile.board.field_profile_bio
+field_name: field_profile_bio
+entity_type: profile
+bundle: board
+label: Bio
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

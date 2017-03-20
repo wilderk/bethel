@@ -1,0 +1,41 @@
+
+[class*='icon-'] {
+  position: relative;
+  &:after {
+    font-family: 'oxbow';
+    @include fill;
+    @include flex(center, center);
+    box-sizing: border-box;
+  }
+}
+
+.icon-advanced::after {
+  content: '\E801';
+}
+
+.icon-save::after {
+  content: '\E802';
+}
+
+.icon-delete::after {
+  content: '\0054';
+}
+
+.icon-add::after {
+  content: '\E800';
+}
+
+.icon-drag::after {
+  content: '\E805';
+}
+
+.icon-loading::after {
+  content: '\0041';
+  animation:spin 2s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform:rotate(360deg);
+  }
+}

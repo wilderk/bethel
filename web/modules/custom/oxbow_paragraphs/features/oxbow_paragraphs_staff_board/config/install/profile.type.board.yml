@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+id: board
+label: Board
+registration: false
+multiple: true
+roles:
+  boad: boad
+  authenticated: '0'
+  administrator: '0'
+  staff: '0'
+weight: 0

@@ -1,0 +1,132 @@
+
+$arrow-size: 90px;
+$arrow-opacity: .5;
+$dot-size: 10px;
+
+
+@mixin slick-slideshow {
+
+  &.arrows-hover {
+    .slick-prev, .slick-next {
+      opacity: 0;
+    }
+    
+    > .content > .inner {
+      &:hover {
+        .slick-prev, .slick-next {
+          opacity: $arrow-opacity;
+        }
+      }
+    }
+  }
+  
+  &.dots-show {
+    .slick-prev, .slick-next {
+      bottom: $dot-size * 2;
+    }
+  }
+  
+  .slick-dots {
+    margin: 0;
+    margin-top: $dot-size;
+    font-size: 0;
+    text-align: center;
+    
+    li {
+      list-style: none;
+      display: inline-block;
+      margin: 0 $dot-size;
+      
+      button {
+        display: inline-block;
+        width: $dot-size;
+        height: $dot-size;
+        padding: 0;
+        margin: 0;
+        
+        border: none;
+        border-radius: 50%;
+        background: rgba(0,0,0,.3);
+        
+        &:after {
+          display: none;
+        }
+      }
+      
+      &.slick-active button {
+        background: rgba(0,0,0,.1);
+      }    
+    }
+  }
+  
+  .slick-prev, .slick-next {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: padding(m) * 2;
+    
+    margin: 0;
+    padding: 0;
+    
+    overflow: hidden;
+    background: rgba(0,0,0,.6); //transparent;
+    color: color(slick-arrow);
+    
+    font-size: 0;
+    text-indent: 1000%;
+    
+    border: none;
+    border-radius: 0;
+    
+    outline: none;
+    opacity: $arrow-opacity;
+    
+    transition: opacity .5s;
+    
+    &:hover {
+      //@include box-shadow(none);
+      border: none;
+      opacity: .9 !important;
+    }
+    
+    &:after {
+      display: inline-block;
+      margin: 0;
+      border-radius: 50%;
+      text-align: center;
+      text-indent: 0;
+      font-size: $arrow-size;
+    }
+  }
+  
+  .slick-prev {
+    left: 0; //-$page-padding*2;
+    text-align: left;
+    
+    &:after {
+      //margin-left: 10px;
+      font-family: oxbow;
+      content: '\27E8';
+      padding-left: rem-calc(5);
+    }
+  }
+  
+  .slick-next {
+    right: 0; //-$page-padding*2;
+    text-align: right;
+    
+    &:after {
+      //margin-right: 10px;
+      font-family: oxbow;
+      content: '\27E9';
+      padding-right: rem-calc(5);
+    }
+  }
+  
+  @media screen and (max-width: 470px) {
+    .slick-prev, .slick-next {
+      display: none !important;
+    }
+  }
+}

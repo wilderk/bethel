@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.region.field_p_paragraphs
+    - field.field.paragraph.region.field_p_settings
+    - field.field.paragraph.region.field_p_settings_layout
+    - field.field.paragraph.region.field_p_tag
+    - field.field.paragraph.region.field_p_title
+    - paragraphs.paragraphs_type.region
+  module:
+    - field_collection
+    - paragraphs
+id: paragraph.region.default
+targetEntityType: paragraph
+bundle: region
+mode: default
+content:
+  field_p_paragraphs:
+    type: entity_reference_paragraphs
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+    third_party_settings: {  }
+  field_p_settings:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_embed
+  field_p_tag:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_p_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  field_p_settings_layout: true
+  status: true
+  uid: true

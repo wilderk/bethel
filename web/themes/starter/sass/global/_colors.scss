@@ -1,0 +1,78 @@
+$ox-orange: #DD6011;
+$ox-gray: #404040;
+
+$white       : #FFFFFF;
+$gainsboro   : #DDDDDD;
+$base        : #AAAAAA;
+$charcoal    : #555555;
+$oil         : #333333;
+$black       : #000000;
+
+$foundation-palette: (
+  primary: $ox-orange,
+  secondary: hotpink,
+  success: #3fbc4b,
+  warning: #ffae00,
+  alert: #ec5840,
+);
+
+$oxbow-colors: (
+  primary: $ox-orange,
+  secondary: $ox-gray,
+  success: #4ACE57,
+  warning: #EFF453,
+  alert: #dc143c,
+  status: cornflowerblue,
+);
+
+$site-colors: (
+  header: $gainsboro,
+  body: white,
+  footer: $oil,
+
+  menu: transparent,
+  menu-text: map-get($foundation-palette, primary),
+
+  menu-child: darken($gainsboro, 10%),
+  menu-child-hover: darken($gainsboro, 15%),
+  menu-child-active: darken($gainsboro, 20%),
+  menu-child-text: $ox-orange,
+  menu-child-text-active: white,
+
+  menu-mobile: $ox-orange,
+  menu-mobile-text: white,
+
+  menu-footer-text: gray,
+  menu-social-text: gray,
+
+  title: $oil,
+  subtitle: $charcoal,
+  text: $charcoal,
+  link: map-get($foundation-palette, primary),
+  table: $base,
+
+  button: map-get($foundation-palette, primary),
+  button-text: white,
+  button-secondary: $charcoal,
+  button-secondary-text: white,
+  button-tertiary: $base,
+  button-tertiary-text: $charcoal,
+
+  input: transparent,
+  input-label: $charcoal,
+  input-active: map-get($foundation-palette, primary),
+
+  slick-arrow: white,
+);
+
+@function color($color, $set:null) {
+  @if($set == null or $set == 'site') {
+    @return map-get($site-colors, $color);
+  }
+  @else if($set == 'oxbow'){
+    @return map-get($oxbow-colors, $color);
+  }
+  @else if($set == 'foundation') {
+    @return map-get($foundation-palette, $color);
+  }
+}

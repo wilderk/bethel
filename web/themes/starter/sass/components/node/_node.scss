@@ -1,0 +1,40 @@
+
+/// Node Page Title
+body.path-node {
+  #block-starter-page-title {
+    //text-align: left;
+  }
+}
+
+/////////////////////
+/// Node Displays ///
+/////////////////////
+
+.node {
+
+  /// All Displays
+
+  /// Full Display
+  &.node--view-mode-full {
+
+  }
+
+  /// Teaser Display
+  &.node--view-mode-teaser {
+
+    [class*='field--type-text'] {
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .links {
+      margin: padding(s) 0 0;
+      list-style: none;
+
+      .node-readmore a {
+        @include btn;
+      }
+    }
+  }
+}

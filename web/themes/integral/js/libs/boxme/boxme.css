@@ -1,0 +1,197 @@
+/* Fontello Fonts (fontello.com) */
+@font-face {
+  font-family: 'boxme';
+  src: url('fontello-boxme/font/boxme.eot?');
+  src: url('fontello-boxme/font/boxme.eot?#iefix') format('embedded-opentype'),
+       url('fontello-boxme/font/boxme.woff') format('woff'),
+       url('fontello-boxme/font/boxme.ttf') format('truetype'),
+       url('fontello-boxme/font/boxme.svg#boxme') format('svg');
+  font-weight: bold;
+  font-weight: normal; 
+  font-style: normal;
+}
+
+/* lightbox-able items */
+.boxme {
+  cursor: pointer;
+}
+
+
+/* lightbox */
+#boxme {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10001;
+  
+  background: rgba(0,0,0,.9);
+  
+  display: none;
+}
+
+#boxme .boxme-loading {
+  width: 50px;
+  height: 50px;
+  
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  
+  margin: 0 auto;
+  margin-top: -25px;
+  
+  line-height: 50px;
+  text-align: center;
+  
+  font-family: boxme;
+  font-size: 43px;
+  
+  color: rgba(255,255,255,.7);
+  
+  -webkit-animation: spin 4000ms infinite linear;
+  -moz-animation: spin 4000ms infinite linear;
+  -ms-animation: spin 4000ms infinite linear;
+  animation: spin 4000ms infinite linear;
+}
+
+#boxme .boxme-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('glass.jpg');
+  background-size: cover;
+  opacity: .2;
+}
+
+#boxme .boxme-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  
+  cursor: pointer;
+}
+
+#boxme .boxme-canvas > * {
+  cursor: default;
+  display: none;
+  
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#boxme .boxme-left {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  
+  width: 40px;
+  height: 60px;
+  
+  margin-top: -30px;
+  
+  text-align: left;
+  line-height: 60px;
+  
+  font-family: boxme;
+  font-size: 35px;
+  
+  color: rgba(255,255,255,.7);
+  
+  cursor: pointer;
+}
+
+#boxme .boxme-right {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  
+  width: 40px;
+  height: 60px;
+  
+  margin-top: -30px;
+  
+  text-align: right;
+  line-height: 60px;
+  
+  font-family: boxme;
+  font-size: 35px;
+  
+  color: rgba(255,255,255,.7);
+  
+  cursor: pointer;
+}
+
+#boxme .boxme-close {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  
+  width: 40px;
+  height: 40px;
+  
+  margin-left: -20px;
+  
+  text-align: center;
+  
+  font-family: boxme;
+  font-size: 35px;
+  
+  color: rgba(255,255,255,.7);
+  
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  #boxme .boxme-left {
+    left: 10px;
+  }
+  #boxme .boxme-right {
+    right: 10px;
+  }
+  #boxme .boxme-close {
+    top: 10px;
+  }
+}
+
+
+/* animations */
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}

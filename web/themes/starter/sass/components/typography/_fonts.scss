@@ -1,0 +1,29 @@
+
+/// Icon Fonts
+@font-face {
+  font-family: 'oxbow';
+  src: url('../fonts/fontello-oxbow/font/oxbow.eot?');
+  src: url('../fonts/fontello-oxbow/font/oxbow.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/fontello-oxbow/font/oxbow.woff') format('woff'),
+       url('../fonts/fontello-oxbow/font/oxbow.ttf') format('truetype'),
+       url('../fonts/fontello-oxbow/font/oxbow.svg#oxbow') format('svg');
+  font-weight: bold;
+  font-weight: normal; 
+  font-style: normal;
+}  
+
+.fs-s {
+  font-size: rem-calc(12);
+}
+.fs-m {
+  font-size: $global-font-size;
+}
+.fs-l {
+  font-size: map-get($headers, h3);
+}
+.fs-xl {
+  font-size: map-get($headers, h2);
+}
+.fs-xxl {
+  font-size: map-get($headers, h1);
+}

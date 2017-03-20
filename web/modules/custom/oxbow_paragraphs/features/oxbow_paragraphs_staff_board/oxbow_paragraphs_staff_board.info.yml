@@ -1,0 +1,22 @@
+name: 'Staff & Board'
+description: 'Board and Staff paragraph bundles and their respective profile configurations.'
+type: module
+core: 8.x
+dependencies:
+  - entity_reference_revisions
+  - features
+  - field
+  - field_collection
+  - file
+  - image
+  - link
+  - node
+  - options
+  - oxbow_paragraphs_defaults
+  - paragraphs
+  - path
+  - profile
+  - text
+  - user
+version: 8.x-1.0
+package: 'Oxbow Paragraphs'

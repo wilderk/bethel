@@ -1,0 +1,40 @@
+[{
+
+  "menu": {
+    "weight": 5,
+    "label": "Menu",
+    "restrict": ["region"],
+    "fields": {
+
+      "link": {
+        "label": "Menu Link",
+        "type": "buttons",
+        "values": {
+          "none": {
+            "label": "None",
+            "value": "false"
+          },
+          "on": {
+            "label": "Add to Menu",
+            "value": "true"
+          }
+        },
+        "default": "none"
+      },
+
+      "title": {
+        "label": "Menu Link Title",
+        "type": "text",
+        "values": {
+          "title": {
+            "label": "Text",
+            "value": "",
+            "placeholder": "Add a link title..."
+          }
+        },
+        "default": ""
+      }
+    }
+  }
+  
+}]

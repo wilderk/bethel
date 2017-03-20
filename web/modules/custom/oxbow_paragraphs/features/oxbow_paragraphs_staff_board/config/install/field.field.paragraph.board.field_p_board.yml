@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_board
+    - paragraphs.paragraphs_type.board
+id: paragraph.board.field_p_board
+field_name: field_p_board
+entity_type: paragraph
+bundle: board
+label: 'Board Members'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: role
+      role:
+        boad: boad
+        administrator: '0'
+        staff: '0'
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

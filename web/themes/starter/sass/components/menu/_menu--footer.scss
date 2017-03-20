@@ -1,0 +1,17 @@
+$target: '#block-starter-footer';
+
+#{$target} {
+  .menu {
+    @include flex($h-align:center, $v-align:center);
+
+    li {
+      padding: 0 $site-p-s;
+      @include flex($h-align:center, $v-align:center);
+
+      a {
+        color: color(menu-footer-text);
+        padding: 0;
+      }
+    }
+  }
+}

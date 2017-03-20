@@ -1,0 +1,27 @@
+global-css:
+  css:
+    theme:
+      css/screen.css: {}
+
+global-js:
+  js:
+    foundation/bower_components/foundation-sites/dist/foundation.min.js: {}
+    js/libs/oxbow.rows.js: {}
+    js/libs/oxbow.size.js: {}
+    js/starter.menus.js: {}
+    js/starter.theme.js: {}
+    js/starter.script.js: {}
+  dependencies:
+    - core/jquery
+    
+bigtext:
+  js:
+    js/libs/jquery.bigtext.js: {}
+  dependencies:
+    - core/jquery
+    
+masonry:
+  js:
+    js/libs/jquery.masonry.min.js: {}
+  dependencies:
+    - core/jquery

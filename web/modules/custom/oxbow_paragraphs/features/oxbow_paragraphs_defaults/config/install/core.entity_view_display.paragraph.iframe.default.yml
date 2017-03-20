@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.iframe.field_p_iframe_height
+    - field.field.paragraph.iframe.field_p_iframe_url
+    - field.field.paragraph.iframe.field_p_settings
+    - field.field.paragraph.iframe.field_p_tag
+    - paragraphs.paragraphs_type.iframe
+  module:
+    - field_collection
+    - link
+id: paragraph.iframe.default
+targetEntityType: paragraph
+bundle: iframe
+mode: default
+content:
+  field_p_iframe_height:
+    weight: 2
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  field_p_iframe_url:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_p_settings:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_list
+  field_p_tag:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  uid: true

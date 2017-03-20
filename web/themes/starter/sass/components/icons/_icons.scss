@@ -1,0 +1,21 @@
+/// All fontello icons
+[class*='icon-']::after {
+  font-family: 'oxbow';
+}
+
+/// Map to fontello character
+.icon-facebook::after {
+  content: '\0066';
+}
+
+.icon-twitter::after {
+  content: '\0074';
+}
+
+.icon-instagram::after {
+  content: '\E80D';
+}
+
+.icon-youtube::after {
+  content: '\0079';
+}

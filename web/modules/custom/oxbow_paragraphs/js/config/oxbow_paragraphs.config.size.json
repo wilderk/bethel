@@ -1,0 +1,179 @@
+[{
+
+  "size": {
+    "weight": 3,
+    "label": "Size",
+    "restrict": ["region"],
+    "fields": {
+
+      "height": {
+        "label": "Height",
+        "type": "select",
+        "values": {
+          "auto": {
+            "label": "Auto",
+            "value": "auto"
+          },
+          "size_1": {
+            "label": "25%",
+            "value": "25"
+          },
+          "size_2": {
+            "label": "33%",
+            "value": "33"
+          },
+          "size_3": {
+            "label": "50%",
+            "value": "50"
+          },
+          "size_4": {
+            "label": "66%",
+            "value": "66"
+          },
+          "size_5": {
+            "label": "75%",
+            "value": "75"
+          },
+          "size_6": {
+            "label": "100%",
+            "value": "100"
+          }
+        },
+        "default": "auto"
+      },
+
+      "constrain": {
+        "label": "Width",
+        "type": "buttons",
+        "values": {
+          "constrain": {
+            "label": "Constrained",
+            "value": "true"
+          },
+          "full": {
+            "label": "Full Width",
+            "value": "false"
+          }
+        },
+        "default": "constrain"
+      },
+
+      "padding_t": {
+        "label": "Padding Top",
+        "type": "global",
+        "map": "padding"
+      },
+
+      "padding_b": {
+        "label": "Padding Bottom",
+        "type": "global",
+        "map": "padding"
+      },
+
+      "padding_l": {
+        "label": "Padding Left",
+        "type": "global",
+        "map": "padding"
+      },
+
+      "padding_r": {
+        "label": "Padding Right",
+        "type": "global",
+        "map": "padding"
+      }
+    }
+  },
+
+  "size_with_margin": {
+    "weight": 3,
+    "label": "Size",
+    "restrict": ["!region"],
+    "fields": {
+
+      "height": {
+        "label": "Height",
+        "type": "select",
+        "values": {
+          "auto": {
+            "label": "Auto",
+            "value": "auto"
+          },
+          "size_1": {
+            "label": "25%",
+            "value": "25"
+          },
+          "size_2": {
+            "label": "33%",
+            "value": "33"
+          },
+          "size_3": {
+            "label": "50%",
+            "value": "50"
+          },
+          "size_4": {
+            "label": "66%",
+            "value": "66"
+          },
+          "size_5": {
+            "label": "75%",
+            "value": "75"
+          },
+          "size_6": {
+            "label": "100%",
+            "value": "100"
+          }
+        },
+        "default": "auto"
+      },
+
+      "padding_t": {
+        "label": "Padding Top",
+        "type": "global",
+        "map": "padding"
+      },
+
+      "padding_b": {
+        "label": "Padding Bottom",
+        "type": "global",
+        "map": "padding"
+      },
+
+      "padding_l": {
+        "label": "Padding Left",
+        "type": "global",
+        "map": "padding"
+      },
+
+      "padding_r": {
+        "label": "Padding Right",
+        "type": "global",
+        "map": "padding"
+      },
+
+      "margin_t": {
+        "label": "Margin Top",
+        "type": "global",
+        "map": "padding"
+      },
+
+      "margin_b": {
+        "label": "Margin Bottom",
+        "type": "global",
+        "map": "padding"
+      },
+
+      "margin_l": {
+        "label": "Margin Left",
+        "type": "global",
+        "map": "padding"
+      },
+
+      "margin_r": {
+        "label": "Margin Right",
+        "type": "global",
+        "map": "padding"
+      }
+    }
+  }
+  
+}]

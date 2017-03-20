@@ -1,0 +1,13 @@
+
+table {
+  margin: padding(m) auto;
+  border-collapse: collapse;
+  
+  tr:nth-child(even) {
+    background: color(table);
+  }
+  
+  caption {
+    caption-side: bottom;
+  }
+}

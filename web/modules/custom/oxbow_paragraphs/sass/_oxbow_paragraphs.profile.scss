@@ -1,0 +1,20 @@
+
+.paragraph.paragraph--type--board,
+.paragraph.paragraph--type--staff {
+
+  &.layout-type-stack {
+    .field--name-field-p-board,
+    .field--name-field-p-staff {
+      .field__item {
+        width: 100%;
+      }
+    }
+  }
+
+  > .p__inner {
+
+    > .p__content {
+
+    }
+  }
+}

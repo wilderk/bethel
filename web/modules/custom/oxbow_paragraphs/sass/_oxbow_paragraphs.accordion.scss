@@ -1,0 +1,55 @@
+
+/// all paragraphs
+.paragraph.layout-type-accordion {
+  
+  .layout-item-accordion {
+
+    .p__accordion {
+      @include flex($v-align: center, $h-align: space-between);
+      @include group;
+      cursor: pointer;
+    }
+
+    .accordion__button {
+      float: right;
+      font-size: 2em;
+      line-height: 1;
+
+      .open {
+        display: none;
+      }
+      .closed {
+        display: block;
+      }
+    }
+    &.open .accordion__button {
+      .open {
+        display: block;
+      }
+      .closed {
+        display: none;
+      }
+    }
+
+    .accordion__title {
+      flex-grow: 2;
+      margin: 0;
+      line-height: 1;
+    }
+
+    > .paragraph > .p__inner > .p__content {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+
+      > *:first-child {
+        margin-top: map-get($paragraph-padding, s);
+      }
+    }
+
+    &.open > .paragraph > .p__inner > .p__content {
+      max-height: 10000px;
+      transition: max-height 1s ease-in-out;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+name: Oxbow Blocks
+description: Provides custom Oxbow Labs blocks.
+core: 8.x
+package: Custom
+dependencies:
+- block
+type: module

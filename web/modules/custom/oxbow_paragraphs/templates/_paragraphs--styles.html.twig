@@ -1,0 +1,89 @@
+{% set css_target = '.paragraph--id-' ~ paragraph.id.value %}
+
+<style>
+  
+{# TITLE #}
+{% if settings.title.color and settings.title.color != 'auto' %}
+  {{ css_target }} .p__title * { color: {{ settings.title.color }}; }
+{% endif %}
+
+{# TEXT #}
+{% if settings.text.color and settings.text.color != 'auto' %}
+  {{ css_target }} .p__content * { color: {{ settings.text.color }}; }
+  {{ css_target }} .p__content .pager a { color: {{ settings.text.color }}; border-color: {{ settings.text.color }}; }
+  {{ css_target }} .p__content .slick-slider .slick-prev::after, {{ css_target }} .p__content .slick-slider .slick-next::after { background: {{ settings.text.color }}; }
+{% endif %}
+
+{# TABS #}
+{% if settings.layout.tabs.color and settings.layout.tabs.color != 'auto' %}
+  {{ css_target }} .p__tabs * { color: {{ settings.layout.tabs.color }}; }
+{% endif %}
+
+{# BACKGROUNDS #}
+{% if settings.background.color and settings.background.color != 'auto' %}
+  {{ css_target }} > .p__bg { background-color: {{ settings.background.color }}; }
+{% endif %}
+
+{% if settings.background.overlay and settings.background.overlay.color != 'auto' %}
+  {{ css_target }} > .p__bg::before {
+    content: '';
+    background-color: {{ settings.background.overlay.color }};
+  }
+{% endif %}
+
+{% if settings.background.image %}
+  {{ css_target }} > .p__bg {
+    background-image: url('{{ settings.background.image.url }}');
+    {% if settings.background.image.size == 'repeat' %}
+    background-size: auto;
+    background-repeat: repeat;
+    {% else %}
+    background-size: {{ settings.background.image.size }};
+    {% endif %}
+    background-attachment: {{ settings.background.image.attach }};
+  }
+{% endif %}
+
+{# SIZING #}
+{% if settings.size and settings.size.height != 'auto' %}
+  {{ css_target }} { min-height: {{ settings.size.height }}vh; }
+  {% if settings.layout and settings.layout.type == 'slides' %}
+    {{ css_target }} { height: {{ settings.size.height }}vh !important; overflow: hidden; }
+    {{ css_target }} .slick-slide > .paragraph { height: {{ settings.size.height }}vh; overflow: hidden; }
+  {% endif %}
+{% endif %}
+
+{# VIEWS #}
+{% if settings.view and settings.view.background != 'auto' %}
+  {{ css_target }} .views-row > * { background: {{ settings.view.background }}; }
+  {{ css_target }} .p-view-bg { background: {{ settings.view.background }}; }
+{% endif %}
+{% if settings.view and settings.view.color != 'auto' %}
+  {{ css_target }} .views-row * { color: {{ settings.view.color }}; }
+  {{ css_target }} .p-view-color, {{ css_target }} .p-view-color * { color: {{ settings.view.color }}; }
+{% endif %}
+{% if settings.view and settings.view.accent != 'auto' %}
+  {{ css_target }} .views-row a, {{ css_target }} .views-row a * { color: {{ settings.view.accent }}; }
+  {{ css_target }} .p-view-accent, {{ css_target }} .p-view-accent * { color: {{ settings.view.accent }}; }
+{% endif %}
+{# VIEW FILTERS #}
+{% if settings.view and settings.view.background != 'auto' %}
+  {{ css_target }} .view-filters .views-row a, {{ css_target }} .view-filters .views-row a:hover { color: {{ settings.view.background }}; border-color: {{ settings.view.background }}; }
+  {% if settings.background and settings.background.color != 'auto' and settings.background.color != '' %}
+    {{ css_target }} .view-filters .views-row a.filter-active { background: {{ settings.view.background }}; color: {{ settings.background.color }}; }
+    {{ css_target }} .view-filters .views-row a.filter-active:hover { background: {{ settings.view.background }}; color: {{ settings.background.color }}; }
+  {% else %}
+    {{ css_target }} .view-filters .views-row a.filter-active { background: {{ settings.view.background }}; color: white; }
+    {{ css_target }} .view-filters .views-row a.filter-active:hover { background: {{ settings.view.background }}; color: white; }
+  {% endif %}
+{% endif %}
+
+{# SCROLL #}
+{% if settings.scroll and settings.scroll.background != 'auto' %}
+  {{ css_target }} .p__scroll { background: {{ settings.scroll.background }}; }
+{% endif %}
+{% if settings.scroll and settings.scroll.color != 'auto' %}
+  {{ css_target }} .p__scroll { color: {{ settings.scroll.color }}; }
+{% endif %}
+
+</style>

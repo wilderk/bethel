@@ -1,0 +1,22 @@
+/// Titles
+#block-starter-page-title {
+  text-align: center;
+
+  h1 {
+    margin-bottom: padding(s);
+  }
+}
+
+h1 {
+  font-weight: bold;
+}
+
+h3, h4, h5, h6 {
+  font-family: $font-body;
+}
+
+
+/// Links
+[class*='field--type-text'] a {
+  border-bottom: 1px solid;
+}

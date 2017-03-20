@@ -1,0 +1,443 @@
+[{
+
+  "layout": {
+    "weight": 4,
+    "label": "Layout",
+    "restrict": ["region", "view", "board", "staff"],
+    "fields": {
+
+      "type": {
+        "label": "",
+        "type": "pane-menu",
+        "values": {
+          "stack": {
+            "label": "Stack",
+            "value": "stack"
+          },
+          "columns": {
+            "label": "Columns",
+            "value": "columns"
+          },
+          "slides": {
+            "label": "Slides",
+            "value": "slides"
+          },
+          "tabs": {
+            "label": "Tabs",
+            "value": "tabs"
+          },
+          "accordion": {
+            "label": "Accordion",
+            "value": "accordion"
+          }
+        },
+        "default": "stack"
+      },
+
+      "stack": {
+        "label": "Stack",
+        "type": "pane",
+        "fields": {
+          "padding": {
+            "label": "Content Spacing",
+            "type": "global",
+            "map": "padding"
+          },
+          "h-align": {
+            "label": "Horizontal Alignment",
+            "type": "global",
+            "map": "h-align"
+          }
+        }
+      },
+
+      "columns": {
+        "label": "Columns",
+        "type": "pane",
+        "fields": {
+
+          "layout": {
+            "label": "Layout",
+            "type": "popup",
+            "fields": {
+
+              "columns": {
+                "label": "",
+                "type": "pane-menu",
+                "values": {
+                  "cols_2": {
+                    "label": "2",
+                    "value": "cols_2"
+                  },
+                  "cols_3": {
+                    "label": "3",
+                    "value": "cols_3"
+                  },
+                  "cols_4": {
+                    "label": "4",
+                    "value": "cols_4"
+                  },
+                  "cols_5": {
+                    "label": "5+",
+                    "value": "cols_5"
+                  }
+                },
+                "default": "cols_2"
+              },
+
+              "cols_2": {
+                "label": "2 Columns",
+                "type": "pane",
+                "fields": {
+                  "layout": {
+                    "label": "Layout",
+                    "type": "buttons",
+                    "values": {
+                      "layout_1": {
+                        "label": "1/2 | 1/2",
+                        "value": "1-2_1-2"
+                      },
+                      "layout_2": {
+                        "label": "1/3 | 2/3",
+                        "value": "1-3_2-3"
+                      },
+                      "layout_4": {
+                        "label": "2/3 | 1/3",
+                        "value": "2-3_1-3"
+                      },
+                      "layout_3": {
+                        "label": "1/4 | 3/4",
+                        "value": "1-4_3-4"
+                      },
+                      "layout_5": {
+                        "label": "3/4 | 1/4",
+                        "value": "3-4_1-4"
+                      }
+                    },
+                    "default": "layout_1"
+                  }
+                }
+              },
+
+              "cols_3": {
+                "label": "3 Columns",
+                "type": "pane",
+                "fields": {
+                  "layout": {
+                    "label": "Layout",
+                    "type": "buttons",
+                    "values": {
+                      "layout_1": {
+                        "label": "1/3 | 1/3 | 1/3",
+                        "value": "1-3_1-3_1-3"
+                      },
+                      "layout_2": {
+                        "label": "1/4 | 1/2 | 1/4",
+                        "value": "1-4_1-2_1-4"
+                      },
+                      "layout_3": {
+                        "label": "1/2 | 1/4 | 1/4",
+                        "value": "1-2_1-4_1-4"
+                      },
+                      "layout_4": {
+                        "label": "1/4 | 1/4 | 1/2",
+                        "value": "1-4_1-4_1-2"
+                      }
+                    },
+                    "default": "layout_1"
+                  }
+                }
+              },
+
+              "cols_4": {
+                "label": "4 Columns",
+                "type": "pane",
+                "fields": {
+                  "layout": {
+                    "label": "Layout",
+                    "type": "buttons",
+                    "values": {
+                      "layout_1": {
+                        "label": "1/4 | 1/4 | 1/4 | 1/4",
+                        "value": "1-4_1-4_1-4_1-4"
+                      },
+                      "layout_2": {
+                        "label": "1/6 | 1/3 | 1/3 | 1/6",
+                        "value": "1-6_1-3_1-3_1-6"
+                      },
+                      "layout_3": {
+                        "label": "1/3 | 1/3 | 1/6 | 1/6",
+                        "value": "1-3_1-3_1-6_1-6"
+                      }
+                    },
+                    "default": "layout_1"
+                  }
+                }
+              },
+
+              "cols_5": {
+                "label": "5+ Columns",
+                "type": "pane",
+                "fields": {
+                  "layout": {
+                    "label": "Layout",
+                    "type": "buttons",
+                    "values": {
+                      "layout_1": {
+                        "label": "1/5 | 1/5 | 1/5 | 1/5 | 1/5",
+                        "value": "1-5"
+                      },
+                      "layout_2": {
+                        "label": "1/6 | 1/6 | 1/6 | 1/6 | 1/6 | 1/6",
+                        "value": "1-6"
+                      }
+                    },
+                    "default": "layout_1"
+                  }
+                }
+              }
+            }
+          },
+          "direction": {
+            "label": "Direction",
+            "type": "buttons",
+            "values": {
+              "ltr": {
+                "label": "Left to Right",
+                "value": "ltr"
+              },
+              "rtl": {
+                "label": "Right to Left",
+                "value": "rtl"
+              }
+            },
+            "default": "ltr"
+          },
+          "align": {
+            "label": "Vertical Alignment",
+            "type": "buttons",
+            "values": {
+              "top": {
+                "label": "Top",
+                "value": "top"
+              },
+              "center": {
+                "label": "Center",
+                "value": "center"
+              },
+              "bottom": {
+                "label": "Bottom",
+                "value": "bottom"
+              }
+            },
+            "default": "top"
+          },
+          "h-align": {
+            "label": "Horizontal Alignment",
+            "type": "global",
+            "map": "h-align"
+          },
+          "padding": {
+            "label": "Content Spacing",
+            "type": "global",
+            "map": "padding"
+          }
+        }
+      },
+
+      "slides": {
+        "label": "Slides",
+        "type": "pane",
+        "fields": {
+
+          "slides": {
+            "label": "Slides to Show",
+            "type": "select",
+            "values": {
+              "slides_1": {
+                "label": "1",
+                "value": "1"
+              },
+              "slides_2": {
+                "label": "2",
+                "value": "2"
+              },
+              "slides_3": {
+                "label": "3",
+                "value": "3"
+              },
+              "slides_4": {
+                "label": "4",
+                "value": "4"
+              }
+            },
+            "default": "slides_1"
+          },
+
+          "speed": {
+            "label": "Play Speed",
+            "type": "select",
+            "values": {
+              "speed_0": {
+                "label": "On Click",
+                "value": "0"
+              },
+              "speed_1": {
+                "label": "1 Second",
+                "value": "1"
+              },
+              "speed_2": {
+                "label": "2 Seconds",
+                "value": "2"
+              },
+              "speed_3": {
+                "label": "3 Seconds",
+                "value": "3"
+              },
+              "speed_4": {
+                "label": "4 Seconds",
+                "value": "4"
+              },
+              "speed_5": {
+                "label": "5 Seconds",
+                "value": "5"
+              },
+              "speed_6": {
+                "label": "6 Seconds",
+                "value": "6"
+              },
+              "speed_7": {
+                "label": "7 Seconds",
+                "value": "7"
+              },
+              "speed_8": {
+                "label": "8 Seconds",
+                "value": "8"
+              }
+            },
+            "default": "speed_4"
+          },
+
+          "align": {
+            "label": "Vertical Alignment",
+            "type": "buttons",
+            "values": {
+              "top": {
+                "label": "Top",
+                "value": "top"
+              },
+              "center": {
+                "label": "Center",
+                "value": "center"
+              }
+            },
+            "default": "top"
+          },
+
+          "arrows": {
+            "label": "Arrows",
+            "type": "buttons",
+            "values": {
+              "show": {
+                "label": "Show",
+                "value": "true"
+              },
+              "hide": {
+                "label": "Hide",
+                "value": "false"
+              }
+            },
+            "default": "show"
+          }
+        }
+      },
+
+      "tabs": {
+        "label": "Tabs",
+        "type": "pane",
+        "fields": {
+
+          "align": {
+            "label": "Tab Link Position",
+            "type": "buttons",
+            "values": {
+              "left": {
+                "label": "Left",
+                "value": "left"
+              },
+              "top": {
+                "label": "Top",
+                "value": "top"
+              },
+              "right": {
+                "label": "Right",
+                "value": "right"
+              }
+            },
+            "default": "top"
+          },
+
+          "color": {
+            "label": "Tab Link Color",
+            "type": "popup",
+            "fields": {
+              "color": {
+                "label": "Tab Link Color",
+                "type": "global",
+                "map": "color"
+              }
+            }
+          }
+
+        }
+      },
+
+      "accordion": {
+        "label": "Accordion",
+        "type": "pane",
+        "fields": {
+
+          "expand_first": {
+            "label": "Expand first item",
+            "type": "buttons",
+            "values": {
+              "on": {
+                "label": "On",
+                "value": "on"
+              },
+              "off": {
+                "label": "Off",
+                "value": "off"
+              }
+            },
+            "default": "off"
+          },
+
+          "expand_multiple": {
+            "label": "Allow expansion of multiple items",
+            "type": "buttons",
+            "values": {
+              "on": {
+                "label": "On",
+                "value": "on"
+              },
+              "off": {
+                "label": "Off",
+                "value": "off"
+              }
+            },
+            "default": "off"
+          },
+
+          "padding": {
+            "label": "Content Spacing",
+            "type": "global",
+            "map": "padding"
+          }
+
+        }
+      }
+    }
+  }
+  
+}]

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_tag
+    - paragraphs.paragraphs_type.text
+id: paragraph.text.field_p_tag
+field_name: field_p_tag
+entity_type: paragraph
+bundle: text
+label: Tag
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

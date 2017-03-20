@@ -1,0 +1,54 @@
+
+drupal.oxbow_paragraphs:
+  version: 1.x
+  css:
+    theme:
+      css/oxbow_paragraphs.css: {}
+      css/oxbow_paragraphs.layouts.css: {}
+  js:
+    js/libs/jquery.sticky-kit.js: {}
+    js/libs/jquery.fitvids.js: {}
+    js/libs/oxbow.size.js: {}
+    js/oxbow_paragraphs.js: {}
+
+  dependencies:
+    - oxbow_paragraphs/drupal.oxbow_paragraphs.slick
+    - oxbow_paragraphs/drupal.oxbow_paragraphs.reveal
+
+
+drupal.oxbow_paragraphs.admin:
+  version: 1.x
+  css:
+    theme:
+      css/oxbow_paragraphs.admin.css: {}
+  js:
+    js/libs/jquery.svg/jquery.svg.js: {}
+    js/libs/oxbow.toggle.js: {}
+    js/oxbow_paragraphs.admin.preview.js: {}
+    js/oxbow_paragraphs.admin.fields.js: {}
+    js/oxbow_paragraphs.admin.menu.js: {}
+    js/oxbow_paragraphs.admin.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.ui.slider
+
+
+drupal.oxbow_paragraphs.slick:
+  version: 1.x
+  css:
+    theme:
+      js/libs/slick/slick.css: {}
+  js:
+    js/libs/slick/slick.min.js: {}
+  dependencies:
+    - core/jquery
+
+drupal.oxbow_paragraphs.reveal:
+  version: 1.x
+  css:
+    theme:
+      js/libs/foundation/foundation.min.css: {}
+  js:
+    js/libs/foundation/foundation.min.js: {}
+  dependencies:
+    - core/jquery

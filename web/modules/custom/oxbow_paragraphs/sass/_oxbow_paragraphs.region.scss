@@ -1,0 +1,30 @@
+
+/// all paragraphs
+.paragraph.paragraph--type--region {
+  height: auto;
+  z-index: 1;
+  
+  > .p__inner {
+    
+    > .p__content {
+      
+    }
+  }
+  
+  .paragraph.paragraph--type--region {
+    &.background-type-none {
+      &.padding-top-auto > .p__inner {
+        padding-top: 0;
+      }
+      &.padding-bottom-auto > .p__inner {
+        padding-bottom: 0;
+      }
+      &.padding-left-auto > .p__inner {
+        padding-left: 0;
+      }
+      &.padding-right-auto > .p__inner {
+        padding-right: 0;
+      }
+    }
+  }
+}

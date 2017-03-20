@@ -1,0 +1,50 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.field_collection_item.field_p_settings.field_p_setting_bg_img
+    - field.field.field_collection_item.field_p_settings.field_p_setting_bg_vid
+    - field.field.field_collection_item.field_p_settings.field_p_setting_json
+    - field.field.field_collection_item.field_p_settings.field_p_setting_title_link
+    - field_collection.field_collection.field_p_settings
+  module:
+    - file
+    - image
+    - link
+id: field_collection_item.field_p_settings.default
+targetEntityType: field_collection_item
+bundle: field_p_settings
+mode: default
+content:
+  field_p_setting_bg_img:
+    weight: 1
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_p_setting_bg_vid:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+  field_p_setting_json:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_p_setting_title_link:
+    weight: 2
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+hidden: {  }

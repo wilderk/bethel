@@ -1,0 +1,52 @@
+$ox-orange: #DD6011;
+$ox-gray: #404040;
+
+$white       : #FFFFFF;
+$gainsboro   : #DDDDDD;
+$base        : #AAAAAA;
+$charcoal    : #555555;
+$oil         : #333333;
+$black       : #000000;
+
+$foundation-palette: (
+  primary: $ox-orange,
+  secondary: hotpink,
+  success: #3fbc4b,
+  warning: #ffae00,
+  alert: #ec5840,
+);
+
+$oxbow-colors: (
+  primary: $ox-orange,
+  secondary: $ox-gray,
+  success: #4ACE57,
+  warning: #EFF453,
+  alert: #dc143c,
+  status: cornflowerblue,
+);
+
+$site-colors: (
+  header: #242424,
+  dropdown: lightgray,
+  nav: lightgray,
+  nav-advanced: #0eb1ff,
+  nav-save: #308f5a,
+  nav-delete: #b01030,
+  nav-preview: white,
+  nav-active: #0eb1ff,
+  node-p: #878787,
+  p: white,
+  p-alt: #f9f9f9,
+);
+
+@function color($color, $set:null) {
+  @if($set == null or $set == 'site') {
+    @return map-get($site-colors, $color);
+  }
+  @else if($set == 'oxbow'){
+    @return map-get($oxbow-colors, $color);
+  }
+  @else if($set == 'foundation') {
+    @return map-get($foundation-palette, $color);
+  }
+}

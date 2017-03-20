@@ -1,0 +1,35 @@
+$target: '#block-mainnavigation';
+
+#{$target} {
+  @include fill;
+  top: $header-top-h;
+  position: fixed;
+  z-index: 1001;
+  background: color(menu-mobile);
+  padding: $site-p;
+
+  > ul:not(.contextual-links) {
+    @include fill;
+    @include flex($h-align:center, $v-align:center);
+    flex-direction: column;
+    margin: 0;
+    list-style: none;
+
+    li {
+      @include flex($h-align:center, $v-align:center);
+
+      a {
+        color: color(menu-mobile-text);
+        padding: $site-p;
+        font-size: $h3-font-size;
+        text-align: center;
+      }
+    }
+  }
+
+  display: none;
+
+  &.open {
+    display: block;
+  }
+}
