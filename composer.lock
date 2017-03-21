@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "13e95f596366d7bc892d6da483b976bb",
-    "content-hash": "76a5ba38c4ea916c0f47b142007459fb",
+    "hash": "1093dd46cca45b12887c3d941703a525",
+    "content-hash": "56d52a0a76c246aa785af22e113e7163",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1660,16 +1660,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "8.2.6",
+            "version": "8.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal-composer/drupal-core.git",
-                "reference": "6cd5d296125a4584d470d75d8e5218ff17c39c22"
+                "reference": "5d3fb8a93514f23198ac6848b2679ef1026d2326"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal-composer/drupal-core/zipball/6cd5d296125a4584d470d75d8e5218ff17c39c22",
-                "reference": "6cd5d296125a4584d470d75d8e5218ff17c39c22",
+                "url": "https://api.github.com/repos/drupal-composer/drupal-core/zipball/5d3fb8a93514f23198ac6848b2679ef1026d2326",
+                "reference": "5d3fb8a93514f23198ac6848b2679ef1026d2326",
                 "shasum": ""
             },
             "require": {
@@ -1808,7 +1808,7 @@
                 "jcalderonzumba/gastonjs": "~1.0.2",
                 "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
                 "mikey179/vfsstream": "~1.2",
-                "phpunit/phpunit": "~4.8",
+                "phpunit/phpunit": ">=4.8.28 <5",
                 "symfony/css-selector": "~2.8"
             },
             "type": "drupal-core",
@@ -1833,7 +1833,7 @@
                 "GPL-2.0+"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2017-02-01 17:03:36"
+            "time": "2017-03-15 20:19:51"
         },
         {
             "name": "drupal/ctools",
@@ -2419,17 +2419,17 @@
         },
         {
             "name": "drupal/features",
-            "version": "3.4.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/features",
-                "reference": "8.x-3.4"
+                "reference": "8.x-3.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/features-8.x-3.4.zip",
-                "reference": "8.x-3.4",
-                "shasum": "7d0a1be440564a37fda9dd5fb8e75398b2d0ee35"
+                "url": "https://ftp.drupal.org/files/projects/features-8.x-3.5.zip",
+                "reference": null,
+                "shasum": "546b34387018f9adbe742b6992c4d473f9447c41"
             },
             "require": {
                 "drupal/config_update": "*",
@@ -2441,7 +2441,7 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.4",
+                    "version": "8.x-3.5",
                     "datestamp": "1488908583"
                 }
             },
@@ -3153,7 +3153,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/redirect-8.x-1.0-alpha4.zip",
-                "reference": null,
+                "reference": "8.x-1.0-alpha4",
                 "shasum": "883401f9983a00ac23bfda9830bf6b77d53209ad"
             },
             "require": {
@@ -3466,20 +3466,23 @@
         },
         {
             "name": "drupal/twig_tweak",
-            "version": "1.5.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/twig_tweak",
-                "reference": "8.x-1.5"
+                "reference": "8.x-1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/twig_tweak-8.x-1.5.zip",
-                "reference": "8.x-1.5",
-                "shasum": "8e2820ba3b706909c76cb4fa0a85becd39c5b9b1"
+                "url": "https://ftp.drupal.org/files/projects/twig_tweak-8.x-1.6.zip",
+                "reference": null,
+                "shasum": "afdc20b0bfe238364b128ee4b66c1cf7d970baed"
             },
             "require": {
                 "drupal/core": "~8.0"
+            },
+            "suggest": {
+                "symfony/var-dumper": "Provides a better dump() function that can help you debug Twig variables."
             },
             "type": "drupal-module",
             "extra": {
@@ -3487,8 +3490,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.5",
-                    "datestamp": "1484994183"
+                    "version": "8.x-1.6",
+                    "datestamp": "1489930083"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3501,10 +3504,15 @@
                     "homepage": "https://www.drupal.org/user/556138"
                 }
             ],
-            "description": "Provides some extra twig functions.",
+            "description": "A Twig extension with some useful functions and filters for Drupal development.",
             "homepage": "https://www.drupal.org/project/twig_tweak",
+            "keywords": [
+                "Drupal",
+                "Twig"
+            ],
             "support": {
-                "source": "http://cgit.drupalcode.org/twig_tweak"
+                "source": "http://cgit.drupalcode.org/twig_tweak",
+                "issues": "https://www.drupal.org/project/issues/twig_tweak"
             }
         },
         {
@@ -3552,23 +3560,20 @@
         },
         {
             "name": "drupal/webform",
-            "version": "5.0.0-beta7",
+            "version": "5.0.0-beta9",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/webform",
-                "reference": "8.x-5.0-beta7"
+                "reference": "8.x-5.0-beta9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.0-beta7.zip",
-                "reference": "8.x-5.0-beta7",
-                "shasum": "1c2be66200291e38ebe41e27641e2607d4be7baa"
+                "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.0-beta9.zip",
+                "reference": null,
+                "shasum": "cc1a31b22ae3daca5c2cc05ca729092a90f3835d"
             },
             "require": {
                 "drupal/core": "*"
-            },
-            "require-dev": {
-                "drupal/devel": "*"
             },
             "type": "drupal-module",
             "extra": {
@@ -3576,8 +3581,8 @@
                     "dev-5.x": "5.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-5.0-beta7",
-                    "datestamp": "1488739683"
+                    "version": "8.x-5.0-beta9",
+                    "datestamp": "1488753784"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
