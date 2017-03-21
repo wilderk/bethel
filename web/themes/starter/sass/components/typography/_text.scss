@@ -8,7 +8,7 @@
 }
 
 h1 {
-  font-weight: bold;
+  //font-weight: bold;
 }
 
 h3, h4, h5, h6 {
@@ -19,4 +19,21 @@ h3, h4, h5, h6 {
 /// Links
 [class*='field--type-text'] a {
   border-bottom: 1px solid;
+}
+
+/// Font Size Classes
+.fs-s {
+  font-size: rem-calc(12);
+}
+.fs-m {
+  font-size: $global-font-size;
+}
+.fs-l {
+  font-size: map-get($headers, h3);
+}
+.fs-xl {
+  font-size: map-get($headers, h2);
+}
+.fs-xxl {
+  font-size: map-get($headers, h1);
 }

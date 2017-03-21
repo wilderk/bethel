@@ -1,14 +1,13 @@
 /// Import Fonts
-@import url('http://fonts.googleapis.com/css?family=Bitter:400,700|Roboto+Condensed:400,700,300');
 @import url('https://fonts.googleapis.com/css?family=Oxygen+Mono');
-@import url('https://fonts.googleapis.com/css?family=Anton|Arsenal');
+@import url('https://fonts.googleapis.com/css?family=Francois+One|Nunito+Sans');
 
 /// Copy Fonts
-$font-body: 'Roboto Condensed', Helvetica, Arial, sans-serif;
-$font-header: Arsenal, Helvetica;
-$font-family-sans-serif: "Roboto Condensed", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-family-serif: "Bitter", "Times New Roman", Times, Baskerville, Georgia, serif;
-$font-family-monospace: "Oxygen Mono", Consolas, monospace;
+$font-family-sans-serif: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-serif: 'Francois One', Times, Baskerville, Georgia, serif;
+$font-family-monospace: 'Oxygen Mono', Consolas, monospace;
+$font-body: $font-family-sans-serif;
+$font-header: $font-family-serif;
 
 /// Icon Fonts
 @font-face {

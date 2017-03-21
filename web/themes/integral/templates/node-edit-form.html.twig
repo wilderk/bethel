@@ -15,6 +15,7 @@
       <div class="node__advanced">
         <div class="btn toggle icon-advanced"></div>
         <div class="btn__dropdown">
+          {{ form.field_title_display }}
           {{ form.advanced }}
           <div class="node__delete">
             <div class="btn"></div>
@@ -61,7 +62,7 @@
         {% if form['#title'] %}
           <h1 class="form__title">{{ form['#title'] }}</h1>
         {% endif %}
-        {{ form|without('title', 'advanced', 'actions', 'field_p_regions') }}
+        {{ form|without('title', 'advanced', 'actions', 'field_p_regions', 'field_title_display') }}
       </div>
       {% if form.field_p_regions %}
         <div class="node__paragraphs">{{ form.field_p_regions }}</div>
@@ -69,7 +70,7 @@
     </div>
   {% else %}
     <div class="group__static">
-      {{ form|without('title', 'advanced', 'actions', 'field_p_regions') }}
+      {{ form|without('title', 'advanced', 'actions', 'field_p_regions', 'field_title_display') }}
     </div>
   {% endif %}
 </div>

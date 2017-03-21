@@ -74,9 +74,11 @@ set classes = [
   {% endif %}
 {% endif %}
 
+{% if settings.title %}
+  {% set classes = classes | merge(['title-align-' ~ settings.title.align]) %}
+{% endif %}
 {% if settings.title and p_title_text %}
   {% set classes = classes | merge(['title-' ~ settings.title.visible]) %}
-  {% set classes = classes | merge(['title-align-' ~ settings.title.align]) %}
 {% else %}
   {% set classes = classes | merge(['title-false']) %}
 {% endif %}
@@ -224,6 +226,8 @@ set classes = [
     {% include oxbow_paragraphs.path_module ~ '/templates/_paragraphs--view.html.twig' %}
   {% elseif paragraph.bundle == 'misc' %}
     {% include oxbow_paragraphs.path_module ~ '/templates/_paragraphs--misc.html.twig' %}
+  {% elseif paragraph.bundle == 'title' %}
+    {% include oxbow_paragraphs.path_module ~ '/templates/_paragraphs--title.html.twig' %}
   {% else %}
     {{ content | without('field_p_tag', 'field_p_title', 'field_p_settings') }}
   {% endif %}

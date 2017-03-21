@@ -8,8 +8,12 @@ $charcoal    : #555555;
 $oil         : #333333;
 $black       : #000000;
 
+$bethel-purple: #8B3A7E;
+$bethel-green: #6EBE6E;
+$bethel-red: #C55252;
+
 $foundation-palette: (
-  primary: $ox-orange,
+  primary: $bethel-green,
   secondary: hotpink,
   success: #3fbc4b,
   warning: #ffae00,
@@ -26,26 +30,26 @@ $oxbow-colors: (
 );
 
 $site-colors: (
-  header: $gainsboro,
+  header: $bethel-purple,
   body: white,
-  footer: $oil,
+  footer: $bethel-red,
 
   menu: transparent,
-  menu-text: map-get($foundation-palette, primary),
+  menu-text: white,
 
-  menu-child: darken($gainsboro, 10%),
-  menu-child-hover: darken($gainsboro, 15%),
-  menu-child-active: darken($gainsboro, 20%),
-  menu-child-text: $ox-orange,
+  menu-child: $bethel-green,
+  menu-child-hover: darken($bethel-green, 15%),
+  menu-child-active: darken($bethel-green, 20%),
+  menu-child-text: white,
   menu-child-text-active: white,
 
-  menu-mobile: $ox-orange,
+  menu-mobile: $bethel-purple,
   menu-mobile-text: white,
 
-  menu-footer-text: gray,
-  menu-social-text: gray,
+  menu-footer-text: rgba(white, .8),
+  menu-social-text: rgba(white, .8),
 
-  title: $oil,
+  title: $bethel-red,
   subtitle: $charcoal,
   text: $charcoal,
   link: map-get($foundation-palette, primary),
@@ -53,10 +57,10 @@ $site-colors: (
 
   button: map-get($foundation-palette, primary),
   button-text: white,
-  button-secondary: $charcoal,
+  button-secondary: $bethel-purple,
   button-secondary-text: white,
-  button-tertiary: $base,
-  button-tertiary-text: $charcoal,
+  button-tertiary: $bethel-red,
+  button-tertiary-text: white,
 
   input: transparent,
   input-label: $charcoal,

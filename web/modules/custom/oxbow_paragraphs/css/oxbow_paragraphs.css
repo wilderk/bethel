@@ -92,18 +92,21 @@
   display: none;
 }
 /* line 147, ../sass/_oxbow_paragraphs.base.scss */
-.paragraph.title-align-left > .p__inner > .p__title {
+.paragraph.title-align-left > .p__inner > .p__title,
+.paragraph.title-align-left > .p__inner > .p__content > .p__title {
   text-align: left;
 }
-/* line 152, ../sass/_oxbow_paragraphs.base.scss */
-.paragraph.title-align-center > .p__inner > .p__title {
+/* line 153, ../sass/_oxbow_paragraphs.base.scss */
+.paragraph.title-align-center > .p__inner > .p__title,
+.paragraph.title-align-center > .p__inner > .p__content > .p__title {
   text-align: center;
 }
-/* line 157, ../sass/_oxbow_paragraphs.base.scss */
-.paragraph.title-align-right > .p__inner > .p__title {
+/* line 159, ../sass/_oxbow_paragraphs.base.scss */
+.paragraph.title-align-right > .p__inner > .p__title,
+.paragraph.title-align-right > .p__inner > .p__content > .p__title {
   text-align: right;
 }
-/* line 163, ../sass/_oxbow_paragraphs.base.scss */
+/* line 166, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph .p__scroll {
   display: -webkit-box;
   display: -webkit-flex;
@@ -128,315 +131,315 @@
   border-radius: 50%;
   cursor: pointer;
 }
-/* line 176, ../sass/_oxbow_paragraphs.base.scss */
+/* line 179, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph .p__scroll:after {
   content: '▼';
   font-size: 1.125rem;
 }
-/* line 183, ../sass/_oxbow_paragraphs.base.scss */
+/* line 186, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-equalize.layout-columns > .p__inner > .p__content > .field--name-field-p-paragraphs > .field__item > .paragraph {
   height: 100%;
   align-items: flex-start;
 }
-/* line 190, ../sass/_oxbow_paragraphs.base.scss */
+/* line 193, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-top-auto > .p__inner {
   padding-top: 1.5rem;
 }
-/* line 191, ../sass/_oxbow_paragraphs.base.scss */
+/* line 194, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-bottom-auto > .p__inner {
   padding-bottom: 1.5rem;
 }
-/* line 192, ../sass/_oxbow_paragraphs.base.scss */
+/* line 195, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-left-auto > .p__inner {
   padding-left: 1.5rem;
 }
-/* line 193, ../sass/_oxbow_paragraphs.base.scss */
+/* line 196, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-right-auto > .p__inner {
   padding-right: 1.5rem;
 }
-/* line 190, ../sass/_oxbow_paragraphs.base.scss */
+/* line 193, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-top-none > .p__inner {
   padding-top: 0;
 }
-/* line 191, ../sass/_oxbow_paragraphs.base.scss */
+/* line 194, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-bottom-none > .p__inner {
   padding-bottom: 0;
 }
-/* line 192, ../sass/_oxbow_paragraphs.base.scss */
+/* line 195, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-left-none > .p__inner {
   padding-left: 0;
 }
-/* line 193, ../sass/_oxbow_paragraphs.base.scss */
+/* line 196, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-right-none > .p__inner {
   padding-right: 0;
 }
-/* line 190, ../sass/_oxbow_paragraphs.base.scss */
+/* line 193, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-top-xs > .p__inner {
   padding-top: 0.375rem;
 }
-/* line 191, ../sass/_oxbow_paragraphs.base.scss */
+/* line 194, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-bottom-xs > .p__inner {
   padding-bottom: 0.375rem;
 }
-/* line 192, ../sass/_oxbow_paragraphs.base.scss */
+/* line 195, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-left-xs > .p__inner {
   padding-left: 0.375rem;
 }
-/* line 193, ../sass/_oxbow_paragraphs.base.scss */
+/* line 196, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-right-xs > .p__inner {
   padding-right: 0.375rem;
 }
-/* line 190, ../sass/_oxbow_paragraphs.base.scss */
+/* line 193, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-top-s > .p__inner {
   padding-top: 0.75rem;
 }
-/* line 191, ../sass/_oxbow_paragraphs.base.scss */
+/* line 194, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-bottom-s > .p__inner {
   padding-bottom: 0.75rem;
 }
-/* line 192, ../sass/_oxbow_paragraphs.base.scss */
+/* line 195, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-left-s > .p__inner {
   padding-left: 0.75rem;
 }
-/* line 193, ../sass/_oxbow_paragraphs.base.scss */
+/* line 196, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-right-s > .p__inner {
   padding-right: 0.75rem;
 }
-/* line 190, ../sass/_oxbow_paragraphs.base.scss */
+/* line 193, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-top-m > .p__inner {
   padding-top: 1.5rem;
 }
-/* line 191, ../sass/_oxbow_paragraphs.base.scss */
+/* line 194, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-bottom-m > .p__inner {
   padding-bottom: 1.5rem;
 }
-/* line 192, ../sass/_oxbow_paragraphs.base.scss */
+/* line 195, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-left-m > .p__inner {
   padding-left: 1.5rem;
 }
-/* line 193, ../sass/_oxbow_paragraphs.base.scss */
+/* line 196, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-right-m > .p__inner {
   padding-right: 1.5rem;
 }
-/* line 190, ../sass/_oxbow_paragraphs.base.scss */
+/* line 193, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-top-l > .p__inner {
   padding-top: 2.25rem;
 }
-/* line 191, ../sass/_oxbow_paragraphs.base.scss */
+/* line 194, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-bottom-l > .p__inner {
   padding-bottom: 2.25rem;
 }
-/* line 192, ../sass/_oxbow_paragraphs.base.scss */
+/* line 195, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-left-l > .p__inner {
   padding-left: 2.25rem;
 }
-/* line 193, ../sass/_oxbow_paragraphs.base.scss */
+/* line 196, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-right-l > .p__inner {
   padding-right: 2.25rem;
 }
-/* line 190, ../sass/_oxbow_paragraphs.base.scss */
+/* line 193, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-top-xl > .p__inner {
   padding-top: 3rem;
 }
-/* line 191, ../sass/_oxbow_paragraphs.base.scss */
+/* line 194, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-bottom-xl > .p__inner {
   padding-bottom: 3rem;
 }
-/* line 192, ../sass/_oxbow_paragraphs.base.scss */
+/* line 195, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-left-xl > .p__inner {
   padding-left: 3rem;
 }
-/* line 193, ../sass/_oxbow_paragraphs.base.scss */
+/* line 196, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-right-xl > .p__inner {
   padding-right: 3rem;
 }
-/* line 190, ../sass/_oxbow_paragraphs.base.scss */
+/* line 193, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-top-xxl > .p__inner {
   padding-top: 4.5rem;
 }
-/* line 191, ../sass/_oxbow_paragraphs.base.scss */
+/* line 194, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-bottom-xxl > .p__inner {
   padding-bottom: 4.5rem;
 }
-/* line 192, ../sass/_oxbow_paragraphs.base.scss */
+/* line 195, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-left-xxl > .p__inner {
   padding-left: 4.5rem;
 }
-/* line 193, ../sass/_oxbow_paragraphs.base.scss */
+/* line 196, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-right-xxl > .p__inner {
   padding-right: 4.5rem;
 }
-/* line 190, ../sass/_oxbow_paragraphs.base.scss */
+/* line 193, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-top-xxxl > .p__inner {
   padding-top: 9rem;
 }
-/* line 191, ../sass/_oxbow_paragraphs.base.scss */
+/* line 194, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-bottom-xxxl > .p__inner {
   padding-bottom: 9rem;
 }
-/* line 192, ../sass/_oxbow_paragraphs.base.scss */
+/* line 195, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-left-xxxl > .p__inner {
   padding-left: 9rem;
 }
-/* line 193, ../sass/_oxbow_paragraphs.base.scss */
+/* line 196, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.padding-right-xxxl > .p__inner {
   padding-right: 9rem;
 }
-/* line 196, ../sass/_oxbow_paragraphs.base.scss */
+/* line 199, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph:not(.paragraph--type--region).background-type-none.padding-top-auto > .p__inner {
   padding-top: 0;
 }
-/* line 197, ../sass/_oxbow_paragraphs.base.scss */
+/* line 200, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph:not(.paragraph--type--region).background-type-none.padding-bottom-auto > .p__inner {
   padding-bottom: 0;
 }
-/* line 198, ../sass/_oxbow_paragraphs.base.scss */
+/* line 201, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph:not(.paragraph--type--region).background-type-none.padding-left-auto > .p__inner {
   padding-left: 0;
 }
-/* line 199, ../sass/_oxbow_paragraphs.base.scss */
+/* line 202, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph:not(.paragraph--type--region).background-type-none.padding-right-auto > .p__inner {
   padding-right: 0;
 }
-/* line 204, ../sass/_oxbow_paragraphs.base.scss */
+/* line 207, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-top-auto {
   margin-top: 0;
 }
-/* line 205, ../sass/_oxbow_paragraphs.base.scss */
+/* line 208, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-bottom-auto {
   margin-bottom: 0;
 }
-/* line 206, ../sass/_oxbow_paragraphs.base.scss */
+/* line 209, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-left-auto {
   margin-left: 0;
 }
-/* line 207, ../sass/_oxbow_paragraphs.base.scss */
+/* line 210, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-right-auto {
   margin-right: 0;
 }
-/* line 204, ../sass/_oxbow_paragraphs.base.scss */
+/* line 207, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-top-none {
   margin-top: 0;
 }
-/* line 205, ../sass/_oxbow_paragraphs.base.scss */
+/* line 208, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-bottom-none {
   margin-bottom: 0;
 }
-/* line 206, ../sass/_oxbow_paragraphs.base.scss */
+/* line 209, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-left-none {
   margin-left: 0;
 }
-/* line 207, ../sass/_oxbow_paragraphs.base.scss */
+/* line 210, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-right-none {
   margin-right: 0;
 }
-/* line 204, ../sass/_oxbow_paragraphs.base.scss */
+/* line 207, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-top-xs {
   margin-top: 0.75rem;
 }
-/* line 205, ../sass/_oxbow_paragraphs.base.scss */
+/* line 208, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-bottom-xs {
   margin-bottom: 0.75rem;
 }
-/* line 206, ../sass/_oxbow_paragraphs.base.scss */
+/* line 209, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-left-xs {
   margin-left: 0.75rem;
 }
-/* line 207, ../sass/_oxbow_paragraphs.base.scss */
+/* line 210, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-right-xs {
   margin-right: 0.75rem;
 }
-/* line 204, ../sass/_oxbow_paragraphs.base.scss */
+/* line 207, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-top-s {
   margin-top: 1.5rem;
 }
-/* line 205, ../sass/_oxbow_paragraphs.base.scss */
+/* line 208, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-bottom-s {
   margin-bottom: 1.5rem;
 }
-/* line 206, ../sass/_oxbow_paragraphs.base.scss */
+/* line 209, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-left-s {
   margin-left: 1.5rem;
 }
-/* line 207, ../sass/_oxbow_paragraphs.base.scss */
+/* line 210, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-right-s {
   margin-right: 1.5rem;
 }
-/* line 204, ../sass/_oxbow_paragraphs.base.scss */
+/* line 207, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-top-m {
   margin-top: 3rem;
 }
-/* line 205, ../sass/_oxbow_paragraphs.base.scss */
+/* line 208, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-bottom-m {
   margin-bottom: 3rem;
 }
-/* line 206, ../sass/_oxbow_paragraphs.base.scss */
+/* line 209, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-left-m {
   margin-left: 3rem;
 }
-/* line 207, ../sass/_oxbow_paragraphs.base.scss */
+/* line 210, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-right-m {
   margin-right: 3rem;
 }
-/* line 204, ../sass/_oxbow_paragraphs.base.scss */
+/* line 207, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-top-l {
   margin-top: 6rem;
 }
-/* line 205, ../sass/_oxbow_paragraphs.base.scss */
+/* line 208, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-bottom-l {
   margin-bottom: 6rem;
 }
-/* line 206, ../sass/_oxbow_paragraphs.base.scss */
+/* line 209, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-left-l {
   margin-left: 6rem;
 }
-/* line 207, ../sass/_oxbow_paragraphs.base.scss */
+/* line 210, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-right-l {
   margin-right: 6rem;
 }
-/* line 204, ../sass/_oxbow_paragraphs.base.scss */
+/* line 207, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-top-xl {
   margin-top: 12rem;
 }
-/* line 205, ../sass/_oxbow_paragraphs.base.scss */
+/* line 208, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-bottom-xl {
   margin-bottom: 12rem;
 }
-/* line 206, ../sass/_oxbow_paragraphs.base.scss */
+/* line 209, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-left-xl {
   margin-left: 12rem;
 }
-/* line 207, ../sass/_oxbow_paragraphs.base.scss */
+/* line 210, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-right-xl {
   margin-right: 12rem;
 }
-/* line 204, ../sass/_oxbow_paragraphs.base.scss */
+/* line 207, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-top-xxl {
   margin-top: 24rem;
 }
-/* line 205, ../sass/_oxbow_paragraphs.base.scss */
+/* line 208, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-bottom-xxl {
   margin-bottom: 24rem;
 }
-/* line 206, ../sass/_oxbow_paragraphs.base.scss */
+/* line 209, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-left-xxl {
   margin-left: 24rem;
 }
-/* line 207, ../sass/_oxbow_paragraphs.base.scss */
+/* line 210, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.margin-right-xxl {
   margin-right: 24rem;
 }
-/* line 213, ../sass/_oxbow_paragraphs.base.scss */
+/* line 216, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-auto > .p__inner > .p__title {
   padding-bottom: 1.5rem;
 }
-/* line 216, ../sass/_oxbow_paragraphs.base.scss */
+/* line 219, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-auto > .p__inner > .p__content {
   margin-bottom: -1.5rem;
   margin-left: -0.75rem;
   margin-right: -0.75rem;
 }
-/* line 221, ../sass/_oxbow_paragraphs.base.scss */
+/* line 224, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-auto > .p__inner > .p__content > .field--name-field-p-paragraphs > .field__item,
 .paragraph.layout-padding-auto > .p__inner > .p__content > .field--name-field-p-view .view-content > .views-row,
 .paragraph.layout-padding-auto > .p__inner > .p__content > .field--name-field-p-board > .field__item,
@@ -445,17 +448,17 @@
   padding-right: 0.75rem;
   padding-bottom: 1.5rem;
 }
-/* line 213, ../sass/_oxbow_paragraphs.base.scss */
+/* line 216, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-none > .p__inner > .p__title {
   padding-bottom: 0;
 }
-/* line 216, ../sass/_oxbow_paragraphs.base.scss */
+/* line 219, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-none > .p__inner > .p__content {
   margin-bottom: 0;
   margin-left: 0;
   margin-right: 0;
 }
-/* line 221, ../sass/_oxbow_paragraphs.base.scss */
+/* line 224, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-none > .p__inner > .p__content > .field--name-field-p-paragraphs > .field__item,
 .paragraph.layout-padding-none > .p__inner > .p__content > .field--name-field-p-view .view-content > .views-row,
 .paragraph.layout-padding-none > .p__inner > .p__content > .field--name-field-p-board > .field__item,
@@ -464,17 +467,17 @@
   padding-right: 0;
   padding-bottom: 0;
 }
-/* line 213, ../sass/_oxbow_paragraphs.base.scss */
+/* line 216, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-xs > .p__inner > .p__title {
   padding-bottom: 0.375rem;
 }
-/* line 216, ../sass/_oxbow_paragraphs.base.scss */
+/* line 219, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-xs > .p__inner > .p__content {
   margin-bottom: -0.375rem;
   margin-left: -0.1875rem;
   margin-right: -0.1875rem;
 }
-/* line 221, ../sass/_oxbow_paragraphs.base.scss */
+/* line 224, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-xs > .p__inner > .p__content > .field--name-field-p-paragraphs > .field__item,
 .paragraph.layout-padding-xs > .p__inner > .p__content > .field--name-field-p-view .view-content > .views-row,
 .paragraph.layout-padding-xs > .p__inner > .p__content > .field--name-field-p-board > .field__item,
@@ -483,17 +486,17 @@
   padding-right: 0.1875rem;
   padding-bottom: 0.375rem;
 }
-/* line 213, ../sass/_oxbow_paragraphs.base.scss */
+/* line 216, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-s > .p__inner > .p__title {
   padding-bottom: 0.75rem;
 }
-/* line 216, ../sass/_oxbow_paragraphs.base.scss */
+/* line 219, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-s > .p__inner > .p__content {
   margin-bottom: -0.75rem;
   margin-left: -0.375rem;
   margin-right: -0.375rem;
 }
-/* line 221, ../sass/_oxbow_paragraphs.base.scss */
+/* line 224, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-s > .p__inner > .p__content > .field--name-field-p-paragraphs > .field__item,
 .paragraph.layout-padding-s > .p__inner > .p__content > .field--name-field-p-view .view-content > .views-row,
 .paragraph.layout-padding-s > .p__inner > .p__content > .field--name-field-p-board > .field__item,
@@ -502,17 +505,17 @@
   padding-right: 0.375rem;
   padding-bottom: 0.75rem;
 }
-/* line 213, ../sass/_oxbow_paragraphs.base.scss */
+/* line 216, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-m > .p__inner > .p__title {
   padding-bottom: 1.5rem;
 }
-/* line 216, ../sass/_oxbow_paragraphs.base.scss */
+/* line 219, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-m > .p__inner > .p__content {
   margin-bottom: -1.5rem;
   margin-left: -0.75rem;
   margin-right: -0.75rem;
 }
-/* line 221, ../sass/_oxbow_paragraphs.base.scss */
+/* line 224, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-m > .p__inner > .p__content > .field--name-field-p-paragraphs > .field__item,
 .paragraph.layout-padding-m > .p__inner > .p__content > .field--name-field-p-view .view-content > .views-row,
 .paragraph.layout-padding-m > .p__inner > .p__content > .field--name-field-p-board > .field__item,
@@ -521,17 +524,17 @@
   padding-right: 0.75rem;
   padding-bottom: 1.5rem;
 }
-/* line 213, ../sass/_oxbow_paragraphs.base.scss */
+/* line 216, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-l > .p__inner > .p__title {
   padding-bottom: 2.25rem;
 }
-/* line 216, ../sass/_oxbow_paragraphs.base.scss */
+/* line 219, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-l > .p__inner > .p__content {
   margin-bottom: -2.25rem;
   margin-left: -1.125rem;
   margin-right: -1.125rem;
 }
-/* line 221, ../sass/_oxbow_paragraphs.base.scss */
+/* line 224, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-l > .p__inner > .p__content > .field--name-field-p-paragraphs > .field__item,
 .paragraph.layout-padding-l > .p__inner > .p__content > .field--name-field-p-view .view-content > .views-row,
 .paragraph.layout-padding-l > .p__inner > .p__content > .field--name-field-p-board > .field__item,
@@ -540,17 +543,17 @@
   padding-right: 1.125rem;
   padding-bottom: 2.25rem;
 }
-/* line 213, ../sass/_oxbow_paragraphs.base.scss */
+/* line 216, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-xl > .p__inner > .p__title {
   padding-bottom: 3rem;
 }
-/* line 216, ../sass/_oxbow_paragraphs.base.scss */
+/* line 219, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-xl > .p__inner > .p__content {
   margin-bottom: -3rem;
   margin-left: -1.5rem;
   margin-right: -1.5rem;
 }
-/* line 221, ../sass/_oxbow_paragraphs.base.scss */
+/* line 224, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-xl > .p__inner > .p__content > .field--name-field-p-paragraphs > .field__item,
 .paragraph.layout-padding-xl > .p__inner > .p__content > .field--name-field-p-view .view-content > .views-row,
 .paragraph.layout-padding-xl > .p__inner > .p__content > .field--name-field-p-board > .field__item,
@@ -559,17 +562,17 @@
   padding-right: 1.5rem;
   padding-bottom: 3rem;
 }
-/* line 213, ../sass/_oxbow_paragraphs.base.scss */
+/* line 216, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-xxl > .p__inner > .p__title {
   padding-bottom: 4.5rem;
 }
-/* line 216, ../sass/_oxbow_paragraphs.base.scss */
+/* line 219, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-xxl > .p__inner > .p__content {
   margin-bottom: -4.5rem;
   margin-left: -2.25rem;
   margin-right: -2.25rem;
 }
-/* line 221, ../sass/_oxbow_paragraphs.base.scss */
+/* line 224, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-xxl > .p__inner > .p__content > .field--name-field-p-paragraphs > .field__item,
 .paragraph.layout-padding-xxl > .p__inner > .p__content > .field--name-field-p-view .view-content > .views-row,
 .paragraph.layout-padding-xxl > .p__inner > .p__content > .field--name-field-p-board > .field__item,
@@ -578,17 +581,17 @@
   padding-right: 2.25rem;
   padding-bottom: 4.5rem;
 }
-/* line 213, ../sass/_oxbow_paragraphs.base.scss */
+/* line 216, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-xxxl > .p__inner > .p__title {
   padding-bottom: 9rem;
 }
-/* line 216, ../sass/_oxbow_paragraphs.base.scss */
+/* line 219, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-xxxl > .p__inner > .p__content {
   margin-bottom: -9rem;
   margin-left: -4.5rem;
   margin-right: -4.5rem;
 }
-/* line 221, ../sass/_oxbow_paragraphs.base.scss */
+/* line 224, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.layout-padding-xxxl > .p__inner > .p__content > .field--name-field-p-paragraphs > .field__item,
 .paragraph.layout-padding-xxxl > .p__inner > .p__content > .field--name-field-p-view .view-content > .views-row,
 .paragraph.layout-padding-xxxl > .p__inner > .p__content > .field--name-field-p-board > .field__item,
@@ -597,258 +600,258 @@
   padding-right: 4.5rem;
   padding-bottom: 9rem;
 }
-/* line 236, ../sass/_oxbow_paragraphs.base.scss */
+/* line 239, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.text-size-s h2, .paragraph.text-size-s a[class*='buttton'] {
   font-size: 3vw;
 }
-/* line 239, ../sass/_oxbow_paragraphs.base.scss */
+/* line 242, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.text-size-s h3 {
   font-size: 2vw;
 }
-/* line 242, ../sass/_oxbow_paragraphs.base.scss */
+/* line 245, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.text-size-s h4 {
   font-size: 1.5vw;
 }
-/* line 245, ../sass/_oxbow_paragraphs.base.scss */
+/* line 248, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.text-size-s h5 {
   font-size: 1.2vw;
 }
-/* line 248, ../sass/_oxbow_paragraphs.base.scss */
+/* line 251, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.text-size-s p, .paragraph.text-size-s a {
   font-size: 1.5vw;
 }
 @media screen and (min-width: 64rem) {
-  /* line 254, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 257, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-s h2, .paragraph.text-size-s a[class*='buttton'] {
     font-size: 30px;
   }
-  /* line 257, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 260, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-s h3 {
     font-size: 20px;
   }
-  /* line 260, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 263, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-s h4 {
     font-size: 15px;
   }
-  /* line 263, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 266, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-s h5 {
     font-size: 12px;
   }
-  /* line 266, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 269, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-s p, .paragraph.text-size-s a {
     font-size: 15px;
   }
 }
 @media screen and (max-width: 32rem) {
-  /* line 273, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 276, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-s h2, .paragraph.text-size-s a[class*='buttton'] {
     font-size: 4.5vw;
   }
-  /* line 276, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 279, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-s h3 {
     font-size: 3vw;
   }
-  /* line 279, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 282, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-s h4 {
     font-size: 2.25vw;
   }
-  /* line 282, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 285, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-s h5 {
     font-size: 1.8vw;
   }
-  /* line 285, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 288, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-s p, .paragraph.text-size-s a {
     font-size: 2.25vw;
   }
 }
-/* line 236, ../sass/_oxbow_paragraphs.base.scss */
+/* line 239, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.text-size-m h2, .paragraph.text-size-m a[class*='buttton'] {
   font-size: 5vw;
 }
-/* line 239, ../sass/_oxbow_paragraphs.base.scss */
+/* line 242, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.text-size-m h3 {
   font-size: 3.33333vw;
 }
-/* line 242, ../sass/_oxbow_paragraphs.base.scss */
+/* line 245, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.text-size-m h4 {
   font-size: 2.5vw;
 }
-/* line 245, ../sass/_oxbow_paragraphs.base.scss */
+/* line 248, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.text-size-m h5 {
   font-size: 2vw;
 }
-/* line 248, ../sass/_oxbow_paragraphs.base.scss */
+/* line 251, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.text-size-m p, .paragraph.text-size-m a {
   font-size: 2.5vw;
 }
 @media screen and (min-width: 64rem) {
-  /* line 254, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 257, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-m h2, .paragraph.text-size-m a[class*='buttton'] {
     font-size: 50px;
   }
-  /* line 257, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 260, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-m h3 {
     font-size: 33.33333px;
   }
-  /* line 260, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 263, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-m h4 {
     font-size: 25px;
   }
-  /* line 263, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 266, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-m h5 {
     font-size: 20px;
   }
-  /* line 266, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 269, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-m p, .paragraph.text-size-m a {
     font-size: 25px;
   }
 }
 @media screen and (max-width: 32rem) {
-  /* line 273, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 276, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-m h2, .paragraph.text-size-m a[class*='buttton'] {
     font-size: 7.5vw;
   }
-  /* line 276, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 279, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-m h3 {
     font-size: 5vw;
   }
-  /* line 279, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 282, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-m h4 {
     font-size: 3.75vw;
   }
-  /* line 282, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 285, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-m h5 {
     font-size: 3vw;
   }
-  /* line 285, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 288, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-m p, .paragraph.text-size-m a {
     font-size: 3.75vw;
   }
 }
-/* line 236, ../sass/_oxbow_paragraphs.base.scss */
+/* line 239, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.text-size-l h2, .paragraph.text-size-l a[class*='buttton'] {
   font-size: 6vw;
 }
-/* line 239, ../sass/_oxbow_paragraphs.base.scss */
+/* line 242, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.text-size-l h3 {
   font-size: 4vw;
 }
-/* line 242, ../sass/_oxbow_paragraphs.base.scss */
+/* line 245, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.text-size-l h4 {
   font-size: 3vw;
 }
-/* line 245, ../sass/_oxbow_paragraphs.base.scss */
+/* line 248, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.text-size-l h5 {
   font-size: 2.4vw;
 }
-/* line 248, ../sass/_oxbow_paragraphs.base.scss */
+/* line 251, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.text-size-l p, .paragraph.text-size-l a {
   font-size: 3vw;
 }
 @media screen and (min-width: 64rem) {
-  /* line 254, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 257, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-l h2, .paragraph.text-size-l a[class*='buttton'] {
     font-size: 60px;
   }
-  /* line 257, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 260, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-l h3 {
     font-size: 40px;
   }
-  /* line 260, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 263, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-l h4 {
     font-size: 30px;
   }
-  /* line 263, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 266, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-l h5 {
     font-size: 24px;
   }
-  /* line 266, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 269, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-l p, .paragraph.text-size-l a {
     font-size: 30px;
   }
 }
 @media screen and (max-width: 32rem) {
-  /* line 273, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 276, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-l h2, .paragraph.text-size-l a[class*='buttton'] {
     font-size: 9vw;
   }
-  /* line 276, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 279, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-l h3 {
     font-size: 6vw;
   }
-  /* line 279, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 282, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-l h4 {
     font-size: 4.5vw;
   }
-  /* line 282, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 285, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-l h5 {
     font-size: 3.6vw;
   }
-  /* line 285, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 288, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-l p, .paragraph.text-size-l a {
     font-size: 4.5vw;
   }
 }
-/* line 236, ../sass/_oxbow_paragraphs.base.scss */
+/* line 239, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.text-size-xl h2, .paragraph.text-size-xl a[class*='buttton'] {
   font-size: 8vw;
 }
-/* line 239, ../sass/_oxbow_paragraphs.base.scss */
+/* line 242, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.text-size-xl h3 {
   font-size: 5.33333vw;
 }
-/* line 242, ../sass/_oxbow_paragraphs.base.scss */
+/* line 245, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.text-size-xl h4 {
   font-size: 4vw;
 }
-/* line 245, ../sass/_oxbow_paragraphs.base.scss */
+/* line 248, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.text-size-xl h5 {
   font-size: 3.2vw;
 }
-/* line 248, ../sass/_oxbow_paragraphs.base.scss */
+/* line 251, ../sass/_oxbow_paragraphs.base.scss */
 .paragraph.text-size-xl p, .paragraph.text-size-xl a {
   font-size: 4vw;
 }
 @media screen and (min-width: 64rem) {
-  /* line 254, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 257, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-xl h2, .paragraph.text-size-xl a[class*='buttton'] {
     font-size: 80px;
   }
-  /* line 257, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 260, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-xl h3 {
     font-size: 53.33333px;
   }
-  /* line 260, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 263, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-xl h4 {
     font-size: 40px;
   }
-  /* line 263, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 266, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-xl h5 {
     font-size: 32px;
   }
-  /* line 266, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 269, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-xl p, .paragraph.text-size-xl a {
     font-size: 40px;
   }
 }
 @media screen and (max-width: 32rem) {
-  /* line 273, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 276, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-xl h2, .paragraph.text-size-xl a[class*='buttton'] {
     font-size: 12vw;
   }
-  /* line 276, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 279, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-xl h3 {
     font-size: 8vw;
   }
-  /* line 279, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 282, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-xl h4 {
     font-size: 6vw;
   }
-  /* line 282, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 285, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-xl h5 {
     font-size: 4.8vw;
   }
-  /* line 285, ../sass/_oxbow_paragraphs.base.scss */
+  /* line 288, ../sass/_oxbow_paragraphs.base.scss */
   .paragraph.text-size-xl p, .paragraph.text-size-xl a {
     font-size: 6vw;
   }
@@ -867,28 +870,32 @@
   display: inline-block;
   margin: 0 auto;
 }
-/* line 22, ../sass/_oxbow_paragraphs.image.scss */
+/* line 21, ../sass/_oxbow_paragraphs.image.scss */
+.paragraph.paragraph--type--image figure[data-open] {
+  cursor: pointer;
+}
+/* line 26, ../sass/_oxbow_paragraphs.image.scss */
 .paragraph.paragraph--type--image figcaption {
   margin: 0 auto;
   padding-top: 1.5rem;
 }
-/* line 27, ../sass/_oxbow_paragraphs.image.scss */
+/* line 31, ../sass/_oxbow_paragraphs.image.scss */
 .paragraph.paragraph--type--image .reveal-modal {
   display: none;
 }
-/* line 31, ../sass/_oxbow_paragraphs.image.scss */
+/* line 35, ../sass/_oxbow_paragraphs.image.scss */
 .paragraph.paragraph--type--image.content-size-large figure {
   max-width: 800px;
 }
-/* line 34, ../sass/_oxbow_paragraphs.image.scss */
+/* line 38, ../sass/_oxbow_paragraphs.image.scss */
 .paragraph.paragraph--type--image.content-size-medium figure {
   max-width: 550px;
 }
-/* line 37, ../sass/_oxbow_paragraphs.image.scss */
+/* line 41, ../sass/_oxbow_paragraphs.image.scss */
 .paragraph.paragraph--type--image.content-size-small figure {
   max-width: 300px;
 }
-/* line 42, ../sass/_oxbow_paragraphs.image.scss */
+/* line 46, ../sass/_oxbow_paragraphs.image.scss */
 .paragraph.paragraph--type--image.content-align-left > .p__inner > .p__content {
   display: -webkit-box;
   display: -webkit-flex;
@@ -899,11 +906,11 @@
   -ms-flex-pack: flex-start;
   justify-content: flex-start;
 }
-/* line 44, ../sass/_oxbow_paragraphs.image.scss */
+/* line 48, ../sass/_oxbow_paragraphs.image.scss */
 .paragraph.paragraph--type--image.content-align-left > .p__inner > .p__content figure {
   text-align: left;
 }
-/* line 50, ../sass/_oxbow_paragraphs.image.scss */
+/* line 54, ../sass/_oxbow_paragraphs.image.scss */
 .paragraph.paragraph--type--image.content-align-center > .p__inner > .p__content {
   display: -webkit-box;
   display: -webkit-flex;
@@ -914,11 +921,11 @@
   -ms-flex-pack: center;
   justify-content: center;
 }
-/* line 52, ../sass/_oxbow_paragraphs.image.scss */
+/* line 56, ../sass/_oxbow_paragraphs.image.scss */
 .paragraph.paragraph--type--image.content-align-center > .p__inner > .p__content figure {
   text-align: center;
 }
-/* line 58, ../sass/_oxbow_paragraphs.image.scss */
+/* line 62, ../sass/_oxbow_paragraphs.image.scss */
 .paragraph.paragraph--type--image.content-align-right > .p__inner > .p__content {
   display: -webkit-box;
   display: -webkit-flex;
@@ -929,42 +936,42 @@
   -ms-flex-pack: flex-end;
   justify-content: flex-end;
 }
-/* line 60, ../sass/_oxbow_paragraphs.image.scss */
+/* line 64, ../sass/_oxbow_paragraphs.image.scss */
 .paragraph.paragraph--type--image.content-align-right > .p__inner > .p__content figure {
   text-align: right;
 }
-/* line 69, ../sass/_oxbow_paragraphs.image.scss */
+/* line 73, ../sass/_oxbow_paragraphs.image.scss */
 .paragraph.paragraph--type--image:not(.background-type-none).padding-bottom-none figcaption {
   padding-bottom: 1.5rem;
 }
-/* line 72, ../sass/_oxbow_paragraphs.image.scss */
+/* line 76, ../sass/_oxbow_paragraphs.image.scss */
 .paragraph.paragraph--type--image:not(.background-type-none).padding-left-none figcaption {
   padding-left: 1.5rem;
 }
-/* line 75, ../sass/_oxbow_paragraphs.image.scss */
+/* line 79, ../sass/_oxbow_paragraphs.image.scss */
 .paragraph.paragraph--type--image:not(.background-type-none).padding-right-none figcaption {
   padding-right: 1.5rem;
 }
-/* line 81, ../sass/_oxbow_paragraphs.image.scss */
+/* line 85, ../sass/_oxbow_paragraphs.image.scss */
 .paragraph.paragraph--type--image.background-type-none.padding-bottom-auto figcaption {
   padding-bottom: 0;
 }
-/* line 84, ../sass/_oxbow_paragraphs.image.scss */
+/* line 88, ../sass/_oxbow_paragraphs.image.scss */
 .paragraph.paragraph--type--image.background-type-none.padding-left-auto figcaption {
   padding-left: 0;
 }
-/* line 87, ../sass/_oxbow_paragraphs.image.scss */
+/* line 91, ../sass/_oxbow_paragraphs.image.scss */
 .paragraph.paragraph--type--image.background-type-none.padding-right-auto figcaption {
   padding-right: 0;
 }
 
-/* line 93, ../sass/_oxbow_paragraphs.image.scss */
+/* line 97, ../sass/_oxbow_paragraphs.image.scss */
 .reveal-overlay {
   padding: 3rem;
   text-align: center;
 }
 
-/* line 97, ../sass/_oxbow_paragraphs.image.scss */
+/* line 101, ../sass/_oxbow_paragraphs.image.scss */
 .reveal-modal.paragraph-image {
   outline: none;
   z-index: 10001;
@@ -972,16 +979,16 @@
   background: white;
   padding: 1.5rem;
 }
-/* line 105, ../sass/_oxbow_paragraphs.image.scss */
+/* line 109, ../sass/_oxbow_paragraphs.image.scss */
 .reveal-modal.paragraph-image figure {
   margin: 0;
 }
-/* line 108, ../sass/_oxbow_paragraphs.image.scss */
+/* line 112, ../sass/_oxbow_paragraphs.image.scss */
 .reveal-modal.paragraph-image figure figcaption {
   padding-top: 1.5rem;
   color: #1f1f1f;
 }
-/* line 112, ../sass/_oxbow_paragraphs.image.scss */
+/* line 116, ../sass/_oxbow_paragraphs.image.scss */
 .reveal-modal.paragraph-image figure figcaption p:last-of-type {
   margin-bottom: 0;
 }

@@ -17,6 +17,10 @@
   figure {
     display: inline-block;
     margin: 0 auto;
+    
+    &[data-open] {
+      cursor: pointer;
+    }
   }
   
   figcaption {

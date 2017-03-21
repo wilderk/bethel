@@ -5,7 +5,71 @@
     "fields": {
       
       "color": {
-        
+        "label": "Color",
+        "type": "colors",
+        "values": {
+          "auto": {
+            "label": "Auto",
+            "value": "auto"
+          },
+          "color_1": {
+            "label": "Black",
+            "value": "#000000"
+          },
+          "color_2": {
+            "label": "Gray 1",
+            "value": "#404040"
+          },
+          "color_3": {
+            "label": "Gray 2",
+            "value": "#BCBCBC"
+          },
+          "color_4": {
+            "label": "Gray 3",
+            "value": "#E9E9E9"
+          },
+          "color_5": {
+            "label": "White",
+            "value": "#FFFFFF"
+          },
+          "color_6": {
+            "label": "Purple 1",
+            "value": "#701E63"
+          },
+          "color_7": {
+            "label": "Purple 2",
+            "value": "#8B3A7E"
+          },
+          "color_8": {
+            "label": "Purple 3",
+            "value": "#A8619D"
+          },
+          "color_9": {
+            "label": "Green 1",
+            "value": "#227F22"
+          },
+          "color_10": {
+            "label": "Green 2",
+            "value": "#429E42"
+          },
+          "color_11": {
+            "label": "Green 3",
+            "value": "#227F22"
+          },
+          "color_12": {
+            "label": "Red 1",
+            "value": "#9F2B2B"
+          },
+          "color_13": {
+            "label": "Red 2",
+            "value": "#C55252"
+          },
+          "color_14": {
+            "label": "Red 3",
+            "value": "#EE8A8A"
+          }
+        },
+        "default": "auto"
       }
     }
   }

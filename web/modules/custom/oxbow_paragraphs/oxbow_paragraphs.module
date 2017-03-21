@@ -158,6 +158,15 @@ function oxbow_paragraphs_preprocess_paragraph(&$vars) {
       $settings['text']['color_key'] = $text['text_color']['fields']['color']['value'];
       $settings['text']['size'] = _get_value($text['text_size']['value'], $text_map['text_size'], $json_map);
     }
+
+    /// text (for title)
+    if(isset($json['text_for_title']['fields'])) {
+      $text = $json['text_for_title']['fields'];
+      $text_map = $json_map['text_for_title']['fields'];
+
+      $settings['title']['color'] = _get_value($text['title_color']['fields']['color']['value'], $text_map['title_color']['fields']['color'], $json_map);
+      $settings['title']['align'] = _get_value($text['title_align']['value'], $text_map['title_align'], $json_map);
+    }
     
     /// text
     if(isset($json['text']['fields'])) {
@@ -539,6 +548,11 @@ function oxbow_paragraphs_preprocess_paragraph(&$vars) {
           $item->paragraph_link = $staff_link;
         }
       }
+    }
+
+    /// provide node title
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+      $settings['node']['title'] = $node->title->value;
     }
 
     $vars['oxbow_paragraphs']['settings'] = $settings;

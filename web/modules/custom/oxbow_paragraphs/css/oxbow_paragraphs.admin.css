@@ -327,10 +327,22 @@ table td a.tabledrag-handle .handle {
   content: 'S';
   font-family: oxbow-paragraphs;
   position: absolute;
-  top: 2px;
-  bottom: 2px;
-  left: 2px;
-  right: 2px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-size: 18px;
   color: white;
   line-height: 1;
@@ -340,37 +352,37 @@ table td a.tabledrag-handle .handle {
   border-radius: 50%;
   transform: rotate(90deg);
 }
-/* line 328, ../sass/_oxbow_paragraphs.admin.base.scss */
+/* line 329, ../sass/_oxbow_paragraphs.admin.base.scss */
 .field--widget-entity-reference-paragraphs table[id*='field-p-regions-values'] > tbody > tr .p-swap a:hover:after,
 .field--widget-entity-reference-paragraphs table[id*='field-p-paragraphs-values'] > tbody > tr .p-swap a:hover:after {
   transform: rotate(270deg);
 }
-/* line 335, ../sass/_oxbow_paragraphs.admin.base.scss */
+/* line 336, ../sass/_oxbow_paragraphs.admin.base.scss */
 .field--widget-entity-reference-paragraphs table[id*='field-p-regions-values'] > tbody > tr:last-child > .p-swap,
 .field--widget-entity-reference-paragraphs table[id*='field-p-paragraphs-values'] > tbody > tr:last-child > .p-swap {
   display: none;
 }
-/* line 347, ../sass/_oxbow_paragraphs.admin.base.scss */
+/* line 348, ../sass/_oxbow_paragraphs.admin.base.scss */
 .field--widget-entity-reference-paragraphs .field--name-field-p-image,
 .field--widget-entity-reference-paragraphs .field--name-field-p-caption {
   width: 50%;
   float: left;
 }
-/* line 352, ../sass/_oxbow_paragraphs.admin.base.scss */
+/* line 353, ../sass/_oxbow_paragraphs.admin.base.scss */
 .field--widget-entity-reference-paragraphs .field--name-field-p-image {
   padding-right: 30px;
 }
-/* line 354, ../sass/_oxbow_paragraphs.admin.base.scss */
+/* line 355, ../sass/_oxbow_paragraphs.admin.base.scss */
 .field--widget-entity-reference-paragraphs .field--name-field-p-image img {
   max-width: 100%;
   height: auto;
 }
-/* line 358, ../sass/_oxbow_paragraphs.admin.base.scss */
+/* line 359, ../sass/_oxbow_paragraphs.admin.base.scss */
 .field--widget-entity-reference-paragraphs .field--name-field-p-image input[value='Remove'] {
   display: block;
   margin: 15px 0 0 0;
 }
-/* line 378, ../sass/_oxbow_paragraphs.admin.base.scss */
+/* line 379, ../sass/_oxbow_paragraphs.admin.base.scss */
 .field--widget-entity-reference-paragraphs .p-icon {
   float: left;
   height: 40px;
@@ -378,11 +390,11 @@ table td a.tabledrag-handle .handle {
   font-size: 0;
   position: relative;
 }
-/* line 385, ../sass/_oxbow_paragraphs.admin.base.scss */
+/* line 386, ../sass/_oxbow_paragraphs.admin.base.scss */
 .field--widget-entity-reference-paragraphs .p-icon input {
   display: none;
 }
-/* line 389, ../sass/_oxbow_paragraphs.admin.base.scss */
+/* line 390, ../sass/_oxbow_paragraphs.admin.base.scss */
 .field--widget-entity-reference-paragraphs .p-icon input:checked + label {
   position: absolute;
   top: 0px;
@@ -391,11 +403,11 @@ table td a.tabledrag-handle .handle {
   right: 0px;
   transition: all .3s ease-out;
 }
-/* line 393, ../sass/_oxbow_paragraphs.admin.base.scss */
+/* line 394, ../sass/_oxbow_paragraphs.admin.base.scss */
 .field--widget-entity-reference-paragraphs .p-icon input:checked + label:before {
   border: 7px solid transparent;
 }
-/* line 398, ../sass/_oxbow_paragraphs.admin.base.scss */
+/* line 399, ../sass/_oxbow_paragraphs.admin.base.scss */
 .field--widget-entity-reference-paragraphs .p-icon label {
   display: inline-block;
   display: -webkit-box;
@@ -418,7 +430,7 @@ table td a.tabledrag-handle .handle {
   border-radius: 2px;
   transition: all .3s ease-in;
 }
-/* line 406, ../sass/_oxbow_paragraphs.admin.base.scss */
+/* line 407, ../sass/_oxbow_paragraphs.admin.base.scss */
 .field--widget-entity-reference-paragraphs .p-icon label:before {
   content: '';
   position: absolute;
@@ -430,7 +442,7 @@ table td a.tabledrag-handle .handle {
   border: none;
   border-radius: 2px;
 }
-/* line 414, ../sass/_oxbow_paragraphs.admin.base.scss */
+/* line 415, ../sass/_oxbow_paragraphs.admin.base.scss */
 .field--widget-entity-reference-paragraphs .p-icon label:hover {
   transition: all .2s ease-out;
   position: absolute;
@@ -440,12 +452,12 @@ table td a.tabledrag-handle .handle {
   right: 5.33333px;
 }
 
-/* line 422, ../sass/_oxbow_paragraphs.admin.base.scss */
+/* line 423, ../sass/_oxbow_paragraphs.admin.base.scss */
 .ajax-loading {
   position: relative;
   color: rgba(255, 255, 255, 0) !important;
 }
-/* line 426, ../sass/_oxbow_paragraphs.admin.base.scss */
+/* line 427, ../sass/_oxbow_paragraphs.admin.base.scss */
 .ajax-loading:after {
   content: 'A';
   font-family: oxbow-paragraphs;
@@ -482,32 +494,32 @@ table td a.tabledrag-handle .handle {
     transform: rotate(360deg);
   }
 }
-/* line 457, ../sass/_oxbow_paragraphs.admin.base.scss */
+/* line 458, ../sass/_oxbow_paragraphs.admin.base.scss */
 .field--name-field-p-regions table[id*='field-p-regions-values'] > tbody > tr > td.field-multiple-drag {
   display: none !important;
 }
 
-/* line 468, ../sass/_oxbow_paragraphs.admin.base.scss */
+/* line 469, ../sass/_oxbow_paragraphs.admin.base.scss */
 .field--name-field-p-paragraphs {
   position: relative;
   z-index: 1;
 }
-/* line 473, ../sass/_oxbow_paragraphs.admin.base.scss */
+/* line 474, ../sass/_oxbow_paragraphs.admin.base.scss */
 .field--name-field-p-paragraphs table[id*='field-p-paragraphs-values'] > tbody > tr > td.field-multiple-drag {
   display: none !important;
 }
 
-/* line 479, ../sass/_oxbow_paragraphs.admin.base.scss */
+/* line 480, ../sass/_oxbow_paragraphs.admin.base.scss */
 .paragraphs-subform {
   position: relative;
   z-index: 1;
 }
-/* line 483, ../sass/_oxbow_paragraphs.admin.base.scss */
+/* line 484, ../sass/_oxbow_paragraphs.admin.base.scss */
 .paragraphs-subform.active {
   z-index: 2;
 }
 
-/* line 495, ../sass/_oxbow_paragraphs.admin.base.scss */
+/* line 496, ../sass/_oxbow_paragraphs.admin.base.scss */
 form[data-drupal-form-fields*='edit-field-p-regions'] .layout-region-node-main {
   width: 100%;
   padding-right: 0;

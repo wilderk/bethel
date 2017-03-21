@@ -315,7 +315,8 @@ table td a.tabledrag-handle {
             &:after {
               content: 'S';
               font-family: oxbow-paragraphs;
-              @include fill(2px);
+              @include fill;
+              @include flex(center, center);
               font-size: 18px;
               color: white;
               line-height: 1;

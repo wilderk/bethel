@@ -109,10 +109,34 @@
     }
   },
 
+  "text_for_title": {
+    "weight": 1,
+    "label": "Title",
+    "restrict": ["title"],
+    "fields": {
+      "title_color": {
+        "label": "Title Color",
+        "type": "popup",
+        "fields": {
+          "color": {
+            "label": "Title Color",
+            "type": "global",
+            "map": "color"
+          }
+        }
+      },
+      "title_align": {
+        "label": "Title Alignment",
+        "type": "global",
+        "map": "h-align"
+      }
+    }
+  },
+
   "text": {
     "weight": 1,
     "label": "Text",
-    "restrict": ["!region", "!view", "!board", "!staff"],
+    "restrict": ["!region", "!view", "!board", "!staff", "!title"],
     "fields": {
 
       "color": {

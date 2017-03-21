@@ -13,7 +13,10 @@ body.page-node-type-content-page {
     /// Constrain Page Title
     #block-starter-page-title {
       @include constrain;
-      padding-top: padding(m);
+
+      h1 {
+        padding-top: padding(m);
+      }
     }
   }
 }

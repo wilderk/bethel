@@ -130,6 +130,27 @@ $dropdown-p: padding(xs);
         min-width: 300px;
       }
 
+      /// Hide title field
+      .field--name-field-title-display {
+        margin-bottom: $dropdown-p;
+        padding: $dropdown-p;
+        background: white;
+
+        .form-item {
+          @include flex($v-align: center);
+        }
+
+        label {
+          font-weight: bold;
+        }
+
+        input {
+          width: 1.5em;
+          height: 1.5em;
+          margin-right: .5em;
+        }
+      }
+
       /// Unpublish and Delete Buttons
       .node__unpublish,
       .node__publish,

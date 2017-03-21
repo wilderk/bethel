@@ -144,17 +144,20 @@ $scroll-w: $paragraph-p * 1.5;
     }
   }
   &.title-align-left {
-    > .p__inner > .p__title {
+    > .p__inner > .p__title,
+    > .p__inner > .p__content > .p__title {
       text-align: left;
     }
   }
   &.title-align-center {
-    > .p__inner > .p__title {
+    > .p__inner > .p__title,
+    > .p__inner > .p__content > .p__title {
       text-align: center;
     }
   }
   &.title-align-right {
-    > .p__inner > .p__title {
+    > .p__inner > .p__title,
+    > .p__inner > .p__content > .p__title {
       text-align: right;
     }
   }

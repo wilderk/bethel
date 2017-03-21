@@ -28,3 +28,15 @@ function starter_preprocess_user(&$vars) {
     $vars['profiles'] = $profiles;
   }
 }
+
+/// Hide title
+function starter_preprocess_page_title(&$vars) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    if ($node->hasField('field_title_display')) {
+      $title_hide = $node->get('field_title_display')->value;
+      if ($title_hide) {
+        $vars['title'] = '';
+      }
+    }
+  }
+}
