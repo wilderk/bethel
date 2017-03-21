@@ -5600,12 +5600,13 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open #header #header-top {
 #footer #block-copyrightblock {
   text-align: center;
   font-size: .8em;
+  color: rgba(255, 255, 255, 0.5);
 }
-/* line 14, ../sass/layout/_footer.scss */
+/* line 15, ../sass/layout/_footer.scss */
 #footer #block-copyrightblock * {
   color: #00d1de;
 }
-/* line 18, ../sass/layout/_footer.scss */
+/* line 19, ../sass/layout/_footer.scss */
 #footer * + #block-copyrightblock {
   margin-top: 1.5rem;
 }
