@@ -82,9 +82,12 @@
     $nav_fields.find('.fields__preview').first().click();
   }
 
-  // $(window).load(function() {
-  //   $('.paragraph__preview').first().click();
-  // });
+  $(window).load(function() {
+    /// Load paragraphs if no normal fields
+    if($fields.length && !$fields.find('.form-wrapper:not(.field--name-langcode)').length) {
+      $('.paragraph__preview').first().click();
+    }
+  });
 
   /// Return All Top Level Regions
   function getRegions() {
