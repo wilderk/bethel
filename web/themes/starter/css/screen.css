@@ -5589,7 +5589,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open #header #header-top {
 
 /* line 2, ../sass/layout/_footer.scss */
 #footer {
-  background: #A8619D;
+  background: #007178;
 }
 /* line 5, ../sass/layout/_footer.scss */
 #footer > .layout-container {
@@ -5603,7 +5603,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open #header #header-top {
 }
 /* line 14, ../sass/layout/_footer.scss */
 #footer #block-copyrightblock * {
-  color: #cca3c6;
+  color: #00d1de;
 }
 /* line 18, ../sass/layout/_footer.scss */
 #footer * + #block-copyrightblock {
