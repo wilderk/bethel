@@ -193,7 +193,6 @@
       else if(active in $previews == false) {
         var tmp_active = active.replace('-subform', '');
         if(tmp_active in $previews) {
-          console.log('hit '+tmp_active);
           $nav.find('[data-id="' + tmp_active + '"] .paragraph__preview').click();
         }
         else {
@@ -362,9 +361,6 @@
         if (bg_type == 'none') {
           bg_color = 'transparent';
         }
-        else if (json['background']['fields'][bg_type]['fields']['color']['fields']['color']['value'] == 'auto') {
-          bg_color = 'transparent';
-        }
         else if (bg_type == 'solid' || bg_type == 'video') {
           bg_color = json['background']['fields'][bg_type]['fields']['color']['fields']['color']['hex'];
           bg_opacity = (parseInt(json['background']['fields'][bg_type]['fields']['opacity']['value'].replace('opacity_', '')) - 1) * .1;
@@ -375,6 +371,9 @@
           bg_overlay_opacity = (parseInt(json['background']['fields'][bg_type]['fields']['opacity']['value'].replace('opacity_', '')) - 1) * .1;
           bg_img = $paragraph.find('.paragraphs-subform').first().find('> .p-menu li[data-setting="background"] .p-pane[data-field="image"] .field--name-field-p-setting-bg-img img').attr('src');
         }
+
+        /// Handle auto color
+        if(bg_color == 'auto') bg_color = 'transparent';
 
         /// Color
         txt_color = json['text_with_title']['fields']['title_color']['fields']['color']['hex'];
@@ -398,6 +397,11 @@
 
     /// Settings Change
     $paragraph_json.change(function() {
+      update();
+    });
+
+    /// Settings Image Change
+    $paragraph_menu.find('.field--type-image input').change(function() {
       update();
     });
   }
