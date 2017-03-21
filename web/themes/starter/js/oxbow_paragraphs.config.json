@@ -34,39 +34,39 @@
           },
           "color_6": {
             "label": "Purple 1",
-            "value": "#701E63"
+            "value": "#8B3A7E"
           },
           "color_7": {
             "label": "Purple 2",
-            "value": "#8B3A7E"
+            "value": "#A8619D"
           },
           "color_8": {
             "label": "Purple 3",
-            "value": "#A8619D"
+            "value": "#C893C0"
           },
           "color_9": {
             "label": "Green 1",
-            "value": "#227F22"
+            "value": "#429E42"
           },
           "color_10": {
             "label": "Green 2",
-            "value": "#429E42"
+            "value": "#227F22"
           },
           "color_11": {
             "label": "Green 3",
-            "value": "#227F22"
+            "value": "#A0D9A0"
           },
           "color_12": {
             "label": "Red 1",
-            "value": "#9F2B2B"
+            "value": "#C55252"
           },
           "color_13": {
             "label": "Red 2",
-            "value": "#C55252"
+            "value": "#EE8A8A"
           },
           "color_14": {
             "label": "Red 3",
-            "value": "#EE8A8A"
+            "value": "#FFBCBC"
           }
         },
         "default": "auto"
