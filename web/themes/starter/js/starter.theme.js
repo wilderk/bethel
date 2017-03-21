@@ -1,6 +1,6 @@
 
-(function ($) {  
-  
+(function ($) {
+
   $(document).ready(function() {
 
     /// fix labels valid display, for not required fields
@@ -17,12 +17,12 @@
         }
       })
     });
-    
+
     /// menus
     var $menu = $('#block-starter-main-menu');
     var $menu_mobile = $('#block-mainnavigation');
     var $menu_mobile_button = $('<div class="mobile-menu-button">☰</div>');
-    
+
     if($menu.length) {
       $menu.append($menu_mobile_button);
       $menu.watchMenu({ mobileMenu: $menu_mobile });
@@ -32,8 +32,15 @@
       });
       /// Child Menu Items
       $menu.find('.menu-item--expanded > a').click(function(e) {
+        var $parent = $(this).parent();
         e.preventDefault();
-        $(this).parent().toggleClass('open');
+        if($parent.hasClass('open')) {
+          $menu.closeMenu();
+        }
+        else {
+          $menu.closeMenu();
+          $(this).parent().addClass('open');
+        }
       });
       $menu.find('li').click(function(e) {
         e.stopPropagation();
@@ -44,7 +51,7 @@
         $menu.closeMenu();
       });
     }
-    
+
   });
-  
+
 })(jQuery);
