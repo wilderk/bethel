@@ -45,28 +45,16 @@
             "value": "#C893C0"
           },
           "color_9": {
-            "label": "Green 1",
-            "value": "#429E42"
+            "label": "Blue 1",
+            "value": "#007178"
           },
           "color_10": {
-            "label": "Green 2",
-            "value": "#6EBE6E"
+            "label": "Blue 2",
+            "value": "#548395"
           },
           "color_11": {
-            "label": "Green 3",
-            "value": "#A0D9A0"
-          },
-          "color_12": {
-            "label": "Red 1",
-            "value": "#C55252"
-          },
-          "color_13": {
-            "label": "Red 2",
-            "value": "#EE8A8A"
-          },
-          "color_14": {
-            "label": "Red 3",
-            "value": "#FFBCBC"
+            "label": "Blue 3",
+            "value": "#A4C1CC"
           }
         },
         "default": "auto"

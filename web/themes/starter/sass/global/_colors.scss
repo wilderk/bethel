@@ -10,11 +10,15 @@ $black       : #000000;
 
 $bethel-purple: #8B3A7E;
 $bethel-purple-1: #A8619D;
+$bethel-blue: #007178;
+$bethel-blue-1: #548395;
+$bethel-blue-2: #A4C1CC;
+$bethel-tan: #C0C2B8;
 $bethel-green: #6EBE6E;
 $bethel-red: #C55252;
 
 $foundation-palette: (
-  primary: $bethel-green,
+  primary: $bethel-blue-1,
   secondary: hotpink,
   success: #3fbc4b,
   warning: #ffae00,
@@ -38,10 +42,11 @@ $site-colors: (
   menu: transparent,
   menu-text: white,
 
-  menu-child: $bethel-green,
-  menu-child-hover: darken($bethel-green, 15%),
-  menu-child-active: darken($bethel-green, 20%),
+  menu-child: $bethel-blue-1,
+  menu-child-hover: $bethel-blue,
+  menu-child-active: darken($bethel-blue-1, 5%),
   menu-child-text: white,
+  menu-child-text-hover: white,
   menu-child-text-active: white,
 
   menu-mobile: $bethel-purple,
@@ -50,7 +55,7 @@ $site-colors: (
   menu-footer-text: rgba(white, .8),
   menu-social-text: rgba(white, .8),
 
-  title: $bethel-red,
+  title: $bethel-blue,
   subtitle: $charcoal,
   text: $charcoal,
   link: map-get($foundation-palette, primary),
@@ -60,8 +65,8 @@ $site-colors: (
   button-text: white,
   button-secondary: $bethel-purple,
   button-secondary-text: white,
-  button-tertiary: $bethel-red,
-  button-tertiary-text: white,
+  button-tertiary: $bethel-tan,
+  button-tertiary-text: $charcoal,
 
   input: transparent,
   input-label: $charcoal,
