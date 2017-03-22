@@ -5485,7 +5485,7 @@ html, body {
 #page {
   min-height: 100%;
   position: relative;
-  padding-bottom: 184px;
+  padding-bottom: 283px;
 }
 
 /* line 15, ../sass/layout/_layout.scss */
@@ -5518,7 +5518,7 @@ html, body {
 
 /* line 46, ../sass/layout/_layout.scss */
 #footer {
-  margin-top: -184px;
+  margin-top: -283px;
   position: relative;
 }
 /* line 50, ../sass/layout/_layout.scss */
@@ -5590,25 +5590,34 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open #header #header-top {
 /* line 2, ../sass/layout/_footer.scss */
 #footer {
   background: #007178;
+  color: rgba(255, 255, 255, 0.5);
 }
-/* line 5, ../sass/layout/_footer.scss */
+/* line 6, ../sass/layout/_footer.scss */
 #footer > .layout-container {
   padding-top: 3rem;
   padding-bottom: 1.5rem;
 }
-/* line 10, ../sass/layout/_footer.scss */
+/* line 11, ../sass/layout/_footer.scss */
+#footer #block-bethelfooter {
+  margin: 1.5rem 0;
+}
+/* line 14, ../sass/layout/_footer.scss */
+#footer #block-bethelfooter p:last-of-type {
+  margin-bottom: 0;
+}
+/* line 19, ../sass/layout/_footer.scss */
 #footer #block-copyrightblock {
   text-align: center;
   font-size: .8em;
   color: rgba(255, 255, 255, 0.5);
 }
-/* line 15, ../sass/layout/_footer.scss */
+/* line 24, ../sass/layout/_footer.scss */
 #footer #block-copyrightblock * {
   color: #00d1de;
 }
-/* line 19, ../sass/layout/_footer.scss */
+/* line 28, ../sass/layout/_footer.scss */
 #footer * + #block-copyrightblock {
-  margin-top: 1.5rem;
+  margin-top: 3rem;
 }
 
 /* line 2, ../sass/components/icons/_icons.scss */
