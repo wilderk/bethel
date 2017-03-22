@@ -5,9 +5,6 @@
     var $this = $(this);
     $this.removeClass('open');
     $this.find('.open').removeClass('open');
-    if($this.find('.mobile-menu-button')) {
-      $this.find('.mobile-menu-button').removeClass('open');
-    }
   };
   
   $.fn.openMenu = function() {

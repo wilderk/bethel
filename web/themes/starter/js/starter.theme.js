@@ -24,9 +24,12 @@
     var $menu_mobile_button = $('<div class="mobile-menu-button">☰</div>');
 
     if($menu.length) {
+      /// Desktop Menu
       $menu.append($menu_mobile_button);
       $menu.watchMenu({ mobileMenu: $menu_mobile });
-      $menu_mobile_button.click(function() {
+      /// Mobile Menu
+      $menu_mobile_button.click(function(e) {
+        e.stopPropagation();
         $menu_mobile_button.toggleMenu();
         $menu_mobile.toggleMenu();
       });

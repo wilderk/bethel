@@ -113,6 +113,7 @@ $arrow-w: padding(m);
     line-height: 1;
     font-size: rem-calc(40);
     cursor: pointer;
+    color: color(menu-text);
 
     &.open {
       font-size: 0;

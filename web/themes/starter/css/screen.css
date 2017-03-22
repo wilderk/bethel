@@ -6225,12 +6225,13 @@ form .form-item.webform-component-time .form-radios {
   line-height: 1;
   font-size: 2.5rem;
   cursor: pointer;
+  color: white;
 }
-/* line 117, ../sass/components/menu/_menu--desktop.scss */
+/* line 118, ../sass/components/menu/_menu--desktop.scss */
 #block-starter-main-menu .mobile-menu-button.open {
   font-size: 0;
 }
-/* line 120, ../sass/components/menu/_menu--desktop.scss */
+/* line 121, ../sass/components/menu/_menu--desktop.scss */
 #block-starter-main-menu .mobile-menu-button.open:after {
   content: '×';
   position: absolute;
@@ -6243,12 +6244,12 @@ form .form-item.webform-component-time .form-radios {
   cursor: pointer;
 }
 
-/* line 136, ../sass/components/menu/_menu--desktop.scss */
+/* line 137, ../sass/components/menu/_menu--desktop.scss */
 .show-desktop #block-starter-main-menu > ul {
   position: static;
 }
 
-/* line 142, ../sass/components/menu/_menu--desktop.scss */
+/* line 143, ../sass/components/menu/_menu--desktop.scss */
 .show-mobile #block-starter-main-menu .mobile-menu-button {
   display: block;
 }
