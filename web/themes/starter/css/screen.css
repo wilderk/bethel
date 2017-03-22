@@ -6695,7 +6695,7 @@ body.path-user .field--name-user-picture {
 }
 /* line 31, ../sass/components/node/_node.scss */
 .node.node--view-mode-teaser .links {
-  margin: 0.75rem 0 0;
+  margin: 1.5rem 0 0;
   list-style: none;
 }
 /* line 35, ../sass/components/node/_node.scss */
