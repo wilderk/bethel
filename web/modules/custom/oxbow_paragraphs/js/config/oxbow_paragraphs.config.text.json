@@ -36,22 +36,8 @@
 
       "title_align": {
         "label": "Title Alignment",
-        "type": "buttons",
-        "values": {
-          "left": {
-            "label": "Left",
-            "value": "left"
-          },
-          "center": {
-            "label": "Center",
-            "value": "center"
-          },
-          "right": {
-            "label": "Right",
-            "value": "right"
-          }
-        },
-        "default": "left"
+        "type": "global",
+        "map": "h-align"
       },
 
       "title_link": {

@@ -706,16 +706,19 @@
 }
 
 /* line 102, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-h-align-left,
 .layout-h-align-left .paragraph {
   text-align: left;
 }
 
-/* line 105, ../sass/oxbow_paragraphs.layouts.scss */
+/* line 106, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-h-align-center,
 .layout-h-align-center .paragraph {
   text-align: center;
 }
 
-/* line 108, ../sass/oxbow_paragraphs.layouts.scss */
+/* line 110, ../sass/oxbow_paragraphs.layouts.scss */
+.layout-h-align-right,
 .layout-h-align-right .paragraph {
   text-align: right;
 }

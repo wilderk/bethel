@@ -120,6 +120,10 @@ $scroll-w: $paragraph-p * 1.5;
       margin-bottom: 0;
     }
   }
+
+  [class*='field--type-text'] {
+    text-align: left;
+  }
   
   figure {
     margin: 0;

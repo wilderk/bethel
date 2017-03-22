@@ -172,6 +172,11 @@ set classes = [
   {% set classes = classes | merge(['content-align-' ~ settings.image.align]) %}
 {% endif %}
 
+{# VIEW #}
+{% if settings.view and settings.view.background != 'auto' %}
+  {% set classes = classes | merge(['view-background-true']) %}
+{% endif %}
+
 {# CLASSES #}
 {% if settings.classes %}
   {% set classes = classes | merge([settings.classes]) %}

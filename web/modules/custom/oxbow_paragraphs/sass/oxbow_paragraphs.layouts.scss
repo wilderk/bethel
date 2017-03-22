@@ -99,12 +99,15 @@ $col-w-min: 320px;
   flex-direction: row-reverse;
 }
 
+.layout-h-align-left,
 .layout-h-align-left .paragraph {
   text-align: left;
 }
+.layout-h-align-center,
 .layout-h-align-center .paragraph {
   text-align: center;
 }
+.layout-h-align-right,
 .layout-h-align-right .paragraph {
   text-align: right;
 }
