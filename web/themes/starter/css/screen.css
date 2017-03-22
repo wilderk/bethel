@@ -6153,7 +6153,14 @@ form .form-item.webform-component-time .form-radios {
 #block-starter-main-menu > ul > li a.is-active {
   border-bottom: 2px solid white;
 }
-/* line 39, ../sass/components/menu/_menu--desktop.scss */
+/* line 36, ../sass/components/menu/_menu--desktop.scss */
+#block-starter-main-menu > ul > li a.menu-alt {
+  background: white;
+  color: #8B3A7E;
+  padding: 0.375rem 0.75rem 0.375rem 0.63rem;
+  border-radius: 3px;
+}
+/* line 46, ../sass/components/menu/_menu--desktop.scss */
 #block-starter-main-menu > ul > li.open:before {
   content: '';
   position: absolute;
@@ -6166,7 +6173,7 @@ form .form-item.webform-component-time .form-radios {
   transform: rotate(45deg);
   background: #007178;
 }
-/* line 54, ../sass/components/menu/_menu--desktop.scss */
+/* line 61, ../sass/components/menu/_menu--desktop.scss */
 #block-starter-main-menu > ul > li ul {
   display: none;
   position: absolute;
@@ -6178,7 +6185,7 @@ form .form-item.webform-component-time .form-radios {
   background-color: #007178;
   margin-top: 0.75rem;
 }
-/* line 66, ../sass/components/menu/_menu--desktop.scss */
+/* line 73, ../sass/components/menu/_menu--desktop.scss */
 #block-starter-main-menu > ul > li ul li {
   display: inline-block;
   width: 100%;
@@ -6187,7 +6194,7 @@ form .form-item.webform-component-time .form-radios {
   padding: 0;
   white-space: nowrap;
 }
-/* line 74, ../sass/components/menu/_menu--desktop.scss */
+/* line 81, ../sass/components/menu/_menu--desktop.scss */
 #block-starter-main-menu > ul > li ul li a {
   display: inline-block;
   width: 100%;
@@ -6195,21 +6202,21 @@ form .form-item.webform-component-time .form-radios {
   padding: 0.75rem;
   color: white;
 }
-/* line 81, ../sass/components/menu/_menu--desktop.scss */
+/* line 88, ../sass/components/menu/_menu--desktop.scss */
 #block-starter-main-menu > ul > li ul li a:hover {
   background: #548395;
   color: white;
 }
-/* line 86, ../sass/components/menu/_menu--desktop.scss */
+/* line 93, ../sass/components/menu/_menu--desktop.scss */
 #block-starter-main-menu > ul > li ul li a.is-active {
   background: #4b7585;
   color: white;
 }
-/* line 94, ../sass/components/menu/_menu--desktop.scss */
+/* line 101, ../sass/components/menu/_menu--desktop.scss */
 #block-starter-main-menu > ul > li.open > ul {
   display: block;
 }
-/* line 101, ../sass/components/menu/_menu--desktop.scss */
+/* line 108, ../sass/components/menu/_menu--desktop.scss */
 #block-starter-main-menu .mobile-menu-button {
   display: none;
   position: absolute;
@@ -6219,11 +6226,11 @@ form .form-item.webform-component-time .form-radios {
   font-size: 2.5rem;
   cursor: pointer;
 }
-/* line 110, ../sass/components/menu/_menu--desktop.scss */
+/* line 117, ../sass/components/menu/_menu--desktop.scss */
 #block-starter-main-menu .mobile-menu-button.open {
   font-size: 0;
 }
-/* line 113, ../sass/components/menu/_menu--desktop.scss */
+/* line 120, ../sass/components/menu/_menu--desktop.scss */
 #block-starter-main-menu .mobile-menu-button.open:after {
   content: '×';
   position: absolute;
@@ -6236,12 +6243,12 @@ form .form-item.webform-component-time .form-radios {
   cursor: pointer;
 }
 
-/* line 129, ../sass/components/menu/_menu--desktop.scss */
+/* line 136, ../sass/components/menu/_menu--desktop.scss */
 .show-desktop #block-starter-main-menu > ul {
   position: static;
 }
 
-/* line 135, ../sass/components/menu/_menu--desktop.scss */
+/* line 142, ../sass/components/menu/_menu--desktop.scss */
 .show-mobile #block-starter-main-menu .mobile-menu-button {
   display: block;
 }

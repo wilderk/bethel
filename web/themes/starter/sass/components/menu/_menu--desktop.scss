@@ -32,6 +32,13 @@ $arrow-w: padding(m);
         &.is-active {
           border-bottom: 2px solid color(menu-text);
         }
+
+        &.menu-alt {
+          background: color(menu-text);
+          color: color(header);
+          padding: padding(xs) padding(s) padding(xs) (padding(s) - .12rem);
+          border-radius: 3px;
+        }
       }
 
       /// child menu arrow
