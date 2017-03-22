@@ -5553,29 +5553,30 @@ html, body {
 }
 /* line 28, ../sass/layout/_header.scss */
 #header #header-top #block-starter-branding {
-  float: left;
-  height: 2.25rem;
   position: relative;
+  top: -0.5rem;
   z-index: 2;
+  float: left;
+  height: 3.25rem;
   font-size: 0;
 }
-/* line 35, ../sass/layout/_header.scss */
+/* line 36, ../sass/layout/_header.scss */
 #header #header-top #block-starter-branding img {
   height: 100%;
   width: auto;
 }
 
-/* line 48, ../sass/layout/_header.scss */
+/* line 49, ../sass/layout/_header.scss */
 body.toolbar-fixed #header #header-top {
   top: 39px;
 }
 
-/* line 51, ../sass/layout/_header.scss */
+/* line 52, ../sass/layout/_header.scss */
 body.toolbar-fixed.toolbar-horizontal.toolbar-tray-open #header #header-top {
   top: 79px;
 }
 
-/* line 54, ../sass/layout/_header.scss */
+/* line 55, ../sass/layout/_header.scss */
 body.toolbar-fixed.toolbar-vertical.toolbar-tray-open #header #header-top {
   top: 39px;
   left: 240px;

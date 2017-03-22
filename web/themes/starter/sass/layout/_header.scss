@@ -26,10 +26,11 @@ $header-top-content-h: rem-calc($header-top-h) - ($site-p-s * 2);
     
     /// logo
     #block-starter-branding {
-      float: left;
-      height: $header-top-content-h;
       position: relative;
+      top: - padding(s) + .25rem;
       z-index: 2;
+      float: left;
+      height: $header-top-h - .5rem;
       font-size: 0;
       
       img {
