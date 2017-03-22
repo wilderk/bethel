@@ -121,7 +121,7 @@ $arrow-w: padding(m);
       &:after {
         content: '×';
         position: absolute;
-        top: 0;
+        top: -.3rem;
         right: 0;
         padding: 0 $site-p-xs;
         line-height: 1;

@@ -6245,7 +6245,7 @@ form .form-item.webform-component-time .form-radios {
 #block-starter-main-menu .mobile-menu-button.open:after {
   content: '×';
   position: absolute;
-  top: 0;
+  top: -.3rem;
   right: 0;
   padding: 0 0.375rem;
   line-height: 1;
@@ -6274,7 +6274,7 @@ form .form-item.webform-component-time .form-radios {
   top: 3.75rem;
   position: fixed;
   z-index: 1001;
-  background: #8B3A7E;
+  background: #007178;
   padding: 1.5rem;
   display: none;
 }
