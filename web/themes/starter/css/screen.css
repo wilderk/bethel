@@ -2062,7 +2062,7 @@ h6 {
 
   /* line 309, ../foundation/bower_components/foundation-sites/scss/typography/_base.scss */
   h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   /* line 309, ../foundation/bower_components/foundation-sites/scss/typography/_base.scss */
@@ -5682,7 +5682,7 @@ h2, h3, h4, h5, h6 {
 
 /* line 34, ../sass/components/typography/_text.scss */
 .fs-xl {
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 /* line 37, ../sass/components/typography/_text.scss */
