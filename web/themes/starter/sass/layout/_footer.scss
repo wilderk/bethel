@@ -16,7 +16,7 @@
     }
   }
 
-  #block-copyrightblock {
+  #block-oxbowlabscopyright {
     text-align: center;
     font-size: .8em;
     color: color(footer-text);
@@ -25,7 +25,7 @@
       color: lighten(color(footer), 20%);
     }
   }
-  * + #block-copyrightblock {
+  * + #block-oxbowlabscopyright {
     margin-top: padding(l);
   }
 }

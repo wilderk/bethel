@@ -5607,17 +5607,17 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open #header #header-top {
   margin-bottom: 0;
 }
 /* line 19, ../sass/layout/_footer.scss */
-#footer #block-copyrightblock {
+#footer #block-oxbowlabscopyright {
   text-align: center;
   font-size: .8em;
   color: rgba(255, 255, 255, 0.5);
 }
 /* line 24, ../sass/layout/_footer.scss */
-#footer #block-copyrightblock * {
+#footer #block-oxbowlabscopyright * {
   color: #00d1de;
 }
 /* line 28, ../sass/layout/_footer.scss */
-#footer * + #block-copyrightblock {
+#footer * + #block-oxbowlabscopyright {
   margin-top: 3rem;
 }
 
