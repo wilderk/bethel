@@ -1,0 +1,7 @@
+name: Oxbow Misc
+description: Provides miscellaneous functions and blocks.
+core: 8.x
+package: Oxbow
+dependencies:
+- block
+type: module

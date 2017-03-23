@@ -1,0 +1,15 @@
+<?php
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_user_login.
+ * Redirect user to front page on login.
+ */
+function oxbow_misc_user_login($account) {
+  $url = '/';
+  $response = new Symfony\Component\HttpFoundation\RedirectResponse($url);
+  $response->send();
+  return;
+}

@@ -4,7 +4,7 @@
  * Contains \Drupal\gck_header\Plugin\Block\Copyright.
  */
 
-namespace Drupal\oxbow_blocks\Plugin\Block;
+namespace Drupal\oxbow_misc\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 
 /**
@@ -12,7 +12,7 @@ use Drupal\Core\Block\BlockBase;
  *
  * @Block(
  *   id = "copyright",
- *   admin_label = @Translation("Copyright block"),
+ *   admin_label = @Translation("Oxbow Labs -- Copyright"),
  *   category = @Translation("Displays site copyright with name, current date, and Oxbow Labs link.")
  * )
  */
