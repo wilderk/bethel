@@ -123,6 +123,10 @@ $scroll-w: $paragraph-p * 1.5;
 
   [class*='field--type-text'] {
     text-align: left;
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
   }
   
   figure {
