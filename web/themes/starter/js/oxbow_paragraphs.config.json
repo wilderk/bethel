@@ -60,6 +60,14 @@
         "default": "auto"
       }
     }
+  },
+
+  "text_for_title": {
+    "fields": {
+      "title_align": {
+        "default": "center"
+      }
+    }
   }
   
 }]
