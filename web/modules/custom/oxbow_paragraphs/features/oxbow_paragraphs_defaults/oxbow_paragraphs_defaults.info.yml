@@ -1,4 +1,4 @@
-name: Defaults
+name: 'Oxbow Paragraphs -- Defaults'
 description: 'Basic paragraph types with content and setting fields.'
 type: module
 core: 8.x
