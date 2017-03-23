@@ -63,34 +63,6 @@
             "map": "color"
           }
         }
-      },
-
-      "text_size": {
-        "label": "Text Size",
-        "type": "select",
-        "values": {
-          "auto": {
-            "label": "Auto",
-            "value": "auto"
-          },
-          "size_1": {
-            "label": "S",
-            "value": "s"
-          },
-          "size_2": {
-            "label": "M",
-            "value": "m"
-          },
-          "size_3": {
-            "label": "L",
-            "value": "l"
-          },
-          "size_4": {
-            "label": "XL",
-            "value": "xl"
-          }
-        },
-        "default": "auto"
       }
     }
   },
@@ -135,33 +107,6 @@
             "map": "color"
           }
         }
-      },
-      "size": {
-        "label": "Text Size",
-        "type": "select",
-        "values": {
-          "auto": {
-            "label": "Auto",
-            "value": "auto"
-          },
-          "size_1": {
-            "label": "S",
-            "value": "s"
-          },
-          "size_2": {
-            "label": "M",
-            "value": "m"
-          },
-          "size_3": {
-            "label": "L",
-            "value": "l"
-          },
-          "size_4": {
-            "label": "XL",
-            "value": "xl"
-          }
-        },
-        "default": "auto"
       }
     }
   }

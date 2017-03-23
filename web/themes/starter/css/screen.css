@@ -2057,27 +2057,27 @@ h6 {
 @media screen and (min-width: 40em) {
   /* line 309, ../foundation/bower_components/foundation-sites/scss/typography/_base.scss */
   h1 {
-    font-size: 3rem;
+    font-size: 2.75rem;
   }
 
   /* line 309, ../foundation/bower_components/foundation-sites/scss/typography/_base.scss */
   h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   /* line 309, ../foundation/bower_components/foundation-sites/scss/typography/_base.scss */
   h3 {
-    font-size: 1.9375rem;
+    font-size: 1.5rem;
   }
 
   /* line 309, ../foundation/bower_components/foundation-sites/scss/typography/_base.scss */
   h4 {
-    font-size: 1.5625rem;
+    font-size: 1.125rem;
   }
 
   /* line 309, ../foundation/bower_components/foundation-sites/scss/typography/_base.scss */
   h5 {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 
   /* line 309, ../foundation/bower_components/foundation-sites/scss/typography/_base.scss */
@@ -5656,7 +5656,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open #header #header-top {
 }
 
 /* line 14, ../sass/components/typography/_text.scss */
-h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -5677,17 +5677,17 @@ h3, h4, h5, h6 {
 
 /* line 31, ../sass/components/typography/_text.scss */
 .fs-l {
-  font-size: 31;
+  font-size: 1.5rem;
 }
 
 /* line 34, ../sass/components/typography/_text.scss */
 .fs-xl {
-  font-size: 40;
+  font-size: 2rem;
 }
 
 /* line 37, ../sass/components/typography/_text.scss */
 .fs-xxl {
-  font-size: 48;
+  font-size: 2.75rem;
 }
 
 /* line 2, ../sass/components/typography/_tables.scss */
@@ -5886,7 +5886,7 @@ form .form-item .description {
 }
 /* line 46, ../sass/components/forms/_forms.scss */
 form .form-item label {
-  font-size: 20;
+  font-size: 1rem;
   margin-bottom: 0.375rem;
 }
 /* line 55, ../sass/components/forms/_forms.scss */
@@ -6320,7 +6320,7 @@ form .form-item.webform-component-time .form-radios {
 #block-mainnavigation > ul:not(.contextual-links) li a {
   color: white;
   padding: 1.5rem;
-  font-size: 1.6875rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 /* line 32, ../sass/components/menu/_menu--mobile.scss */
