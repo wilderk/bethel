@@ -1,0 +1,22 @@
+
+.node--type-sermon {
+}
+
+body.page-node-type-sermon .node--type-sermon {
+
+  .node__date {
+    text-align: center;
+    margin-bottom: padding(m);
+  }
+
+  [class *= 'field--type-text'] {
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  audio {
+    display: block;
+    margin: padding(m) auto 0;
+  }
+}

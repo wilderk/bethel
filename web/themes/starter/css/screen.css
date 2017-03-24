@@ -6767,6 +6767,21 @@ body.page-node-type-content-page #content-main #block-starter-page-title h1 {
   padding-top: 1.5rem;
 }
 
+/* line 7, ../sass/components/node/_node--sermon.scss */
+body.page-node-type-sermon .node--type-sermon .node__date {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+/* line 13, ../sass/components/node/_node--sermon.scss */
+body.page-node-type-sermon .node--type-sermon [class*='field--type-text'] > *:last-child {
+  margin-bottom: 0;
+}
+/* line 18, ../sass/components/node/_node--sermon.scss */
+body.page-node-type-sermon .node--type-sermon audio {
+  display: block;
+  margin: 1.5rem auto 0;
+}
+
 /* line 6, ../sass/components/view/_view.scss */
 .view > .view-content .views-row {
   margin-bottom: 1.5rem;
