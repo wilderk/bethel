@@ -8,3 +8,12 @@
     }
   }
 }
+
+.paragraph--type--view.layout-type-stack .view {
+  .view-content {
+    flex-wrap: wrap;
+  }
+  .views-row {
+    flex: 1 0 100%;
+  }
+}
