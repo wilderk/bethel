@@ -2,6 +2,7 @@
 .node--type-sermon {
 }
 
+/// Node page
 body.page-node-type-sermon .node--type-sermon {
 
   .node__date {
@@ -18,5 +19,40 @@ body.page-node-type-sermon .node--type-sermon {
   audio {
     display: block;
     margin: padding(m) auto 0;
+  }
+}
+
+/// All Block
+.view-display-id-block_all {
+
+  .node {
+    @include flex($v-align: baseline, $h-align: space-between);
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .node__title {
+      padding-right: padding(m);
+    }
+
+    .node__content {
+      width: 100%;
+
+      audio {
+        margin-top: padding(s);
+      }
+    }
+  }
+}
+
+/// Paragraph View
+.paragraph.layout-type-stack .view-id-sermons {
+
+  .view-content {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .views-row {
+    flex: 1 0 100%;
   }
 }

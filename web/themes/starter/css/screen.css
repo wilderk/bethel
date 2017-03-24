@@ -6767,19 +6767,59 @@ body.page-node-type-content-page #content-main #block-starter-page-title h1 {
   padding-top: 1.5rem;
 }
 
-/* line 7, ../sass/components/node/_node--sermon.scss */
+/* line 8, ../sass/components/node/_node--sermon.scss */
 body.page-node-type-sermon .node--type-sermon .node__date {
   text-align: center;
   margin-bottom: 1.5rem;
 }
-/* line 13, ../sass/components/node/_node--sermon.scss */
+/* line 14, ../sass/components/node/_node--sermon.scss */
 body.page-node-type-sermon .node--type-sermon [class*='field--type-text'] > *:last-child {
   margin-bottom: 0;
 }
-/* line 18, ../sass/components/node/_node--sermon.scss */
+/* line 19, ../sass/components/node/_node--sermon.scss */
 body.page-node-type-sermon .node--type-sermon audio {
   display: block;
   margin: 1.5rem auto 0;
+}
+
+/* line 28, ../sass/components/node/_node--sermon.scss */
+.view-display-id-block_all .node {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-between;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+/* line 33, ../sass/components/node/_node--sermon.scss */
+.view-display-id-block_all .node .node__title {
+  padding-right: 1.5rem;
+}
+/* line 37, ../sass/components/node/_node--sermon.scss */
+.view-display-id-block_all .node .node__content {
+  width: 100%;
+}
+/* line 40, ../sass/components/node/_node--sermon.scss */
+.view-display-id-block_all .node .node__content audio {
+  margin-top: 0.75rem;
+}
+
+/* line 50, ../sass/components/node/_node--sermon.scss */
+.paragraph.layout-type-stack .view-id-sermons .view-content {
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+/* line 55, ../sass/components/node/_node--sermon.scss */
+.paragraph.layout-type-stack .view-id-sermons .views-row {
+  flex: 1 0 100%;
 }
 
 /* line 6, ../sass/components/view/_view.scss */
