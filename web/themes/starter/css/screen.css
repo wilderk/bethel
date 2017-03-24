@@ -6181,7 +6181,7 @@ form .form-item.webform-component-time .form-radios {
   margin-left: -0.75rem;
   margin-top: 5px;
   transform: rotate(45deg);
-  background: #007178;
+  background: #548395;
 }
 /* line 61, ../sass/components/menu/_menu--desktop.scss */
 #block-starter-main-menu > ul > li ul {
@@ -6192,7 +6192,7 @@ form .form-item.webform-component-time .form-radios {
   min-width: 9.375rem;
   transform: translateX(-50%);
   margin: 0;
-  background-color: #007178;
+  background-color: #548395;
   margin-top: 0.75rem;
 }
 /* line 73, ../sass/components/menu/_menu--desktop.scss */
@@ -6214,7 +6214,7 @@ form .form-item.webform-component-time .form-radios {
 }
 /* line 88, ../sass/components/menu/_menu--desktop.scss */
 #block-starter-main-menu > ul > li ul li a:hover {
-  background: #548395;
+  background: #007178;
   color: white;
 }
 /* line 93, ../sass/components/menu/_menu--desktop.scss */

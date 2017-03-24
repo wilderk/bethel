@@ -45,8 +45,8 @@ $site-colors: (
   menu: transparent,
   menu-text: white,
 
-  menu-child: $bethel-blue,
-  menu-child-hover: $bethel-blue-1,
+  menu-child: $bethel-blue-1,
+  menu-child-hover: $bethel-blue,
   menu-child-active: darken($bethel-blue-1, 5%),
   menu-child-text: white,
   menu-child-text-hover: white,
