@@ -233,6 +233,8 @@ set classes = [
     {% include oxbow_paragraphs.path_module ~ '/templates/_paragraphs--misc.html.twig' %}
   {% elseif paragraph.bundle == 'title' %}
     {% include oxbow_paragraphs.path_module ~ '/templates/_paragraphs--title.html.twig' %}
+  {% elseif paragraph.bundle == 'code' %}
+    {% include oxbow_paragraphs.path_module ~ '/templates/_paragraphs--code.html.twig' %}
   {% else %}
     {{ content | without('field_p_tag', 'field_p_title', 'field_p_settings') }}
   {% endif %}
