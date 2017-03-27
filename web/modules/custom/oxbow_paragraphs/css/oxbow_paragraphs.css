@@ -1106,51 +1106,56 @@
   margin-right: auto;
   margin-bottom: 0;
 }
-/* line 22, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 23, ../sass/_oxbow_paragraphs.slideshow.scss */
+.paragraph.layout-type-slides:not(.height-auto) > .p__inner {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+/* line 28, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides.padding-top-auto > .p__inner {
   padding-top: 0;
 }
-/* line 23, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 29, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides.padding-bottom-auto > .p__inner {
   padding-bottom: 0;
 }
-/* line 24, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 30, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides.padding-left-auto > .p__inner {
   padding-left: 0;
 }
-/* line 25, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 31, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides.padding-right-auto > .p__inner {
   padding-right: 0;
 }
-/* line 27, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 33, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides.padding-top-auto > .p__inner > .p__title {
   padding-top: 1.5rem;
 }
-/* line 28, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 34, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides.padding-left-auto > .p__inner > .p__title {
   padding-left: 1.5rem;
 }
-/* line 29, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 35, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides.padding-right-auto > .p__inner > .p__title {
   padding-right: 1.5rem;
 }
-/* line 32, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 38, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides .slick-slide > .paragraph.padding-top-auto > .p__inner {
   padding-top: 1.5rem;
 }
-/* line 33, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 39, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides .slick-slide > .paragraph.padding-bottom-auto > .p__inner {
   padding-bottom: 1.5rem;
 }
-/* line 34, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 40, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides .slick-slide > .paragraph.padding-left-auto > .p__inner {
   padding-left: 1.5rem;
 }
-/* line 35, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 41, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides .slick-slide > .paragraph.padding-right-auto > .p__inner {
   padding-right: 1.5rem;
 }
-/* line 38, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 44, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides .paragraph {
   opacity: 0;
   -webkit-transition: opacity 0.5s;
@@ -1159,11 +1164,11 @@
   -o-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
-/* line 44, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 50, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides.loaded .paragraph {
   opacity: 1;
 }
-/* line 49, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 55, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides .slick-slide {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1171,20 +1176,20 @@
   display: flex;
   height: auto;
 }
-/* line 53, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 59, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides .slick-slide > .paragraph {
   width: 100%;
 }
-/* line 60, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 66, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides.layout-align-center .slick-slide > .paragraph {
   align-items: center;
 }
-/* line 65, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 71, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides .slick-track {
   display: flex;
   flex-flow: row wrap;
 }
-/* line 72, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 78, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides .slick-prev, .paragraph.layout-type-slides .slick-next {
   position: absolute;
   top: 50%;
@@ -1195,7 +1200,7 @@
   font-size: 0;
   outline: none;
 }
-/* line 82, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 88, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides .slick-prev:after, .paragraph.layout-type-slides .slick-next:after {
   content: '';
   display: inline-block;
@@ -1205,35 +1210,45 @@
   background: rgba(255, 255, 255, 0.5);
   position: relative;
 }
-/* line 92, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 98, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides .slick-prev {
   left: 5px;
 }
-/* line 94, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 100, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides .slick-prev:after {
   left: 50%;
 }
-/* line 98, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 104, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides .slick-next {
   right: 5px;
 }
-/* line 100, ../sass/_oxbow_paragraphs.slideshow.scss */
+/* line 106, ../sass/_oxbow_paragraphs.slideshow.scss */
 .paragraph.layout-type-slides .slick-next:after {
   right: 150%;
 }
-/* line 106, ../sass/_oxbow_paragraphs.slideshow.scss */
-.paragraph.layout-type-slides .slick-slide > .paragraph--type--image > .p__inner,
-.paragraph.layout-type-slides .slick-slide > .paragraph--type--image > .p__inner > .p__content {
+/* line 113, ../sass/_oxbow_paragraphs.slideshow.scss */
+.paragraph.layout-type-slides:not(.height-auto) .slick-slide > .paragraph--type--image > .p__inner,
+.paragraph.layout-type-slides:not(.height-auto) .slick-slide > .paragraph--type--image > .p__inner > .p__content {
   height: 100%;
   position: relative;
 }
-/* line 111, ../sass/_oxbow_paragraphs.slideshow.scss */
-.paragraph.layout-type-slides .slick-slide > .paragraph--type--image figure {
+/* line 118, ../sass/_oxbow_paragraphs.slideshow.scss */
+.paragraph.layout-type-slides:not(.height-auto) .slick-slide > .paragraph--type--image figure,
+.paragraph.layout-type-slides:not(.height-auto) .slick-slide > .paragraph--type--image figure > .field--type-image {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+}
+/* line 122, ../sass/_oxbow_paragraphs.slideshow.scss */
+.paragraph.layout-type-slides:not(.height-auto) .slick-slide > .paragraph--type--image figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: auto;
 }
 
 /* line 7, ../sass/_oxbow_paragraphs.accordion.scss */

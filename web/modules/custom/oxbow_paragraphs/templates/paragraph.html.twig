@@ -101,6 +101,9 @@ set classes = [
 {% endif %}
 
 {# SIZE #}
+{% if settings.size.height %}
+  {% set classes = classes | merge(['height-' ~ settings.size.height]) %}
+{% endif %}
 {% if settings.size.padding %}
   {% set classes = classes | merge(['padding-top-' ~ settings.size.padding.t]) %}
   {% set classes = classes | merge(['padding-bottom-' ~ settings.size.padding.b]) %}

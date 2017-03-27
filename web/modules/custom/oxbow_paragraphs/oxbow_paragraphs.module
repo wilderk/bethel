@@ -149,14 +149,11 @@ function oxbow_paragraphs_preprocess_paragraph(&$vars) {
       $settings['title']['visible'] = _get_value($text['title_display']['value'], $text_map['title_display'], $json_map);
       $settings['title']['align'] = _get_value($text['title_align']['value'], $text_map['title_align'], $json_map);
 
+      /// title link
       $link = $fc_settings->get('field_p_setting_title_link')->getValue();
-      //$uri = $link[0]['uri'];
-      //kint($uri);
-      //kint(Url::fromUri($uri));
-
-//      if(isset($link[0]['uri'])) {
-//        $settings['title']['link'] =  Url::fromUri($link[0]['uri'])->toString();
-//      }
+      if(isset($link[0]['uri'])) {
+        $settings['title']['link'] =  Url::fromUri($link[0]['uri'])->toString();
+      }
       
       $settings['text']['color'] = _get_value($text['text_color']['fields']['color']['value'], $text_map['text_color']['fields']['color'], $json_map);
       $settings['text']['color_key'] = $text['text_color']['fields']['color']['value'];

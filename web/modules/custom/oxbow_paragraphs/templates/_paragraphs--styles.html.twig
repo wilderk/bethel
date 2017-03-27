@@ -49,7 +49,7 @@
   {{ css_target }} { min-height: {{ settings.size.height }}vh; }
   {% if settings.layout and settings.layout.type == 'slides' %}
     {{ css_target }} { height: {{ settings.size.height }}vh !important; overflow: hidden; }
-    {{ css_target }} .slick-slide > .paragraph { height: {{ settings.size.height }}vh; overflow: hidden; }
+    {{ css_target }} .slick-slide > .paragraph { height: {{ settings.size.height }}vh; min-height: 0; overflow: hidden; }
   {% endif %}
 {% endif %}
 

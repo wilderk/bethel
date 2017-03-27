@@ -28,8 +28,28 @@
     
     /// slideshow regions
     $('.paragraph--type--region.layout-type-slides').each(function() {
-      $(this).find('.field--name-field-p-paragraphs').first().data('slick', $(this).data('slick')).slick();
-      $(this).find('.paragraph--type--image img').contain();
+      var $this = $(this);
+      $this.find('.field--name-field-p-paragraphs').first().data('slick', $(this).data('slick')).slick();
+      if(!$this.hasClass('height-auto')) {
+        var $tmp_p = $this.find('.slick-slide > .paragraph--type--image');
+        $tmp_p.each(function() {
+          var $tmp_p_img = $(this);
+          /// make room for caption
+          if($tmp_p_img.find('figcaption').length) {
+            $(window).load(function() {
+              $tmp_p_img.find('figure .field--type-image').css('bottom', $tmp_p_img.find('figcaption').outerHeight());
+            });
+            $(window).resize(function() {
+              $tmp_p_img.find('figure .field--type-image').css('bottom', $tmp_p_img.find('figcaption').outerHeight());
+            });
+          }
+          /// fit image
+          $tmp_p_img.find('img').contain();
+          $(window).resize(function() {
+            $tmp_p_img.find('img').contain();
+          });
+        });
+      }
     });
     /// slideshow views
     $('.paragraph--type--view.layout-type-slides').each(function() {

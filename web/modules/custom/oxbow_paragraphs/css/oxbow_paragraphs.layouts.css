@@ -671,53 +671,56 @@
 
 /* line 74, ../sass/oxbow_paragraphs.layouts.scss */
 .layout-align-top.layout-columns,
-.layout-align-top .layout-columns {
+.layout-align-top .layout-columns,
+.layout-align-top .slick-track {
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
 }
 
-/* line 80, ../sass/oxbow_paragraphs.layouts.scss */
+/* line 81, ../sass/oxbow_paragraphs.layouts.scss */
 .layout-align-center.layout-columns,
-.layout-align-center .layout-columns {
+.layout-align-center .layout-columns,
+.layout-align-center .slick-track {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
 }
 
-/* line 86, ../sass/oxbow_paragraphs.layouts.scss */
+/* line 88, ../sass/oxbow_paragraphs.layouts.scss */
 .layout-align-bottom.layout-columns,
-.layout-align-bottom .layout-columns {
+.layout-align-bottom .layout-columns,
+.layout-align-bottom .slick-track {
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
 }
 
-/* line 93, ../sass/oxbow_paragraphs.layouts.scss */
+/* line 96, ../sass/oxbow_paragraphs.layouts.scss */
 .layout-direction-ltr.layout-columns,
 .layout-direction-ltr .layout-columns {
   flex-direction: row;
 }
 
-/* line 97, ../sass/oxbow_paragraphs.layouts.scss */
+/* line 100, ../sass/oxbow_paragraphs.layouts.scss */
 .layout-direction-rtl.layout-columns,
 .layout-direction-rtl .layout-columns {
   flex-direction: row-reverse;
 }
 
-/* line 102, ../sass/oxbow_paragraphs.layouts.scss */
+/* line 105, ../sass/oxbow_paragraphs.layouts.scss */
 .layout-h-align-left,
 .layout-h-align-left .paragraph {
   text-align: left;
 }
 
-/* line 106, ../sass/oxbow_paragraphs.layouts.scss */
+/* line 109, ../sass/oxbow_paragraphs.layouts.scss */
 .layout-h-align-center,
 .layout-h-align-center .paragraph {
   text-align: center;
 }
 
-/* line 110, ../sass/oxbow_paragraphs.layouts.scss */
+/* line 113, ../sass/oxbow_paragraphs.layouts.scss */
 .layout-h-align-right,
 .layout-h-align-right .paragraph {
   text-align: right;

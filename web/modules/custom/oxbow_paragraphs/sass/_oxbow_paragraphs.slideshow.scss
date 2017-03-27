@@ -18,6 +18,12 @@
       }
     }
   }
+
+  /// remove padding on slideshows with explicit height
+  &:not(.height-auto) > .p__inner {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
   
   &.padding-top-auto > .p__inner { padding-top: 0; }
   &.padding-bottom-auto > .p__inner { padding-bottom: 0; }
@@ -102,14 +108,21 @@
     }
   }
 
-  .slick-slide > .paragraph--type--image {
-    > .p__inner,
-    > .p__inner > .p__content {
-      height: 100%;
-      position: relative;
-    }
-    figure {
-      @include fill;
+  &:not(.height-auto) .slick-slide {
+    > .paragraph--type--image {
+      > .p__inner,
+      > .p__inner > .p__content {
+        height: 100%;
+        position: relative;
+      }
+      figure,
+      figure > .field--type-image {
+        @include fill;
+      }
+      figcaption {
+        @include fill;
+        top: auto;
+      }
     }
   }
 }
