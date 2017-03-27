@@ -38,11 +38,11 @@
       /// Scroll to Newly Added Paragraph
       setTimeout(function() {
         if ($region_new && $region_new.length) {
-          Navigation.activate($region_new.closest('tr.p-region').data('id'));
+          Navigation.activate($region_new.closest('tr').data('id'));
           var $paragraph_new = $region_new.find('.field--widget-entity-reference-paragraphs').first().find('table').first().find('> tbody > tr').last();
           var scroll = $paragraphs.scrollTop() - $paragraphs.offset().top + $paragraph_new.offset().top - 12;
           $paragraphs.animate({scrollTop: scroll}, 500);
-          $paragraph_new = null;
+          $region_new = null;
         }
       }, 500);
     }
@@ -85,7 +85,9 @@
   $(window).load(function() {
     /// Load paragraphs if no normal fields
     if($fields.length && !$fields.find('.form-wrapper:not(.field--name-langcode)').length) {
-      $('.paragraph__preview').first().click();
+      if(Navigation.getActive() == 'none') {
+        $('.paragraph__preview').first().click();
+      }
     }
   });
 
@@ -129,6 +131,11 @@
       active = _id;
     };
     var activate = this.activate;
+
+    /// Return Active Key
+    this.getActive = function() {
+      return active;
+    };
 
     /// Enable Sorting
     this.enable = function() {
@@ -225,7 +232,7 @@
         $paragraphs.scrollTop(0);
       }
       /// Set Region as Active
-      active = this_key;
+      activate(this_key);
     });
 
     /// Watch for Fields Activation
