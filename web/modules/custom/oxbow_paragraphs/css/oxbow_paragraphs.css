@@ -1082,17 +1082,21 @@
   bottom: -1px;
   border-bottom: 2px solid;
 }
-/* line 62, ../sass/_oxbow_paragraphs.view.scss */
+/* line 61, ../sass/_oxbow_paragraphs.view.scss */
+.paragraph.paragraph--type--view.view-background-true .views-row > * {
+  padding: 1.5rem;
+}
+/* line 68, ../sass/_oxbow_paragraphs.view.scss */
 .paragraph.paragraph--type--view.layout-slideshow .view-content {
   display: flex;
   flex-flow: row wrap;
 }
-/* line 67, ../sass/_oxbow_paragraphs.view.scss */
+/* line 73, ../sass/_oxbow_paragraphs.view.scss */
 .paragraph.paragraph--type--view.layout-slideshow .views-row {
   display: flex;
   height: auto;
 }
-/* line 72, ../sass/_oxbow_paragraphs.view.scss */
+/* line 78, ../sass/_oxbow_paragraphs.view.scss */
 .paragraph.paragraph--type--view.layout-slideshow .views-row > * {
   padding: 1.5rem;
 }

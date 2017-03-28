@@ -322,6 +322,7 @@ function oxbow_paragraphs_preprocess_paragraph(&$vars) {
 
         $settings['layout']['direction'] = _get_value($layout_columns['direction']['value'], $layout_columns_map['direction'], $json_map);
         $settings['layout']['align'] = _get_value($layout_columns['align']['value'], $layout_columns_map['align'], $json_map);
+        $settings['layout']['height'] = _get_value($layout_columns['height']['value'], $layout_columns_map['height'], $json_map);
         $settings['layout']['padding'] = _get_value($layout_columns['padding']['value'], $layout_columns_map['padding'], $json_map);
 
         if(isset($layout_columns['h-align'])) {
@@ -389,6 +390,7 @@ function oxbow_paragraphs_preprocess_paragraph(&$vars) {
       $settings['layout']['columns'] = _get_value($layout_view['columns']['value'], $layout_view_map['columns'], $json_map);
       $settings['layout']['direction'] = _get_value($layout_view['direction']['value'], $layout_view_map['direction'], $json_map);
       $settings['layout']['align'] = _get_value($layout_view['align']['value'], $layout_view_map['align'], $json_map);
+      $settings['layout']['height'] = _get_value($layout_view['height']['value'], $layout_view_map['height'], $json_map);
       $settings['layout']['padding'] = _get_value($layout_view['padding']['value'], $layout_view_map['padding'], $json_map);
     }
     

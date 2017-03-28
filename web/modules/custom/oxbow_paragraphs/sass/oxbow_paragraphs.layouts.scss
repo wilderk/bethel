@@ -78,34 +78,55 @@ $col-w-min: 320px;
   }
 }
 
-.layout-align-top.layout-columns,
-.layout-align-top .layout-columns,
-.layout-align-top .view-content,
-.layout-align-top .slick-track {
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+.layout-height-auto {
+  &.layout-align-top.layout-columns,
+  &.layout-align-top .layout-columns,
+  &.layout-align-top .view-content,
+  &.layout-align-top .slick-track {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+  &.layout-align-center.layout-columns,
+  &.layout-align-center .layout-columns,
+  &.layout-align-center .view-content,
+  &.layout-align-center .slick-track {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  &.layout-align-bottom.layout-columns,
+  &.layout-align-bottom .layout-columns,
+  &.layout-align-bottom .view-content,
+  &.layout-align-bottom .slick-track {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+  }
 }
-.layout-align-center.layout-columns,
-.layout-align-center .layout-columns,
-.layout-align-center .view-content,
-.layout-align-center .slick-track {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-.layout-align-bottom.layout-columns,
-.layout-align-bottom .layout-columns,
-.layout-align-bottom .view-content,
-.layout-align-bottom .slick-track {
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
-}
-.layout-align-fill .layout-columns,
-.layout-align-fill .view-content,
-.layout-align-fill .slick-track {
-  > * > * {
+.layout-height-equal {
+  &.layout-align-top .layout-columns [class*='layout-item'] > .paragraph,
+  &.layout-align-top .view-content .views-row > *,
+  &.layout-align-top .slick-track .slick-slide > .paragraph {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    height: 100%;
+  }
+  &.layout-align-center .layout-columns [class*='layout-item'] > .paragraph,
+  &.layout-align-center .view-content .views-row > *,
+  &.layout-align-center .slick-track .slick-slide > .paragraph {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+  }
+  &.layout-align-bottom .layout-columns [class*='layout-item'] > .paragraph,
+  &.layout-align-bottom .view-content .views-row > *,
+  &.layout-align-bottom .slick-track .slick-slide > .paragraph {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
     height: 100%;
   }
 }

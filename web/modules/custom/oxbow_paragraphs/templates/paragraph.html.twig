@@ -134,6 +134,9 @@ set classes = [
   {% if settings.layout.align %}
     {% set classes = classes | merge(['layout-align-' ~ settings.layout.align]) %}
   {% endif %}
+  {% if settings.layout.height %}
+    {% set classes = classes | merge(['layout-height-' ~ settings.layout.height]) %}
+  {% endif %}
   {% if settings.layout['h-align'] %}
     {% set classes = classes | merge(['layout-h-align-' ~ settings.layout['h-align']]) %}
   {% endif %}

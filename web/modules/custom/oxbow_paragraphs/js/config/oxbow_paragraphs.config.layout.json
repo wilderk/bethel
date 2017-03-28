@@ -228,13 +228,24 @@
               "bottom": {
                 "label": "Bottom",
                 "value": "bottom"
-              },
-              "fill": {
-                "label": "Fill",
-                "value": "fill"
               }
             },
             "default": "top"
+          },
+          "height": {
+            "label": "Column Heights",
+            "type": "buttons",
+            "values": {
+              "equal": {
+                "label": "Equal",
+                "value": "equal"
+              },
+              "auto": {
+                "label": "Auto",
+                "value": "auto"
+              }
+            },
+            "default": "auto"
           },
           "h-align": {
             "label": "Horizontal Alignment",
@@ -509,13 +520,25 @@
           "bottom": {
             "label": "Bottom",
             "value": "bottom"
-          },
-          "fill": {
-            "label": "Fill",
-            "value": "fill"
           }
         },
         "default": "top"
+      },
+
+      "height": {
+        "label": "Column Heights",
+        "type": "buttons",
+        "values": {
+          "equal": {
+            "label": "Equal",
+            "value": "equal"
+          },
+          "auto": {
+            "label": "Auto",
+            "value": "auto"
+          }
+        },
+        "default": "auto"
       },
 
       "padding": {
