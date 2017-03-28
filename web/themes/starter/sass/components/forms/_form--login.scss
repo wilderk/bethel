@@ -1,0 +1,17 @@
+form[action*='bethelmennonite.ccbchurch.com/login'] {
+
+  label {
+    text-align: left;
+  }
+
+  input[type='submit'] {
+    @include btn;
+    width: 100%;
+    margin: padding(s) 0;
+  }
+
+  a {
+    display: block;
+    font-size: .7em;
+  }
+}
