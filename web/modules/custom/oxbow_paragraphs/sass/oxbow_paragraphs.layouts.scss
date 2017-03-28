@@ -105,6 +105,13 @@ $col-w-min: 320px;
   }
 }
 .layout-height-equal {
+  .layout-columns,
+  .view-content,
+  .slick-track {
+    -webkit-box-align: stretch !important;
+    -ms-flex-align: stretch !important;
+    align-items: stretch !important;
+  }
   &.layout-align-top .layout-columns [class*='layout-item'] > .paragraph,
   &.layout-align-top .view-content .views-row > *,
   &.layout-align-top .slick-track .slick-slide > .paragraph {
