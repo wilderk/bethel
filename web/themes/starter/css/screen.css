@@ -6868,11 +6868,6 @@ body.page-node-type-sermon .node--type-sermon audio {
   flex: 1 0 100%;
 }
 
-/* line 13, ../sass/components/view/_view--articles.scss */
-.paragraph.view-background-true .views-row > .node {
-  padding: 1.5rem;
-}
-
 /* line 18, ../sass/components/paragraphs/_paragraphs.scss */
 .paragraph.title-fill > .p__inner {
   position: absolute;
