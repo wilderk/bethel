@@ -128,12 +128,14 @@ set classes = [
   {% if settings.layout.padding %}
     {% set classes = classes | merge(['layout-padding-' ~ settings.layout.padding]) %}
   {% endif %}
+  {% if settings.layout.direction %}
+    {% set classes = classes | merge(['layout-direction-' ~ settings.layout.direction]) %}
+  {% endif %}
+  {% if settings.layout.align %}
+    {% set classes = classes | merge(['layout-align-' ~ settings.layout.align]) %}
+  {% endif %}
   {% if settings.layout['h-align'] %}
     {% set classes = classes | merge(['layout-h-align-' ~ settings.layout['h-align']]) %}
-  {% endif %}
-  {% if settings.layout.type == 'columns' %}
-    {% set classes = classes | merge(['layout-direction-' ~ settings.layout.direction]) %}
-    {% set classes = classes | merge(['layout-align-' ~ settings.layout.align]) %}
   {% endif %}
   {% if settings.layout.type == 'slides' %}
     {% set slide_data = " data-slick='{" %}
@@ -160,6 +162,11 @@ set classes = [
   {% if settings.layout.type == 'accordion' %}
     {% if settings.layout.accordion.collapse == 'off' %}
       {% set classes = classes | merge(['layout-accordion-collapse']) %}
+    {% endif %}
+  {% endif %}
+  {% if settings.layout.type == 'view' %}
+    {% if settings.layout.columns %}
+      {% set classes = classes | merge(['layout-columns-' ~ settings.layout.columns]) %}
     {% endif %}
   {% endif %}
 {% endif %}

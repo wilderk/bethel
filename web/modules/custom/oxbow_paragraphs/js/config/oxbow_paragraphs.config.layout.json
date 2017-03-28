@@ -3,7 +3,7 @@
   "layout": {
     "weight": 4,
     "label": "Layout",
-    "restrict": ["region", "view", "board", "staff"],
+    "restrict": ["region", "board", "staff"],
     "fields": {
 
       "type": {
@@ -436,6 +436,84 @@
           }
 
         }
+      }
+    }
+  },
+
+  "layout_view": {
+    "weight": 4,
+    "label": "Layout",
+    "restrict": ["view"],
+    "fields": {
+
+      "columns": {
+        "label": "Columns",
+        "type": "buttons",
+        "values": {
+          "cols_1": {
+            "label": "1",
+            "value": "1"
+          },
+          "cols_2": {
+            "label": "2",
+            "value": "2"
+          },
+          "cols_3": {
+            "label": "3",
+            "value": "3"
+          },
+          "cols_4": {
+            "label": "4",
+            "value": "4"
+          },
+          "cols_5": {
+            "label": "5",
+            "value": "5"
+          }
+        },
+        "default": "cols_1"
+      },
+
+      "direction": {
+        "label": "Direction",
+        "type": "buttons",
+        "values": {
+          "ltr": {
+            "label": "Left to Right",
+            "value": "ltr"
+          },
+          "rtl": {
+            "label": "Right to Left",
+            "value": "rtl"
+          }
+        },
+        "default": "ltr"
+      },
+
+      "align": {
+        "label": "Vertical Alignment",
+        "type": "buttons",
+        "values": {
+          "top": {
+            "label": "Top",
+            "value": "top"
+          },
+          "center": {
+            "label": "Center",
+            "value": "center"
+          },
+          "bottom": {
+            "label": "Bottom",
+            "value": "bottom"
+          }
+        },
+        "default": "top"
+      },
+
+      "padding": {
+        "label": "Content Spacing",
+        "type": "global",
+        "map": "padding"
       }
     }
   }

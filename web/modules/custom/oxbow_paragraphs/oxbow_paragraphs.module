@@ -379,6 +379,18 @@ function oxbow_paragraphs_preprocess_paragraph(&$vars) {
         $vars['paragraph']->save();
       }
     }
+
+    /// view layout
+    if(isset($json['layout_view']['fields'])) {
+      $layout_view = $json['layout_view']['fields'];
+      $layout_view_map = $json_map['layout_view']['fields'];
+
+      $settings['layout']['type'] = 'view';
+      $settings['layout']['columns'] = _get_value($layout_view['columns']['value'], $layout_view_map['columns'], $json_map);
+      $settings['layout']['direction'] = _get_value($layout_view['direction']['value'], $layout_view_map['direction'], $json_map);
+      $settings['layout']['align'] = _get_value($layout_view['align']['value'], $layout_view_map['align'], $json_map);
+      $settings['layout']['padding'] = _get_value($layout_view['padding']['value'], $layout_view_map['padding'], $json_map);
+    }
     
     /// extras
     if(isset($json['extras']['fields'])) {

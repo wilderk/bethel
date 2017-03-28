@@ -1034,8 +1034,9 @@
 .paragraph.paragraph--type--view > .p__inner > .p__content > .field--name-field-p-view .view-content {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
 }
-/* line 15, ../sass/_oxbow_paragraphs.view.scss */
+/* line 16, ../sass/_oxbow_paragraphs.view.scss */
 .paragraph.paragraph--type--view > .p__inner > .p__content > .field--name-field-p-view .views-row {
   width: 100%;
   margin-bottom: 0;
@@ -1046,33 +1047,33 @@
   display: table;
   clear: both;
 }
-/* line 21, ../sass/_oxbow_paragraphs.view.scss */
+/* line 22, ../sass/_oxbow_paragraphs.view.scss */
 .paragraph.paragraph--type--view > .p__inner > .p__content > .field--name-field-p-view .feed-icon {
   position: absolute;
   right: 0;
   bottom: 0;
 }
-/* line 27, ../sass/_oxbow_paragraphs.view.scss */
+/* line 28, ../sass/_oxbow_paragraphs.view.scss */
 .paragraph.paragraph--type--view > .p__inner > .p__content > .field--name-field-p-view nav.pager {
   width: 100%;
   padding-bottom: 1.5rem;
   text-align: center;
 }
-/* line 32, ../sass/_oxbow_paragraphs.view.scss */
+/* line 33, ../sass/_oxbow_paragraphs.view.scss */
 .paragraph.paragraph--type--view > .p__inner > .p__content > .field--name-field-p-view nav.pager ul {
   list-style: none;
   margin: 0;
 }
-/* line 37, ../sass/_oxbow_paragraphs.view.scss */
+/* line 38, ../sass/_oxbow_paragraphs.view.scss */
 .paragraph.paragraph--type--view > .p__inner > .p__content > .field--name-field-p-view nav.pager li {
   display: inline-block;
 }
-/* line 40, ../sass/_oxbow_paragraphs.view.scss */
+/* line 41, ../sass/_oxbow_paragraphs.view.scss */
 .paragraph.paragraph--type--view > .p__inner > .p__content > .field--name-field-p-view nav.pager li a {
   position: relative;
   padding: 0 0.375rem;
 }
-/* line 45, ../sass/_oxbow_paragraphs.view.scss */
+/* line 46, ../sass/_oxbow_paragraphs.view.scss */
 .paragraph.paragraph--type--view > .p__inner > .p__content > .field--name-field-p-view nav.pager li.is-active a:after {
   content: '';
   position: absolute;
@@ -1081,17 +1082,17 @@
   bottom: -1px;
   border-bottom: 2px solid;
 }
-/* line 61, ../sass/_oxbow_paragraphs.view.scss */
+/* line 62, ../sass/_oxbow_paragraphs.view.scss */
 .paragraph.paragraph--type--view.layout-slideshow .view-content {
   display: flex;
   flex-flow: row wrap;
 }
-/* line 66, ../sass/_oxbow_paragraphs.view.scss */
+/* line 67, ../sass/_oxbow_paragraphs.view.scss */
 .paragraph.paragraph--type--view.layout-slideshow .views-row {
   display: flex;
   height: auto;
 }
-/* line 71, ../sass/_oxbow_paragraphs.view.scss */
+/* line 72, ../sass/_oxbow_paragraphs.view.scss */
 .paragraph.paragraph--type--view.layout-slideshow .views-row > * {
   padding: 1.5rem;
 }

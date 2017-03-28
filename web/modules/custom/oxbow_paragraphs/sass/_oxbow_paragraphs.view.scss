@@ -10,6 +10,7 @@
         .view-content {
           position: relative;
           display: flex;
+          flex-wrap: wrap;
         }
         
         .views-row {

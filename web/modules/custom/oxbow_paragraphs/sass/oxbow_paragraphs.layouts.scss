@@ -35,6 +35,13 @@ $col-w-min: 320px;
   }
 }
 
+/// View Layouts
+@for $w1 from 1 through $cols-max {
+  .layout-type-view.layout-columns-#{$w1} .view-content .views-row {
+    @include column(100% / $w1);
+  }
+}
+
 /// Breakpoints for Grid Layout Items
 .layout-grid > .layout-item_1-2 {
   @media screen and (max-width: 500px) {
@@ -73,6 +80,7 @@ $col-w-min: 320px;
 
 .layout-align-top.layout-columns,
 .layout-align-top .layout-columns,
+.layout-align-top .view-content,
 .layout-align-top .slick-track {
   -webkit-box-align: start;
   -ms-flex-align: start;
@@ -80,6 +88,7 @@ $col-w-min: 320px;
 }
 .layout-align-center.layout-columns,
 .layout-align-center .layout-columns,
+.layout-align-center .view-content,
 .layout-align-center .slick-track {
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -87,6 +96,7 @@ $col-w-min: 320px;
 }
 .layout-align-bottom.layout-columns,
 .layout-align-bottom .layout-columns,
+.layout-align-bottom .view-content,
 .layout-align-bottom .slick-track {
   -webkit-box-align: end;
   -ms-flex-align: end;
@@ -94,11 +104,13 @@ $col-w-min: 320px;
 }
 
 .layout-direction-ltr.layout-columns,
-.layout-direction-ltr .layout-columns {
+.layout-direction-ltr .layout-columns,
+.layout-direction-ltr .view-content {
   flex-direction: row;
 }
 .layout-direction-rtl.layout-columns,
-.layout-direction-rtl .layout-columns {
+.layout-direction-rtl .layout-columns,
+.layout-direction-rtl .view-content {
   flex-direction: row-reverse;
 }
 
