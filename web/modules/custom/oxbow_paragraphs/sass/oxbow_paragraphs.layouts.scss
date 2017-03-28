@@ -102,6 +102,13 @@ $col-w-min: 320px;
   -ms-flex-align: end;
   align-items: flex-end;
 }
+.layout-align-fill .layout-columns,
+.layout-align-fill .view-content,
+.layout-align-fill .slick-track {
+  > * > * {
+    height: 100%;
+  }
+}
 
 .layout-direction-ltr.layout-columns,
 .layout-direction-ltr .layout-columns,

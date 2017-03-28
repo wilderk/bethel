@@ -228,6 +228,10 @@
               "bottom": {
                 "label": "Bottom",
                 "value": "bottom"
+              },
+              "fill": {
+                "label": "Fill",
+                "value": "fill"
               }
             },
             "default": "top"
@@ -505,6 +509,10 @@
           "bottom": {
             "label": "Bottom",
             "value": "bottom"
+          },
+          "fill": {
+            "label": "Fill",
+            "value": "fill"
           }
         },
         "default": "top"
