@@ -13,4 +13,20 @@
   &.text-color-color_2 {
 
   }
+
+  &.title-fill {
+    > .p__inner {
+      @include fill;
+
+      > .p__title {
+        @include fill;
+        @include flex(center, center);
+
+        a {
+          @include fill;
+          @include flex(center, center);
+        }
+      }
+    }
+  }
 }
