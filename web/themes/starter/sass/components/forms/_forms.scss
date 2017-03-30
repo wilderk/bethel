@@ -147,13 +147,14 @@ form {
 
 /// awesome inputs
 $fancy-input-border: 1px solid color(input-label);
+$fancy-input-padding: 1rem;
 
 .form-type-textfield,
 .form-type-password,
 .form-type-email,
 .form-type-number {
   position: relative;
-  padding-top: padding(m);
+  padding-top: $fancy-input-padding;
   
   input {
     
@@ -174,7 +175,7 @@ $fancy-input-border: 1px solid color(input-label);
   
   label {
     position: absolute;
-    top: padding(m);
+    top: $fancy-input-padding;
     transition: all .3s;
   }
   
@@ -188,7 +189,7 @@ $fancy-input-border: 1px solid color(input-label);
   .form-bar:after {
     content: '';
     position: absolute;
-    top: rem-calc(24) + padding(m);
+    top: rem-calc(24) + $fancy-input-padding;
     height: 2px;
     width: 0;
     background: color(input-active);

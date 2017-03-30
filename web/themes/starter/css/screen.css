@@ -5996,15 +5996,15 @@ form .form-item.webform-component-time .form-radios {
   }
 }
 
-/* line 151, ../sass/components/forms/_forms.scss */
+/* line 152, ../sass/components/forms/_forms.scss */
 .form-type-textfield,
 .form-type-password,
 .form-type-email,
 .form-type-number {
   position: relative;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
 }
-/* line 158, ../sass/components/forms/_forms.scss */
+/* line 159, ../sass/components/forms/_forms.scss */
 .form-type-textfield input,
 .form-type-password input,
 .form-type-email input,
@@ -6016,7 +6016,7 @@ form .form-item.webform-component-time .form-radios {
   height: 1.5625rem;
   padding: 3px 0;
 }
-/* line 167, ../sass/components/forms/_forms.scss */
+/* line 168, ../sass/components/forms/_forms.scss */
 .form-type-textfield input:focus,
 .form-type-password input:focus,
 .form-type-email input:focus,
@@ -6026,16 +6026,16 @@ form .form-item.webform-component-time .form-radios {
   border: none;
   background: transparent;
 }
-/* line 175, ../sass/components/forms/_forms.scss */
+/* line 176, ../sass/components/forms/_forms.scss */
 .form-type-textfield label,
 .form-type-password label,
 .form-type-email label,
 .form-type-number label {
   position: absolute;
-  top: 1.5rem;
+  top: 1rem;
   transition: all .3s;
 }
-/* line 181, ../sass/components/forms/_forms.scss */
+/* line 182, ../sass/components/forms/_forms.scss */
 .form-type-textfield input:focus ~ label, .form-type-textfield input:valid:not(.is-empty) ~ label,
 .form-type-password input:focus ~ label,
 .form-type-password input:valid:not(.is-empty) ~ label,
@@ -6047,7 +6047,7 @@ form .form-item.webform-component-time .form-radios {
   font-size: .6em;
   color: #007178;
 }
-/* line 187, ../sass/components/forms/_forms.scss */
+/* line 188, ../sass/components/forms/_forms.scss */
 .form-type-textfield .form-bar:before,
 .form-type-textfield .form-bar:after,
 .form-type-password .form-bar:before,
@@ -6058,27 +6058,27 @@ form .form-item.webform-component-time .form-radios {
 .form-type-number .form-bar:after {
   content: '';
   position: absolute;
-  top: 3rem;
+  top: 2.5rem;
   height: 2px;
   width: 0;
   background: #007178;
   transition: all .3s;
 }
-/* line 197, ../sass/components/forms/_forms.scss */
+/* line 198, ../sass/components/forms/_forms.scss */
 .form-type-textfield .form-bar:before,
 .form-type-password .form-bar:before,
 .form-type-email .form-bar:before,
 .form-type-number .form-bar:before {
   left: 50%;
 }
-/* line 200, ../sass/components/forms/_forms.scss */
+/* line 201, ../sass/components/forms/_forms.scss */
 .form-type-textfield .form-bar:after,
 .form-type-password .form-bar:after,
 .form-type-email .form-bar:after,
 .form-type-number .form-bar:after {
   right: 50%;
 }
-/* line 204, ../sass/components/forms/_forms.scss */
+/* line 205, ../sass/components/forms/_forms.scss */
 .form-type-textfield input:focus ~ .form-bar:before,
 .form-type-textfield input:focus ~ .form-bar:after,
 .form-type-password input:focus ~ .form-bar:before,
@@ -6090,7 +6090,7 @@ form .form-item.webform-component-time .form-radios {
   width: 50%;
 }
 
-/* line 212, ../sass/components/forms/_forms.scss */
+/* line 213, ../sass/components/forms/_forms.scss */
 #user-login-form {
   width: 300px;
   max-width: 100%;
@@ -6135,6 +6135,7 @@ form[action*='bethelmennonite.ccbchurch.com/login'] input[type='submit']:hover, 
 }
 /* line 13, ../sass/components/forms/_form--login.scss */
 form[action*='bethelmennonite.ccbchurch.com/login'] a {
+  text-align: center;
   display: block;
   font-size: .7em;
 }
