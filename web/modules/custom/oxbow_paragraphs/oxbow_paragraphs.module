@@ -92,7 +92,7 @@ function oxbow_paragraphs_preprocess_field(&$vars) {
     /// column layout
     else {
       /// add layout class to field
-      $vars['attributes']['class'] = ['layout-columns'];
+      $vars['attributes']['class'] = ['layout-columns', 'layout_' . $layout];
       /// layout for each item
       $layout_items = explode('_', $layout);
       /// check for equal column layout
