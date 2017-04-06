@@ -86,6 +86,7 @@ mounts:
     '/tmp': 'shared:files/tmp'
     '/private': 'shared:files/private'
     '/drush-backups': 'shared:files/drush-backups'
+    '/config/sync': 'shared:files/config/sync'
 
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
