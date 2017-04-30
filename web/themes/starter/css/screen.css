@@ -6314,61 +6314,112 @@ form[action*='bethelmennonite.ccbchurch.com/login'] a {
   left: 0;
   right: 0;
   bottom: 0;
-  top: 3.75rem;
+  margin-top: 3.75rem;
+  top: 0;
   position: fixed;
   z-index: 1001;
   background: #007178;
   padding: 1.5rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
   display: none;
 }
-/* line 11, ../sass/components/menu/_menu--mobile.scss */
-#block-mainnavigation > ul:not(.contextual-links) {
+/* line 15, ../sass/components/menu/_menu--mobile.scss */
+#block-mainnavigation ul:not(.contextual-links) {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
   flex-direction: column;
   margin: 0;
+  background: #007178;
+  padding: 0.75rem 0;
   list-style: none;
+  -webkit-transition: left .5s, right .5s;
+  -moz-transition: left .5s, right .5s;
+  -ms-transition: left .5s, right .5s;
+  -o-transition: left .5s, right .5s;
+  transition: left .5s, right .5s;
 }
-/* line 18, ../sass/components/menu/_menu--mobile.scss */
-#block-mainnavigation > ul:not(.contextual-links) li {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+/* line 24, ../sass/components/menu/_menu--mobile.scss */
+#block-mainnavigation ul:not(.contextual-links) li {
+  display: block;
+  margin: auto;
+  min-height: 50px;
+  text-align: center;
 }
-/* line 21, ../sass/components/menu/_menu--mobile.scss */
-#block-mainnavigation > ul:not(.contextual-links) li a {
+/* line 30, ../sass/components/menu/_menu--mobile.scss */
+#block-mainnavigation ul:not(.contextual-links) li a {
+  position: relative;
+  display: inline-block;
+  width: auto;
   color: white;
-  padding: 1.5rem;
+  padding: 0.75rem;
   font-size: 1.5rem;
   text-align: center;
 }
-/* line 32, ../sass/components/menu/_menu--mobile.scss */
+/* line 42, ../sass/components/menu/_menu--mobile.scss */
+#block-mainnavigation ul:not(.contextual-links) li.menu-item--expanded > a:after {
+  content: '\E835';
+  font-family: oxbow;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -7px;
+  font-size: 14px;
+  opacity: .5;
+}
+/* line 54, ../sass/components/menu/_menu--mobile.scss */
+#block-mainnavigation ul:not(.contextual-links) ul:not(.contextual-links) {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+}
+/* line 64, ../sass/components/menu/_menu--mobile.scss */
+#block-mainnavigation ul:not(.contextual-links) li.closing > ul:not(.contextual-links) {
+  z-index: 2;
+  height: auto;
+  overflow: hidden;
+}
+/* line 70, ../sass/components/menu/_menu--mobile.scss */
+#block-mainnavigation ul:not(.contextual-links) li.open > ul:not(.contextual-links) {
+  z-index: 3;
+  height: auto;
+  overflow: visible;
+}
+/* line 76, ../sass/components/menu/_menu--mobile.scss */
+#block-mainnavigation ul:not(.contextual-links) .menu-item.back {
+  position: relative;
+  opacity: .5;
+}
+/* line 80, ../sass/components/menu/_menu--mobile.scss */
+#block-mainnavigation ul:not(.contextual-links) .menu-item.back a:before {
+  content: '\E84B';
+  font-family: oxbow;
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -7px;
+  font-size: 14px;
+}
+/* line 94, ../sass/components/menu/_menu--mobile.scss */
 #block-mainnavigation.open {
   display: block;
+}
+/* line 98, ../sass/components/menu/_menu--mobile.scss */
+#block-mainnavigation.open-1 > ul:not(.contextual-links) {
+  left: -100%;
+  right: 100%;
+}
+
+/* line 104, ../sass/components/menu/_menu--mobile.scss */
+body.show-mobile.open-menu {
+  overflow: hidden;
 }
 
 /* line 4, ../sass/components/menu/_menu--footer.scss */

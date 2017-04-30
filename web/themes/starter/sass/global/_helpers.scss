@@ -124,6 +124,14 @@
   transform: $transform;
 }
 
+@mixin transition($string) {
+  -webkit-transition: #{$string};
+  -moz-transition: #{$string};
+  -ms-transition: #{$string};
+  -o-transition: #{$string};
+  transition: #{$string};
+}
+
 /// Horizontal Spacer
 @mixin spacer($color: $base) {
   content: '\2666';

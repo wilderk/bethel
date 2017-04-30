@@ -2,27 +2,89 @@ $target: '#block-mainnavigation';
 
 #{$target} {
   @include fill;
-  top: $header-top-h;
+  //top: $header-top-h;
+  margin-top: $header-top-h;
+  top: 0;
   position: fixed;
   z-index: 1001;
   background: color(menu-mobile);
   padding: $site-p;
+  overflow-x: hidden;
+  overflow-y: scroll;
 
-  > ul:not(.contextual-links) {
+  ul:not(.contextual-links) {
     @include fill;
-    @include flex($h-align:center, $v-align:center);
     flex-direction: column;
     margin: 0;
+    background: color(menu-mobile);
+    padding: padding(s) 0;
     list-style: none;
+    @include transition('left .5s, right .5s');
 
     li {
-      @include flex($h-align:center, $v-align:center);
+      display: block;
+      margin: auto;
+      min-height: 50px;
+      text-align: center;
 
       a {
+        position: relative;
+        display: inline-block;
+        width: auto;
         color: color(menu-mobile-text);
-        padding: $site-p;
+        padding: padding(s);
         font-size: $h3-font-size;
         text-align: center;
+      }
+    }
+
+    li.menu-item--expanded > a {
+      &:after {
+        content: '\E835';
+        font-family: oxbow;
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-top: -7px;
+        font-size: 14px;
+        opacity: .5;
+      }
+    }
+
+    ul:not(.contextual-links) {
+      position: absolute;
+      left: 100%;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+    }
+
+    li.closing > ul:not(.contextual-links) {
+      z-index: 2;
+      height: auto;
+      overflow: hidden;
+    }
+
+    li.open > ul:not(.contextual-links) {
+      z-index: 3;
+      height: auto;
+      overflow: visible;
+    }
+
+    .menu-item.back {
+      position: relative;
+      opacity: .5;
+
+      a:before {
+        content: '\E84B';
+        font-family: oxbow;
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        margin-top: -7px;
+        font-size: 14px;
       }
     }
   }
@@ -32,4 +94,13 @@ $target: '#block-mainnavigation';
   &.open {
     display: block;
   }
+
+  &.open-1 > ul:not(.contextual-links) {
+    left: -100%;
+    right: 100%;
+  }
+}
+
+body.show-mobile.open-menu {
+  overflow: hidden;
 }

@@ -3,12 +3,14 @@
   
   $.fn.closeMenu = function() {
     var $this = $(this);
-    $this.removeClass('open');
+    $this.removeClass('open open-1');
     $this.find('.open').removeClass('open');
+    $('body').removeClass('open-menu');
   };
   
   $.fn.openMenu = function() {
     $(this).addClass('open');
+    $('body').addClass('open-menu');
   };
   
   $.fn.toggleMenu = function() {
